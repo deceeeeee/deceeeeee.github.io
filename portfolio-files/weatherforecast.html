@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+
+<head>
+    <meta charset="UTF-8">
+    <title> Portfolio </title>
+    <link rel="icon" type="image/x-icon" href="../Pics/profilepicture.png">
+    <link rel="stylesheet" type="text/css" href="../css/page-template.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <style>
+        header.intro {
+            background-image: url("../Pics/Portfolio_image/Weather App/weatherapp.png");
+        }
+    </style>
+</head>
+
+<body>
+    <nav class="nav-container">
+        <a class="default" href="javascript:void(0);"> @deceeeeee </a>
+        <a class="nav-links" href="../"> Home </a>
+        <div class="dropdown">
+            <a class="nav-links" href="javascript:void(0);"> Portfolio <i class="fa fa-caret-down"></i></a>
+            <div class="dropdown-content">
+                <a class="dropdown-items" href="furniturestore1.html">Furniture Store Website</a>
+                <a class="dropdown-items" href="furniturestore2.html">Furniture Store Website(v2)</a>
+                <a class="dropdown-items" href="landing-page.html">Landing Page</a>
+                <a class="dropdown-items" href="weatherforecast.html">Weather Forecast</a>
+            </div>
+        </div>
+    </nav>
+
+    <header class="intro">
+        <div class="title">
+            <div class="title-box">
+                <h1> Weather App </h1>
+                <em> Back-end: JavaScript, Ajax/jQuery </em>
+                <em> Front-end: HTML, CSS, JavaScript, Ajax/jQuery </em>
+                <em> API: Open Weather </em>
+            </div>
+            <div class="title-box">
+                <h2> Project Overview </h2>
+                <p> Weather forecast is a simple web-application that includes Open Weather API to display daily weather forecast around the world. Click <a href="weatherapp/">here</a> to see it.</p>
+            </div>
+        </div>
+    </header>
+
+    <section class="main">
+        <a href="javascript:void(0);" id="content">
+            <i class="fa fa-chevron-up"></i>
+        </a>
+
+        <div class="modal">
+            <img class="modal-content" src="../Pics/Portfolio_image/Weather App/weatherapp.png">
+            <img class="modal-content" src="../Pics/Portfolio_image/Weather App/weatherinfo.png">
+        </div>
+
+        <div class="sub-main">
+            <div class="left">
+                <div class="content tools" id="level1">
+                    <h2> Tools and Softwares </h2>
+                    <ul>
+                        <li> Programming Language: Javascript, HTML, CSS, MySQL </li>
+                        <li> Software: Visual Studio Code </li>
+                        <li> Libraries: Font-awesome w3schools, Ajax/jQuery </li>
+                    </ul>
+                </div>
+
+                <div class="content task-specification" id="level2">
+                    <h2> Features </h2>
+                    <h3 id="level2_1"> </h3>
+                    <div class="task-specification-item">
+                        <p class="desc"> Users will be brought to the first page where they can type any city in the world, then click the button. </p>
+                        <div class="grid-image">
+                            <img onclick="zoomin(0)" src="../Pics/Portfolio_image/Weather App/weatherapp.png" width="400" height="200">
+                        </div>
+                        <p class="desc"> The weather information of the searched city will be displayed afterwards. </p>
+                        <div class="grid-image">
+                            <img onclick="zoomin(1)" src="../Pics/Portfolio_image/Weather App/weatherinfo.png" width="400" height="200">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+            <div class="right">
+                <h3> Contents </h3>
+                <a href="#level1"> Tools and Software </a>
+                <a href="#level2"> Features </a>
+            </div>
+    </section>
+
+    <footer>
+
+    </footer>
+
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script src="../JS/project-template.js"></script>
+<script src="../JS/zoomin.js"></script>

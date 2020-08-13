@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+
+<head>
+  <meta charset="UTF-8" />
+  <title>Weather Forecast</title>
+  <link rel="icon" type="image/x-icon" href="Image/weathericon.png" />
+  <link rel="stylesheet" type="text/css" href="css/app.css" />
+  <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
+  />
+  <style>
+    .fa-search,
+    .fa-arrow-circle-right {
+      font-size: 45px;
+    }
+  </style>
+</head>
+
+<body>
+  <div class="container" id="firstcon">
+    <div class="sub-container">
+      <label for="city"> Enter the city name </label>
+      <div class="search">
+        <i class="fa fa-search"></i>
+        <input
+          placeholder="E.g: London"
+          type="text"
+          name="city"
+          id="city"
+          autocomplete="off"
+        />
+        <button type="submit" name="enter" id="enter">
+          <i class="fa fa-arrow-circle-right"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <div class="container" id="secondcon">
+    <div class="sub-container">
+      <div class="column">
+        <span class="data icon"><img src="Image/" height="150" /></span>
+        <span class="data temperature"> </span>
+        <span class="data main"> </span>
+        <span class="data city"> <i class="fa fa-map-marker"></i> </span>
+      </div>
+
+      <div class="column">
+        <div class="temp-container">
+          <span class="data pressure"> Pressure: </span>
+          <span class="data humid"> Humidity: </span>
+          <span class="data long-lat"> Longitude/Latitude: </span>
+          <span class="data avg-temp"> Average Temperature: </span>
+          <span class="data wind"> Wind: </span>
+          <span class="data real-feel"> Real Feel: </span>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+  $(document).ready(function () {
+    function display_weather() {
+      $("#firstcon").fadeOut();
+      var city = $("#city").val();
+      $.ajax({
+        url: "http://api.openweathermap.org/data/2.5/weather",
+        method: "GET",
+        dataType: "JSON",
+        data: {
+          q: city,
+          appid: "98c18d81433b4f8e097a95a5d9c4ebb2",
+          units: "metric"
+        }
+      }).done(function (data) {
+        console.log(data);
+        var json = data;
+        var imgurl = "Image/" + json.weather[0].icon + ".png";
+        $(".icon img").attr("src", imgurl);
+        $(".temperature").text(
+          json.main.temp_min + "°C/" + json.main.temp_max + "°C"
+        );
+        $(".main").text(json.weather[0].main);
+        $(".city").append(json.name + ", " + json.sys.country);
+
+        $(".pressure").text("Pressure: " + json.main.pressure + "mb");
+        $(".humid").text("Humidity: " + json.main.humidity + '%');
+        $(".long-lat").text(
+          "Longitude/Latitude: " + json.coord.lon + "/" + json.coord.lat
+        );
+        $(".avg-temp").text("Average temperature: " + json.main.temp + "°C");
+        $(".wind").text(
+          "Wind: " + json.wind.deg + "° " + json.wind.speed + "m/s"
+        );
+        $(".real-feel").text("Feels like: " + json.main.feels_like + "°C");
+      });
+      $("#secondcon").fadeIn();
+    }
+
+    $("#firstcon").fadeIn();
+
+    $("#enter").on("click", function () {
+      display_weather();
+    });
+    $("#city").on("keypress", function (e) {
+      if (e.keyCode == 13) {
+        display_weather();
+      }
+    });
+  });
+</script>

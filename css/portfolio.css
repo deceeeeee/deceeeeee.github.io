@@ -1,0 +1,262 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  scroll-behavior: smooth;
+}
+
+/* Navigation bar */
+.nav-container {
+  background-color: #1e1a1a;
+  width: 100%;
+  position: fixed;
+  padding: 0 2em;
+  z-index: 1;
+}
+
+.nav-container .nav-links {
+  text-decoration: none;
+  float: left;
+  font-size: 17px;
+  color: #e3e3e3;
+  padding: 18px 0;
+  margin-right: 0.8rem;
+}
+
+.nav-container .nav-links:hover,
+.nav-links.active {
+  opacity: 0.6;
+}
+
+.nav-container .default {
+  text-decoration: none;
+  float: left;
+  font-size: 20px;
+  color: #e3e3e3;
+  padding: 15px 0;
+  margin-right: 1.5em;
+}
+
+.dropdown {
+  overflow: hidden;
+  float: left;
+}
+
+.dropdown .dropdown-content {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  background-color: #1e1a1a;
+  margin-top: 2.6rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dropdown .dropdown-content .dropdown-items {
+  text-decoration: none;
+  display: block;
+  color: #e3e3e3;
+  padding: 15px 10px;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.dropdown .dropdown-content .dropdown-items:hover {
+  opacity: 0.6;
+}
+
+/* Background Parallax */
+.parallax {
+  height: 600px;
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  opacity: 0.7;
+}
+
+#first-row {
+  background-image: url("../Pics/firstbackground(v2).png");
+  opacity: 1;
+}
+
+#second-row {
+  background-image: url("../Pics/secondbackground.jpg");
+}
+
+#third-row {
+  background-image: url("../Pics/thirdbackground.png");
+}
+
+#fourth-row {
+  background-image: url("../Pics/fourthbackground.jpg");
+  opacity: 0.9;
+}
+
+/* Description box template */
+.description-box {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  flex-grow: 0;
+  flex-shrink: 1;
+  min-height: 740px;
+  padding: 3rem 1rem 2rem 1rem;
+  background-color: #e3e3e3;
+}
+
+/* First box */
+
+.name h1,
+.name h2 {
+  text-align: center;
+}
+
+.introduction {
+  display: flex;
+  visibility: hidden;
+  flex: row nowrap;
+  flex-shrink: 1;
+  flex-grow: 0;
+  width: 100%;
+  margin-top: 1.4rem;
+}
+
+@keyframes fadein {
+  0% {
+    opacity: 0.1;
+    margin-top: 0;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 1.4rem;
+  }
+}
+
+.introduction .columns {
+  padding: 2rem;
+  width: 674.5px;
+  line-height: 1.7rem;
+}
+
+.introduction .columns h2 {
+  font-weight: 500;
+}
+
+.introduction .columns hr {
+  margin: 0.8rem 0;
+}
+
+.introduction .proficient {
+  display: flex;
+  flex: row wrap;
+  gap: 2.4rem;
+}
+
+.introduction .proficient .proficient-item ul {
+  margin-top: 10px;
+  padding-left: 1.3rem;
+}
+
+/* About */
+.introduction .about-me ul {
+  margin-top: 10px;
+  margin-left: 1.2rem;
+}
+
+.introduction .about-me h3 {
+  padding-bottom: 3px;
+}
+
+.introduction .about-me p {
+  border-top: 2px solid #000;
+  width: fit-content;
+}
+
+/* Portfolio */
+.card-container {
+  display: grid;
+  grid-template-columns: 200px 200px 200px 200px;
+  grid-gap: 5rem;
+  margin: 3rem 0;
+}
+
+.card-container a {
+  text-decoration: none;
+  color: #000;
+}
+
+.card-container a:hover .card {
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.3), 0 6px 20px 0 rgba(0, 0, 0, 0.285);
+}
+
+.card {
+  width: 100%;
+  height: 300px;
+  background-color: #fff;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.card .explanation {
+  margin: 0.5rem 0;
+  padding: 0 1.2rem;
+}
+
+.card .explanation h4 {
+  margin-bottom: 0.6rem;
+}
+
+.card .explanation p {
+  font-size: 13px;
+}
+
+@keyframes port-fadein {
+  0% {
+    opacity: 0.1;
+    margin-top: 0;
+  }
+
+  100% {
+    opacity: 1;
+    margin-top: 3rem;
+  }
+}
+
+/* Contact/Social media */
+.footer {
+  display: flex;
+  flex: row nowrap;
+  align-items: center;
+  justify-content: space-around;
+  background-color: #4d79ff;
+  color: #e3e3e3;
+  min-height: 300px;
+  padding-top: 0.6rem;
+}
+
+.footer h2 {
+  font-size: 45px;
+}
+
+.footer .contact-me {
+  display: flex;
+  flex-direction: column;
+  align-content: flex-start;
+  width: 38%;
+}
+
+.footer .contact-me .contacts {
+  line-height: 2.8em;
+}
+
+.footer .contact-me .contacts .fa {
+  font-size: 20px;
+  margin-right: 5px;
+}

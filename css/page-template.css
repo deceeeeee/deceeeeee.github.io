@@ -1,0 +1,305 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+  font-weight: 500;
+  scroll-behavior: smooth;
+}
+
+/* Navigation bar */
+.nav-container {
+  background-color: #1e1a1a;
+  width: 100%;
+  position: fixed;
+  padding: 0 2em;
+  z-index: 1;
+}
+
+.nav-container .nav-links {
+  text-decoration: none;
+  float: left;
+  font-size: 17px;
+  color: #e3e3e3;
+  padding: 18px 0;
+  margin-right: 0.8rem;
+}
+
+.nav-container .nav-links:hover,
+.nav-links.active {
+  opacity: 0.6;
+}
+
+.nav-container .default {
+  text-decoration: none;
+  float: left;
+  font-size: 20px;
+  color: #e3e3e3;
+  padding: 15px 0;
+  margin-right: 1.5em;
+}
+
+.dropdown {
+  overflow: hidden;
+  float: left;
+}
+
+.dropdown .dropdown-content {
+  position: absolute;
+  display: none;
+  z-index: 1;
+  background-color: #1e1a1a;
+  margin-top: 3.65rem;
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
+}
+
+.dropdown .dropdown-content .dropdown-items {
+  text-decoration: none;
+  display: block;
+  color: #e3e3e3;
+  padding: 15px 10px;
+}
+
+.dropdown .dropdown-content .dropdown-items:hover {
+  opacity: 0.6;
+}
+
+header.intro {
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: cover;
+  height: 570px;
+}
+
+.intro .title {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-evenly;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.7);
+}
+
+.intro .title .title-box {
+  color: #e3e3e3;
+}
+
+.title-box:first-child {
+  width: 45%;
+  animation: left-side-fade-in 2s;
+}
+
+.title-box:last-child {
+  width: 35%;
+  animation: right-side-fade-in 2s;
+}
+
+.title .title-box h1 {
+  font-size: 50px;
+  font-weight: 700;
+}
+
+.title .title-box em {
+  font-size: 16px;
+  display: block;
+}
+
+@keyframes left-side-fade-in {
+  0% {
+    margin-left: -3rem;
+    opacity: 0.1;
+  }
+  100% {
+    margin-left: 0;
+    opacity: 1;
+  }
+}
+
+@keyframes right-side-fade-in {
+  0% {
+    margin-right: -3rem;
+    opacity: 0.1;
+  }
+  100% {
+    margin-right: 0;
+    opacity: 1;
+  }
+}
+
+.title .title-box h2 {
+  font-size: 30px;
+  margin-bottom: 1rem;
+}
+
+.title .title-box p {
+  line-height: 1.7rem;
+  font-size: 18px;
+}
+
+.title .title-box a {
+  color: #e3e3e3;
+}
+
+.title .title-box a:hover {
+  opacity: 0.6;
+}
+
+/* Section: Main */
+
+section.main {
+  padding: 1rem 0 3rem 5%;
+  background-color: #e3e3e3;
+}
+
+a .fa-chevron-up {
+  font-size: 60px;
+  text-decoration: none;
+  color: #000;
+  border: none;
+  outline: none;
+  opacity: 0.5;
+  margin-bottom: 2.5rem;
+  margin-left: 48%;
+}
+
+.sub-main {
+  display: flex;
+  flex-direction: row wrap;
+  justify-content: space-between;
+}
+
+.sub-main .left {
+  width: 65%;
+}
+
+.sub-main .left .content {
+  margin: 2rem 0;
+}
+
+.sub-main h2 {
+  font-size: 32px;
+  margin-bottom: 0.6rem;
+}
+
+.sub-main h3 {
+  font-size: 25px;
+  margin-bottom: 0.5rem;
+}
+
+.sub-main .left .grid-image {
+  display: grid;
+  grid-template-columns: auto auto;
+  justify-content: start;
+  align-content: start;
+  margin: 1.5rem 0;
+}
+
+.sub-main .left .grid-image img {
+  transition: transform 0.6s;
+}
+
+.sub-main .left .grid-image img:hover {
+  transform: scale(1.05);
+}
+
+ul {
+  list-style-type: square;
+}
+
+/* Tools and Software */
+.sub-main .left .tools ul {
+  font-size: 18px;
+  line-height: 2rem;
+  margin-left: 1.5rem;
+}
+
+/* Task specification */
+
+.sub-main .left .task-specification .task-specification-item {
+  margin-left: 1.6rem;
+}
+
+.sub-main .left .task-specification ul {
+  line-height: 1.7rem;
+  margin-left: 1.3rem;
+}
+
+.sub-main .left .task-specification .desc {
+  font-size: 18px;
+  margin-bottom: 0.8rem;
+}
+
+/* Other features */
+.sub-main .left .other-features ul {
+  margin-left: 1.5rem;
+}
+
+.sub-main .left .other-features p {
+  font-size: 18px;
+  margin-bottom: 0.8rem;
+}
+
+/* Content list */
+
+.sub-main .right {
+  width: 20%;
+  display: flex;
+  flex-direction: column;
+  align-content: center;
+  margin: 2rem 1rem;
+  padding: 15px;
+  border: 1px solid rgba(0, 0, 0, 0.6);
+  border-radius: 8px;
+  height: fit-content;
+}
+
+.sub-main .right a {
+  text-decoration: none;
+  color: #000;
+  line-height: 1.7rem;
+  display: block;
+}
+
+.sub-main .right a:hover {
+  text-decoration: underline;
+}
+
+.sub-main .right .sub-nav {
+  margin-left: 2rem;
+}
+
+/* Modal box to display the pictures */
+
+.modal {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: 100%;
+  height: 100%;
+  z-index: 1;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+.modal-content {
+  display: none;
+  margin: 5% auto;
+  width: auto;
+  height: 80%;
+  overflow: hidden;
+  animation: zoomin 0.8s;
+}
+
+@keyframes zoomin {
+  from {
+    transform: scale(0);
+  }
+  to {
+    transform: scale(1);
+  }
+}
