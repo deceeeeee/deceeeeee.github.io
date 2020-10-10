@@ -245,8 +245,17 @@ ul {
     grid-template-columns: auto;
   }
 
+  .sub-main .left .grid-image img:hover {
+    transform: scale(1);
+  }
+
   .sub-main .right {
     display: none;
+  }
+
+  .modal-content {
+    max-width: 300px;
+    max-height: 150px;
   }
 }
 
