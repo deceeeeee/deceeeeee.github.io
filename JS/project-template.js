@@ -1,16 +1,16 @@
-$(document).ready(function () {
+$(document).ready(function() {
   var chevron = $("#content").offset().top;
 
-  $("#content").on("click", function () {
+  $("#content").on("click", function() {
     $(window).scrollTop(chevron);
   });
 
-  $(".dropdown").on("click", function () {
+  $(".dropdown").on("click", function() {
     $(".dropdown-content").toggle();
   });
 
-  $(".modal").on("click", function () {
+  $(".modal").on("click", function() {
     $(".modal").fadeOut();
-    $(".modal-content").fadeOut();
+    $(".modal .modal-content").hide();
   });
 });

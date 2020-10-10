@@ -14,46 +14,28 @@
 <body>
   <nav class="nav-container">
     <a class="default" href=""> @deceeeeee </a>
-    <a
-      class="nav-links active"
-      href="javascript:void(0);"
-      onclick="navigationbar(this)"
-      >Home</a
-    >
-    <a
-      class="nav-links"
-      href="javascript:void(0);"
-      onclick="navigationbar(this)"
-      >About</a
-    >
+    <a class="nav-links" href="javascript:void(0);">Home</a>
+    <a class="nav-links" href="javascript:void(0);">About</a>
     <div class="dropdown">
-      <a
-        class="nav-links"
-        href="javascript:void(0);"
-        onclick="navigationbar(this)"
-        >Portfolio</a
-      >
+      <a class="nav-links" href="javascript:void(0);">Portfolio</a>
       <div class="dropdown-content">
-        <a class="dropdown-items" href="portfolio-files/furniturestore1.html"
-          >Furniture Store Website</a
+        <a class="dropdown-items" href="Portfolio-files/furniturestore2.html"
+          >Furniture Store Website(Remake)</a
         >
-        <a class="dropdown-items" href="portfolio-files/furniturestore2.html"
-          >Furniture Store Website(v2)</a
-        >
-        <a class="dropdown-items" href="portfolio-files/landing-page.html"
+        <a class="dropdown-items" href="Portfolio-files/landing-page.html"
           >Landing Page</a
         >
-        <a class="dropdown-items" href="portfolio-files/weatherforecast.html"
+        <a class="dropdown-items" href="Portfolio-files/weatherforecast.html"
           >Weather Forecast</a
+        >
+        <a
+          class="dropdown-items"
+          href="Portfolio-files/courseselectionsystem.html"
+          >Course Selection System</a
         >
       </div>
     </div>
-    <a
-      class="nav-links"
-      href="javascript:void(0);"
-      onclick="navigationbar(this)"
-      >Contact</a
-    >
+    <a class="nav-links" href="javascript:void(0);">Contact</a>
   </nav>
 
   <div class="parallax" id="first-row"></div>
@@ -193,13 +175,13 @@
     <div class="card-container">
       <a href="portfolio-files/furniturestore1.html">
         <div class="card">
-          <span class="port-image">
+          <div class="port-image">
             <img
               src="Pics/Portfolio_image/Furniture Store Website(JSP)/recommend.png"
               height="125"
               width="250"
             />
-          </span>
+          </div>
           <div class="explanation">
             <h4>Furniture Store Website</h4>
             <p>
@@ -211,13 +193,13 @@
       </a>
       <a href="portfolio-files/furniturestore2.html">
         <div class="card">
-          <span class="port-image">
+          <div class="port-image">
             <img
               src="Pics/Portfolio_image/Furniture Store Website(PHP)/logistic.png"
               height="125"
               width="250"
             />
-          </span>
+          </div>
           <div class="explanation">
             <h4>Furniture Store Website(Remake)</h4>
             <p>
@@ -227,15 +209,15 @@
           </div>
         </div>
       </a>
-      <a href="Portfolio-files/landing-page.html">
+      <a href="portfolio-files/landing-page.html">
         <div class="card">
-          <span class="port-image">
+          <div class="port-image">
             <img
               src="Pics/Portfolio_image/Landing Page/landingpage.png"
               height="125"
               width="250"
             />
-          </span>
+          </div>
           <div class="explanation">
             <h4>Landing Page</h4>
             <p>
@@ -245,15 +227,15 @@
           </div>
         </div>
       </a>
-      <a href="Portfolio-files/weatherforecast.html">
+      <a href="portfolio-files/weatherforecast.html">
         <div class="card">
-          <span class="port-image">
+          <div class="port-image">
             <img
               src="Pics/Portfolio_image/Weather App/weatherapp.png"
               height="125"
               width="245"
             />
-          </span>
+          </div>
           <div class="explanation">
             <h4>Weather Forecast</h4>
             <p>
@@ -265,24 +247,42 @@
       </a>
       <a href="">
         <div class="card">
-          <span class="port-image">
+          <div class="port-image">
             <img src="Pics/thirdbackground.png" height="125" width="200" />
-          </span>
+          </div>
           <div class="explanation">
-            <h4>Project Name</h4>
+            <h4>Mantis Bug Tracker</h4>
             <p>
-              This is part of my coding for the PHP Furniture Store Website
-              Project. It is basically a remake of my thesis project, with a
-              better UI and UX.
+              This is my first contribution to an open-source project. This
+              website is an open-source bug tracker that is used for project
+              listing and bug reporting.
+            </p>
+          </div>
+        </div>
+      </a>
+      <a href="portfolio-files/courseselectionsystem.html">
+        <div class="card">
+          <div class="port-image">
+            <img
+              src="Pics/Portfolio_image/Course Selection System/course-selection-system(course-selection).png"
+              height="125"
+              width="200"
+            />
+          </div>
+          <div class="explanation">
+            <h4>Course Selection System</h4>
+            <p>
+              Course Selection System is a web-based application for students to
+              select courses that they want to enter.
             </p>
           </div>
         </div>
       </a>
       <a href="">
         <div class="card">
-          <span class="port-image">
+          <div class="port-image">
             <img src="Pics/thirdbackground.png" height="125" width="200" />
-          </span>
+          </div>
           <div class="explanation">
             <h4>Project Name</h4>
             <p>
@@ -308,21 +308,6 @@
           </div>
         </div>
       </a>
-      <a href="">
-        <div class="card">
-          <span class="port-image">
-            <img src="Pics/thirdbackground.png" height="125" width="200" />
-          </span>
-          <div class="explanation">
-            <h4>Project Name</h4>
-            <p>
-              This is part of my coding for the PHP Furniture Store Website
-              Project. It is basically a remake of my thesis project, with a
-              better UI and UX.
-            </p>
-          </div>
-        </div>
-      </a>
     </div>
   </div>
 
@@ -331,16 +316,6 @@
   <div class="footer" id="Contact">
     <h2>How to reach me?</h2>
     <div class="contact-me">
-      <div class="columns">
-        <span class="contacts">
-          <i class="fa fa-envelope"></i>
-          micha3l_dct@yahoo.com
-        </span>
-        <span class="contacts">
-          <i class="fa fa-map-marker"></i>
-          Citra 2 ext BH 10/7, Pegadungan, Kalideres, Jakarta Barat
-        </span>
-      </div>
       <div class="columns">
         <span class="contacts">
           <i class="fa fa-whatsapp"></i>
@@ -353,6 +328,16 @@
         <span class="contacts">
           <i class="fa fa-github-square"></i>
           deceeeeee
+        </span>
+      </div>
+      <div class="columns">
+        <span class="contacts">
+          <i class="fa fa-envelope"></i>
+          micha3l_dct@yahoo.com
+        </span>
+        <span class="contacts">
+          <i class="fa fa-map-marker"></i>
+          Citra 2 ext BH 10/7, Pegadungan, Kalideres, Jakarta Barat
         </span>
       </div>
     </div>

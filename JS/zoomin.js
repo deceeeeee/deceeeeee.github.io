@@ -1,7 +1,12 @@
-function zoomin(index) {
-    var modal = document.getElementsByClassName("modal")[0];
-    var zoomin_image = document.getElementsByClassName("modal-content");
-
-    modal.style.display = "block";
-    zoomin_image[index].style.display = "block";
+function zoomin(elem, type) {
+  let src = elem.prop("src");
+  $(".modal").show();
+  $(".modal-content." + type).show();
+  $(".modal .modal-content")
+    .children()
+    .prop("src", src);
 }
+
+$("img").on("click", function() {
+  zoomin($(this), "img");
+});

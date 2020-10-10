@@ -1,7 +1,5 @@
-$(document).ready(function () {
-  $(window).scroll(function () {
-    $(".nav-links").removeClass("active");
-
+$(document).ready(function() {
+  $(window).scroll(function() {
     function fade_in(classname) {
       var element_post = $(classname).offset().top;
       var current_post = $(window).scrollTop();
@@ -14,11 +12,11 @@ $(document).ready(function () {
       }
     }
 
-    $(".introduction").each(function () {
+    $(".introduction").each(function() {
       fade_in(this);
     });
 
-    $(".card-container").each(function () {
+    $(".card-container").each(function() {
       fade_in(this);
     });
   });

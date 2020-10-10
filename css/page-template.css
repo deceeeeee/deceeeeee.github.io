@@ -1,69 +1,4 @@
-* {
-  padding: 0;
-  margin: 0;
-  box-sizing: border-box;
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
-  font-weight: 500;
-  scroll-behavior: smooth;
-}
-
-/* Navigation bar */
-.nav-container {
-  background-color: #1e1a1a;
-  width: 100%;
-  position: fixed;
-  padding: 0 2em;
-  z-index: 1;
-}
-
-.nav-container .nav-links {
-  text-decoration: none;
-  float: left;
-  font-size: 17px;
-  color: #e3e3e3;
-  padding: 18px 0;
-  margin-right: 0.8rem;
-}
-
-.nav-container .nav-links:hover,
-.nav-links.active {
-  opacity: 0.6;
-}
-
-.nav-container .default {
-  text-decoration: none;
-  float: left;
-  font-size: 20px;
-  color: #e3e3e3;
-  padding: 15px 0;
-  margin-right: 1.5em;
-}
-
-.dropdown {
-  overflow: hidden;
-  float: left;
-}
-
-.dropdown .dropdown-content {
-  position: absolute;
-  display: none;
-  z-index: 1;
-  background-color: #1e1a1a;
-  margin-top: 3.65rem;
-  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 4px 8px 0 rgba(0, 0, 0, 0.19);
-}
-
-.dropdown .dropdown-content .dropdown-items {
-  text-decoration: none;
-  display: block;
-  color: #e3e3e3;
-  padding: 15px 10px;
-}
-
-.dropdown .dropdown-content .dropdown-items:hover {
-  opacity: 0.6;
-}
+@import url("base-layout.css");
 
 header.intro {
   background-position: center;
@@ -76,7 +11,6 @@ header.intro {
 .intro .title {
   display: flex;
   flex-direction: row;
-  flex-wrap: wrap;
   align-items: center;
   justify-content: space-evenly;
   width: 100%;
@@ -168,7 +102,7 @@ a .fa-chevron-up {
 
 .sub-main {
   display: flex;
-  flex-direction: row wrap;
+  flex-direction: row;
   justify-content: space-between;
 }
 
@@ -280,19 +214,24 @@ ul {
   top: 0;
   left: 0;
   overflow: hidden;
+  z-index: 10000;
   width: 100%;
   height: 100%;
-  z-index: 1;
-  background-color: rgba(0, 0, 0, 0.6);
+  background-color: rgba(0, 0, 0, 0.7);
 }
 
 .modal-content {
+  margin: 10% auto;
   display: none;
-  margin: 5% auto;
-  width: auto;
-  height: 80%;
-  overflow: hidden;
+  justify-content: center;
+  align-items: center;
+  max-width: 800px;
+  max-height: 400px;
   animation: zoomin 0.8s;
+}
+
+.modal-content.video {
+  margin-top: 5%;
 }
 
 @keyframes zoomin {
@@ -301,5 +240,30 @@ ul {
   }
   to {
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 850px) {
+  .sub-main .left {
+    width: 90%;
+  }
+
+  .sub-main .left .grid-image {
+    grid-template-columns: auto;
+  }
+
+  .sub-main .right {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 755px) {
+  .intro .title {
+    flex-direction: column;
+    padding: 50px 0;
+  }
+
+  .intro .title .title-box {
+    width: 60%;
   }
 }
