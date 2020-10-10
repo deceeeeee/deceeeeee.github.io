@@ -234,10 +234,6 @@
     height: auto;
   }
 
-  .card-container .card .explanation {
-    z-index: 1;
-  }
-
   .footer {
     flex-direction: column;
   }
@@ -250,5 +246,26 @@
 
   .footer .contact-me .columns {
     min-width: 190px;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .introduction .proficient {
+    display: grid;
+    grid-template-columns: auto auto;
+  }
+
+  .card-container {
+    grid-template-columns: 300px;
+  }
+
+  .footer .contact-me {
+    display: flex;
+    align-self: flex-start;
+    padding: 0 10vw;
+  }
+
+  .footer .contact-me .columns {
+    min-width: 250px;
   }
 }

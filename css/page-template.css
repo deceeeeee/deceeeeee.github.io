@@ -153,10 +153,6 @@ ul {
 
 /* Task specification */
 
-.sub-main .left .task-specification .task-specification-item {
-  margin-left: 1.6rem;
-}
-
 .sub-main .left .task-specification ul {
   line-height: 1.7rem;
   margin-left: 1.3rem;
@@ -168,9 +164,6 @@ ul {
 }
 
 /* Other features */
-.sub-main .left .other-features ul {
-  margin-left: 1.5rem;
-}
 
 .sub-main .left .other-features p {
   font-size: 18px;
@@ -258,6 +251,20 @@ ul {
 }
 
 @media screen and (max-width: 755px) {
+  .responsive {
+    display: none;
+  }
+
+  a .fa-chevron-up {
+    margin-left: 38%;
+  }
+
+  .sub-main .left .grid-image img,
+  .sub-main .left .grid-image video {
+    width: 350px;
+    height: 175px;
+  }
+
   .intro .title {
     flex-direction: column;
     padding: 50px 0;

@@ -15,6 +15,7 @@
 
 body {
   overflow-x: hidden;
+  word-break: break-word;
 }
 
 /* Navigation bar */
@@ -73,16 +74,14 @@ body {
   opacity: 0.6;
 }
 
-@media screen and (max-width: 1000px) {
-  .nav-container .nav-links,
-  .nav-container .default,
-  .nav-container .dropdown {
-    font-size: 23px;
+@media screen and (max-width: 600px) {
+  .nav-container .default {
+    display: none;
   }
 }
 
-@media screen and (max-width: 600px) {
-  .nav-container .default {
+@media screen and (max-width: 400px) {
+  .nav-container .nav-responsive {
     display: none;
   }
 }
