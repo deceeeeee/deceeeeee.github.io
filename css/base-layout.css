@@ -69,11 +69,7 @@ body {
   opacity: 0.6;
 }
 
-@media screen and (max-width: 700px) {
-  .nav-container .default {
-    display: block;
-  }
-
+@media screen and (max-width: 1000px) {
   .nav-container .nav-links,
   .nav-container .default,
   .nav-container .dropdown {
