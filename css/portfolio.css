@@ -255,6 +255,7 @@
 
 .footer .contact-me .contacts {
   line-height: 2.8em;
+  display: block;
 }
 
 .footer .contact-me .contacts .fa {
@@ -288,11 +289,11 @@
 
 @media screen and (max-width: 700px) {
   .card-container {
-    grid-template-columns: auto;
+    grid-template-columns: 400px;
   }
 
   .card-container .card {
-    height: 350px;
+    height: 400px;
   }
 
   .card-container .card .port-image {
@@ -315,6 +316,10 @@
   .footer .contact-me {
     display: grid;
     width: 90%;
-    grid-template-columns: 40% auto;
+    grid-template-columns: 300px auto;
+  }
+
+  .footer .contact-me .columns {
+    max-width: 300px;
   }
 }
