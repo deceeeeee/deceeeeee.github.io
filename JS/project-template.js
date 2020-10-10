@@ -5,10 +5,6 @@ $(document).ready(function() {
     $(window).scrollTop(chevron);
   });
 
-  $(".dropdown").on("click", function() {
-    $(".dropdown-content").toggle();
-  });
-
   $(".modal").on("click", function() {
     $(".modal").fadeOut();
     $(".modal .modal-content").hide();
