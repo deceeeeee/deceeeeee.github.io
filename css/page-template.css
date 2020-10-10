@@ -223,10 +223,6 @@ ul {
   animation: zoomin 0.8s;
 }
 
-.modal-content.video {
-  margin-top: 5%;
-}
-
 @keyframes zoomin {
   from {
     transform: scale(0);
@@ -256,6 +252,12 @@ ul {
   .modal-content {
     max-width: 300px;
     max-height: 150px;
+  }
+
+  .modal-content img {
+    width: 100%;
+    height: auto;
+    padding: auto auto;
   }
 }
 
