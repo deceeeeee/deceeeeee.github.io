@@ -254,6 +254,10 @@
     height: 500px;
   }
 
+  #first-row {
+    height: 100vh;
+  }
+
   .introduction .proficient {
     display: grid;
     grid-template-columns: auto auto;
@@ -261,6 +265,10 @@
 
   .card-container {
     grid-template-columns: 300px;
+  }
+
+  .footer {
+    padding: 0.6rem 10vw;
   }
 
   .footer .contact-me {
