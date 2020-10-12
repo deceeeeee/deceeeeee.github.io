@@ -2,7 +2,7 @@
 
 /* Background Parallax */
 .parallax {
-  height: 500px;
+  height: 600px;
   background-attachment: fixed;
   background-position: center;
   background-repeat: no-repeat;
@@ -250,6 +250,10 @@
 }
 
 @media screen and (max-width: 600px) {
+  .parallax {
+    height: 500px;
+  }
+
   .introduction .proficient {
     display: grid;
     grid-template-columns: auto auto;
