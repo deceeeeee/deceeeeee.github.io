@@ -7,6 +7,6 @@ $(document).ready(function() {
 
   $(".modal").on("click", function() {
     $(".modal").fadeOut();
-    $(".modal .modal-content").hide();
+    // $(".modal .modal-content").hide();
   });
 });
