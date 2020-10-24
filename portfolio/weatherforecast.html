@@ -7,24 +7,26 @@
     <link rel="icon" type="image/x-icon" href="../Pics/profilepicture.png">
     <link rel="stylesheet" type="text/css" href="../css/page-template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         header.intro {
             background-image: url("../Pics/Portfolio_image/Weather App/weatherapp.png");
         }
+
+        .modal {
+            display: block;
+        }
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <nav class="nav-container">
         <a class="default" href="javascript:void(0);"> @deceeeeee </a>
         <a class="nav-links" href="../"> Home </a>
         <div class="dropdown">
             <a class="nav-links" href="javascript:void(0);"> Portfolio <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
-                <a class="dropdown-items" href="furniturestore1.html">Furniture Store Website</a>
-                <a class="dropdown-items" href="furniturestore2.html">Furniture Store Website(Remake)</a>
-                <a class="dropdown-items" href="landing-page.html">Landing Page</a>
-                <a class="dropdown-items" href="courseselectionsystem.html">Course Selection System</a>
+                <a class="dropdown-items" ng-repeat="links in navbar" href="{{links.url}}">{{links.name}}</a>
             </div>
         </div>
     </nav>
@@ -32,25 +34,25 @@
     <header class="intro">
         <div class="title">
             <div class="title-box">
-                <h1> Weather App </h1>
+                <h1> {{ProjectOverview.title}} </h1>
                 <div class="responsive">
-                    <em> Back-end: JavaScript, Ajax/jQuery </em>
-                    <em> Front-end: HTML, CSS, JavaScript, Ajax/jQuery </em>
-                    <em> API: Open Weather </em>
+                    <em> Back-end: {{concatData(ProjectOverview.programminglanguage.backend)}} </em>
+                    <em> Front-end: {{concatData(ProjectOverview.programminglanguage.frontend)}} </em>
+                    <em> API: {{concatData(ProjectOverview.programminglanguage.api)}} </em>
                 </div>
             </div>
             <div class="title-box">
                 <div class="responsive">
                     <h2> Project Overview </h2>
                 </div>
-                <p> Weather forecast is a simple web-application that includes Open Weather API to display daily weather forecast around the world. Click <a href="weatherapp/">here</a> to see it.</p>
+                <p> {{ProjectOverview.description}} Click <a href='weatherapp/'>here</a> to see it. </p>
             </div>
         </div>
     </header>
 
-    <div class="modal">
+    <div class="modal" ng-show="showmodal" ng-click="zoomin()">
         <div class="modal-content">
-            <img src="" height="400">
+            <img src="{{modal_img_url}}" height="400">
         </div>
     </div>
 
@@ -62,40 +64,122 @@
         <div class="sub-main">
             <div class="left">
                 <div class="content tools" id="level1">
-                    <h2> Tools and Softwares </h2>
+                    <h2> {{tools.title}} </h2>
                     <ul>
-                        <li> Programming Language: Javascript, HTML, CSS, MySQL </li>
-                        <li> Software: Visual Studio Code </li>
-                        <li> Libraries: Font-awesome w3schools, Ajax/jQuery </li>
+                        <li> Programming Language: {{concatData(tools.programminglanguage)}} </li>
+                        <li> Software: {{concatData(tools.software)}} </li>
+                        <li> Libraries/Frameworks: {{concatData(tools.lib_or_framework)}} </li>
                     </ul>
                 </div>
 
-                <div class="content task-specification" id="level2">
-                    <h2> Features </h2>
-                    <h3 id="level2_1"> </h3>
+                <h2> {{features.title}} </h2>
+                <div class="content task-specification" id="level2" ng-repeat="x in features.features">
                     <div class="task-specification-item">
-                        <p class="desc"> Users will be brought to the first page where they can type any city in the world, then click the button. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Weather App/weatherapp.png" width="400" height="200">
-                        </div>
-                        <p class="desc"> The weather information of the searched city will be displayed afterwards. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Weather App/weatherinfo.png" width="400" height="200">
+                        <h3 id="level2_{{$index+1}}"> {{x.name}} </h3>
+                        <div ng-repeat="item in x.explanation">
+                            <p class="desc"> {{item.description}} </p>
+                            <div class="grid-image">
+                                <img ng-repeat="y in item.image_url" src="{{y}}" ng-click="zoomin(y)" width="400" height="200">
+                            </div>
                         </div>
                     </div>
-
                 </div>
 
             </div>
             <div class="right">
                 <h3> Contents </h3>
-                <a href="#level1"> Tools and Software </a>
-                <a href="#level2"> Features </a>
+                <a href="#level1"> {{tools.title}} </a>
+                <a href="#level2"> {{features.title}} </a>
             </div>
     </section>
 
 </body>
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope){
+
+        // Initial value
+        $scope.counter = 0;
+        $scope.showmodal = false;
+        $scope.modal_img_url = "";
+
+        // Functions
+        $scope.concatData = function(array) {
+            return array.join(", ");
+        }
+
+        $scope.zoomin = function(src = ""){
+            $scope.modal_img_url = src;
+            $scope.showmodal = !$scope.showmodal;
+        }
+
+        // Data
+        $scope.navbar = [
+            {
+                name: "Furniture Store Website",
+                url: "furniturestore1.html"
+            },
+            {
+                name: "Furniture Store Website(Remake)",
+                url: "furniturestore2.html"
+            },
+            {
+                name: "Landing Page",
+                url: "landing-page.html"
+            },
+            {
+                name: "Course Selection System",
+                url: "courseselectionsystem.html"
+            },
+        ];
+
+        $scope.ProjectOverview = {
+            title: "Weather Forecast",
+            programminglanguage: {
+                backend: ["Javascript"],
+                frontend: ["HTML", "CSS", "JavaScript"],
+                api: ["OpenWeather"],
+            },
+            description: "Weather forecast is a simple web-application that includes Open Weather API to display daily weather forecast around the world.",
+        };
+
+        $scope.tools = {
+            title: "Tools and Software",
+            programminglanguage: [
+                $scope.concatData($scope.ProjectOverview.programminglanguage.backend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.frontend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.api)
+            ],
+            software: [
+                "Visual Studio Code"
+            ],
+            lib_or_framework: [
+                "Font-awesome w3schools",
+                "Ajax/JQuery"
+            ]
+        }
+
+        $scope.features = {
+            title: "Features",
+            features: [
+                {
+                    name: "",
+                    explanation: [
+                        {
+                            description: "Users will be brought to the first page where they can type any city in the world, then click the button.",
+                            image_url: ["../Pics/Portfolio_image/Weather App/weatherapp.png"]
+                        },
+                        {
+                            description: "The weather information of the searched city will be displayed afterwards.",
+                            image_url: ["../Pics/Portfolio_image/Weather App/weatherinfo.png"]
+                        }
+                    ]
+                }
+            ]
+        }
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../JS/dropdown.js"></script>
-<script src="../JS/project-template.js"></script>
-<script src="../JS/zoomin.js"></script>
+<!-- <script src="../JS/project-template.js"></script> -->

@@ -7,6 +7,6 @@ function zoomin(elem) {
     .prop("src", src);
 }
 
-$("img").on("click", function() {
+$(".grid-image img").on("click", function() {
   zoomin($(this));
 });
