@@ -36,9 +36,7 @@
             <div class="title-box">
                 <h1> {{ProjectOverview.title}} </h1>
                 <div class="responsive">
-                    <em> Back-end: {{concatData(ProjectOverview.programminglanguage.backend)}} </em>
-                    <em> Front-end: {{concatData(ProjectOverview.programminglanguage.frontend)}} </em>
-                    <em> API: {{concatData(ProjectOverview.programminglanguage.api)}} </em>
+                    <em ng-repeat="(type, coding) in ProjectOverview.programminglanguage"> {{type}}: {{concatData(coding)}} </em>
                 </div>
             </div>
             <div class="title-box">
