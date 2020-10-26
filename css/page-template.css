@@ -252,6 +252,7 @@ ul {
   .modal-content {
     max-width: 300px;
     max-height: 150px;
+    margin: 40vh auto;
   }
 
   .modal-content img {
@@ -283,9 +284,5 @@ ul {
 
   .intro .title .title-box {
     width: 60%;
-  }
-
-  .modal-content {
-    margin: 40vh auto;
   }
 }
