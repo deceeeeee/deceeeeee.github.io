@@ -40,6 +40,7 @@ header.intro {
 .title .title-box em {
   font-size: 16px;
   display: block;
+  text-transform: capitalize;
 }
 
 @keyframes left-side-fade-in {
@@ -160,7 +161,7 @@ ul {
 
 .sub-main .left .task-specification .desc {
   font-size: 18px;
-  margin-bottom: 0.8rem;
+  /* margin-bottom: 0.8rem; */
 }
 
 /* Other features */

@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../Pics/profilepicture.png">
     <link rel="stylesheet" type="text/css" href="../css/page-template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         header.intro {
             background-image: url("../Pics/Portfolio_image/Course Selection System/course-selection-system(course-selection).png");
@@ -14,17 +15,14 @@
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <nav class="nav-container">
         <a class="default" href="javascript:void(0);"> @deceeeeee </a>
         <a class="nav-links" href="../"> Home </a>
         <div class="dropdown">
             <a class="nav-links" href="javascript:void(0);"> Portfolio <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
-                <a class="dropdown-items" href="furniturestore1.html">Furniture Store Website</a>
-                <a class="dropdown-items" href="furniturestore2.html">Furniture Store Website(Remake)</a>
-                <a class="dropdown-items" href="landing-page.html">Landing Page</a>
-                <a class="dropdown-items" href="weatherforecast.html">Weather Forecast</a>
+                <a class="dropdown-items" ng-repeat="links in navbar" href="{{links.url}}">{{links.name}}</a>
             </div>
         </div>
     </nav>
@@ -32,26 +30,23 @@
     <header class="intro">
         <div class="title">
             <div class="title-box">
-                <h1> Course Selection System </h1>
+                <h1> {{ProjectOverview.title}} </h1>
                 <div class="responsive">
-                    <em> Back-end: PHP </em>
-                    <em> Front-end: HTML, CSS, JavaScript, Ajax/jQuery </em>
+                    <em ng-repeat="(type, coding) in ProjectOverview.programminglanguage"> {{type}}: {{concatData(coding)}} </em>
                 </div>
             </div>
             <div class="title-box">
                 <div class="responsive">
                     <h2> Project Overview </h2>
                 </div>
-                <p>
-                    Course Selection System is a web-based application for students to select courses that they want to enter. There are 2 roles in this website, which are administrator and students.
-                </p>
+                <p> {{ProjectOverview.description}} </p>
             </div>
         </div>
     </header>
 
-    <div class="modal">
+    <div class="modal" ng-show="showmodal" ng-click="zoomin()">
         <div class="modal-content">
-            <img src="" height="400">
+            <img src="{{modal_img_url}}" height="400">
         </div>
     </div>
 
@@ -63,18 +58,18 @@
         <div class="sub-main">
             <div class="left">
                 <div class="content tools" id="level1">
-                    <h2> Tools and Softwares </h2>
+                    <h2> {{tools.title}} </h2>
                     <ul>
-                        <li> Programming Language: HTML/CSS, PHP, JavaScript, MySQL </li>
-                        <li> Software: Visual Studio Code </li>
-                        <li> Libraries: Font-awesome w3schools, Ajax/jQuery </li>
+                        <li> Programming Language: {{concatData(tools.programminglanguage)}} </li>
+                        <li> Software: {{concatData(tools.software)}} </li>
+                        <li> Libraries/Frameworks: {{concatData(tools.lib_or_framework)}} </li>
                     </ul>
                 </div>
 
+                <h2> Features </h2>
                 <div class="content features" id="level2">
-                    <h2> Features </h2>
                     <div class="task-specification-item">
-                        <p class="desc"> Course selection system is created by considering the UI for users so that it doesn't look boring. User will be directed to the login page, where they can either login or register by clicking buttons provided. </p>
+                        <p class="desc"> Course selection system is created by considering the UI for users so that it doesn't look boring. User will be directed to the first page, where they can either login or register an account to this website. </p>
                         <div class="grid-image">
                             <video width="600" height="300" controls>
                                 <source src="../Pics/Portfolio_image/Course Selection System/Course Selection System.mp4" type="video/mp4">
@@ -83,48 +78,201 @@
                     </div>
                 </div>
 
-                <div class="content task-specification" id="level3">
-                    <h2> Task Specification </h2>
-                    <h3 id="level2_2"> 1. User Management </h3>
+                <h2> {{features.title}} </h2>
+                <div class="content task-specification" id="level3" ng-repeat="x in features.features">
                     <div class="task-specification-item">
-                        <p class="desc"> The user of this website is categorized into 2 types: </p>
-                        <ul>
-                            <li> Administrator </li>
-                            <p> Administrator is the master of this website, which makes this user has the highest authority. Administrator can manage students and courses database. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Course Selection System/course-selection-system(login-page).png" width="375" height="175">
-                                <img src="../Pics/Portfolio_image/Course Selection System/course-selection-system(admin-page1).png" width="375" height="175">
+                        <h3 id="level3_{{$index+1}}"> {{$index+1}}. {{x.name}} </h3>
+                        <div ng-repeat="item in x.explanation">
+                            <p class="desc"> {{item.description}} </p>
+                            <div class="grid-image" ng-if="item.image_url">
+                                <img ng-repeat="y in item.image_url" src="{{y}}" ng-click="zoomin(y)" width="375" height="175">
                             </div>
-                            <li> Student </li>
-                            <p> Student can log in to the website after registering their account to the website. They are required to register their id, name, and major that they have taken. Then, the account will be created and their data will be automatically stored in the administrator data management. While selecting their courses. Once logging in</p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Course Selection System/course-selection-system(register-page).png" width="375" height="175">
-                                <img src="../Pics/Portfolio_image/Course Selection System/course-selection-system.png" width="375" height="175"/>
-                                <img src="../Pics/Portfolio_image/Course Selection System/course-selection-system(profile).png" width="375" height="175">
-                                <img src="../Pics/Portfolio_image/Course Selection System/course-selection-system(course-selection).png" width="375" height="175"/>
-                            </div>
-                        </ul>
+                            <ul ng-if="item.description_list" ng-repeat="items in item.description_list">
+                                <li> {{items.name}} </li>
+                                <p> {{items.description}} </p>
+                                <div class="grid-image">
+                                    <img ng-repeat="y in items.image_url" src="{{y}}" ng-click="zoomin(y)" width="375" height="175">
+                                </div>
+                            </ul>
+                        </div>
                     </div>
                 </div>
 
             </div>
             <div class="right">
                 <h3> Contents </h3>
-                <a href="#level1"> Tools and Software </a>
+                <a href="#level1"> {{tools.title}} </a>
                 <a href="#level2"> Features </a>
-                <a href="#level3"> Task Specification </a>
-                <div class="sub-nav">
-                    <a href="#level3_1"> Website Information </a>
-                    <a href="#level3_2"> User Management </a>
-                    <a href="#level3_3"> Commodity Information </a>
-                    <a href="#level3_4"> Recommendation System </a>
-                    <a href="#level3_5"> Transaction System </a>
+                <a href="#level3"> {{features.title}} </a>
+                <div class="sub-nav" ng-repeat="x in features.features">
+                    <a href="#level3_{{$index+1}}"> {{x.name}} </a>
                 </div>
             </div>
     </section>
 
 </body>
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope){
+
+        // Initial value
+        $scope.counter = 0;
+        $scope.showmodal = false;
+        $scope.modal_img_url = "";
+
+        // Functions
+        $scope.concatData = function(array) {
+            return array.join(", ");
+        }
+
+        $scope.zoomin = function(src = ""){
+            $scope.modal_img_url = src;
+            $scope.showmodal = !$scope.showmodal;
+        }
+
+        // Data
+        $scope.navbar = [
+            {
+                name: "Furniture Store Website",
+                url: "furniturestore1.html"
+            },
+            {
+                name: "Furniture Store Website(Remake)",
+                url: "furniturestore2.html"
+            },
+            {
+                name: "Landing Page",
+                url: "landing-page.html"
+            },
+            {
+                name: "Weather Forecast",
+                url: "weatherforecast.html"
+            },
+        ];
+
+        $scope.ProjectOverview = {
+            title: "Course Selection System",
+            programminglanguage: {
+                backend: ["PHP"],
+                frontend: ["HTML", "CSS", "JavaScript"],
+                database: ["MySQL"],
+            },
+            description: "Weather forecast is a simple web-application that includes Open Weather API to display daily weather forecast around the world.",
+        };
+
+        $scope.tools = {
+            title: "Tools and Software",
+            programminglanguage: [
+                $scope.concatData($scope.ProjectOverview.programminglanguage.backend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.frontend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.database)
+            ],
+            software: [
+                "Visual Studio Code"
+            ],
+            lib_or_framework: [
+                "Font-awesome w3schools",
+                "Ajax/JQuery"
+            ]
+        }
+
+        $scope.features = {
+            title: "Task Specification",
+            features: [
+                {
+                    name: "User Management",
+                    explanation: [
+                        {
+                            description: "The user of this website is categorized into 2 types:",
+                            description_list: [
+                                {
+                                    name: "Administrator",
+                                    description: "Administrator is the master of this website, which makes this user has the highest authority. Administrator can manage students and courses database.",
+                                    image_url: [
+                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(login-page).png",
+                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(admin-page1).png"
+                                    ]
+                                },
+                                {
+                                    name: "Student",
+                                    description: "Student can log in to the website after registering their account to the website. They are required to register their id, name, and major that they have taken. Then, the account will be created and their data will be automatically stored in the administrator data management.",
+                                    image_url: [
+                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(register-page).png",
+                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system.png",
+                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(profile).png",
+                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-selection).png"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Course Management",
+                    explanation: [
+                        {
+                            description: "Administrator are able to add/modify/delete students, teachers, and courses information.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-table).png",
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(teacher-form).png",
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(student-form).png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Course Selection",
+                    explanation: [
+                        {
+                            description: "The student user can select a new course.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-selection).png",
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-select).png",
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-select-2).png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Fuzzy Query",
+                    explanation: [
+                        {
+                            description: "The student user can use the fuzzy query (using the wildcard * in the search keyword) to search the related courses by providing the course name, course teacher.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(fuzzy-query).png",
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(fuzzy-query-2).png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Satisfaction Scores",
+                    explanation: [
+                        {
+                            description: "The student can give score and write comments on the selected courses.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-transcript).png",
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(satisfaction-score).png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Course Statistics",
+                    explanation: [
+                        {
+                            description: "The admin can get the following statistics: top 3 popular courses (i.e., the courses with the top 3 number of students), course selection rate (i.e., the number of selected courses / the total course number).",
+                            image_url: [
+                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-statistics).png"
+                            ]
+                        }
+                    ]
+                },
+            ]
+        }
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../JS/dropdown.js"></script>
 <script src="../JS/project-template.js"></script>
-<script src="../JS/zoomin.js"></script>

@@ -81,6 +81,13 @@
                             <div class="grid-image">
                                 <img ng-repeat="y in item.image_url" src="{{y}}" ng-click="zoomin(y)" width="400" height="200">
                             </div>
+                            <ul ng-if="item.description_list" ng-repeat="items in item.description_list">
+                                <li> {{items.name}} </li>
+                                <p> {{items.description}} </p>
+                                <div class="grid-image">
+                                    <img ng-repeat="y in items.image_url" src="{{y}}" ng-click="zoomin(y)" width="375" height="175">
+                                </div>
+                            </ul>
                         </div>
                     </div>
                 </div>
