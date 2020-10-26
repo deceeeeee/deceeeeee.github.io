@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../Pics/profilepicture.png">
     <link rel="stylesheet" type="text/css" href="../css/page-template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         header.intro {
             background-image: url("../Pics/Portfolio_image/Mantis Bug Tracker/image-preview.png");
@@ -40,17 +41,14 @@
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <nav class="nav-container">
         <a class="default" href="javascript:void(0);"> @deceeeeee </a>
         <a class="nav-links" href="../"> Home </a>
         <div class="dropdown">
             <a class="nav-links" href="javascript:void(0);"> Portfolio <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
-                <a class="dropdown-items" href="furniturestore2.html">Furniture Store Website(Remake)</a>
-                <a class="dropdown-items" href="landing-page.html">Landing Page</a>
-                <a class="dropdown-items" href="weatherforecast.html">Weather Forecast</a>
-                <a class="dropdown-items" href="courseselectionsystem.html">Course Selection System</a>
+                <a class="dropdown-items" ng-repeat="links in navbar" href="{{links.url}}">{{links.name}}</a>
             </div>
         </div>
     </nav>
@@ -58,24 +56,24 @@
     <header class="intro">
         <div class="title">
             <div class="title-box">
-                <h1> Mantis Bug Tracker </h1>
+                <h1> {{ProjectOverview.title}} </h1>
                 <div class="responsive">
-                    <em> Back-end: PHP </em>
-                    <em> Front-end: HTML, CSS, JavaScript, Ajax/jQuery </em>
+                    <em> Back-end: {{concatData(ProjectOverview.programminglanguage.backend)}} </em>
+                    <em> Front-end: {{concatData(ProjectOverview.programminglanguage.frontend)}} </em>
                 </div>
             </div>
             <div class="title-box">
                 <div class="responsive">
                     <h2> Project Overview </h2>
                 </div>
-                <p> This website is an open-source bug tracker that is used for project listing and bug reporting. This project is the first open-source project that I contributed.</p>
+                <p> {{ProjectOverview.description}} </p>
             </div>
         </div>
     </header>
 
-    <div class="modal">
+    <div class="modal" ng-show="showmodal" ng-click="zoomin()">
         <div class="modal-content">
-            <img src="" height="400">
+            <img src="{{modal_img_url}}" height="400">
         </div>
     </div>
 
@@ -87,71 +85,163 @@
         <div class="sub-main">
             <div class="left">
                 <div class="content tools" id="level1">
-                    <h2> Tools and Softwares </h2>
+                    <h2> {{tools.title}} </h2>
                     <ul>
-                        <li> Programming Language: Javascript, HTML, CSS, MySQL </li>
-                        <li> Software: Visual Studio Code </li>
-                        <li> Libraries: Ajax/jQuery </li>
+                        <li> Programming Language: {{concatData(tools.programminglanguage)}} </li>
+                        <li> Software: {{concatData(tools.software)}} </li>
+                        <li> Libraries/Frameworks: {{concatData(tools.lib_or_framework)}} </li>
                     </ul>
                 </div>
 
-                <div class="content task-specification" id="level2">
-                    <h2> Features </h2>
-                    <p class="desc"> Mantis is an open-source bug tracker that is used for project listing and bug reporting. The use of this bug tracker is similar to Jira Software. There are two roles in this website, which is administrator and reporter.</p>
-                    <div class="grid-image">
-                        <img src="../Pics/Portfolio_image/Mantis Bug Tracker/view-issue-details.png" width="400" height="200">
-                    </div>
-                    
-                    <h3 id="level2_1"> Search and Filter </h3>
+                <h2> {{features.title}} </h2>
+                <div class="content task-specification" id="level2" ng-repeat="x in features.features">
                     <div class="task-specification-item">
-                        <p class="desc"> There are some things that I have changed, such as this search field that I put in the home page for administrators to search and filter for the issues based on reporter or status. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/search-on-homepage.png" width="400" height="200">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/search-on-homepage-2.png" width="400" height="200">
+                        <h3 id="level2_{{$index+1}}"> {{x.name}} </h3>
+                        <div ng-repeat="item in x.explanation">
+                            <p class="desc"> {{item.description}} </p>
+                            <div class="grid-image">
+                                <img ng-repeat="y in item.image_url" src="{{y}}" ng-click="zoomin(y)" width="400" height="200">
+                            </div>
                         </div>
                     </div>
-
-                    <h3 id="level2_2"> Simpler Issue Status Change </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> Usually, users has to open one issue to edit its status. But after modification, this website can now edit issue without opening the issue. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/homepage-done.png" width="400" height="200">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/select-issue-status.png" width="400" height="200">
-                        </div>
-
-                        <p class="desc"> When user opens a bug list page, they can also edit the status, priority, severity, and even the issue summary.</p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/view-all-bugs.png" width="400" height="200">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/select-issue-status-on-view-bug-page.png" width="400" height="200">
-                        </div>
-                    </div>
-
-                    <h3 id="level2_3"> Image Preview </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> When reporter uploads some images about reported bugs, user can now preview the image without have to be redirected to another page. By simply click the image, the image will be zoom in and user can navigate through pictures shown in carousel style. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/image-preview-2.png" width="400" height="200">
-                            <img src="../Pics/Portfolio_image/Mantis Bug Tracker/image-preview.png" width="400" height="200">
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
             <div class="right">
                 <h3> Contents </h3>
-                <a href="#level1"> Tools and Software </a>
-                <a href="#level2"> Features </a>
-                <div class="sub-nav">
-                    <a href="#level2_1"> Search and Filter </a>
-                    <a href="#level2_2"> Simpler Issue Status Change </a>
-                    <a href="#level2_3"> Image Preview </a>
+                <a href="#level1"> {{tools.title}} </a>
+                <a href="#level2"> {{features.title}} </a>
+                <div class="sub-nav" ng-repeat="x in features.features">
+                    <a href="#level2_{{$index+1}}"> {{x.name}} </a>
                 </div>
             </div>
     </section>
 
 </body>
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope){
+
+        // Initial value
+        $scope.counter = 0;
+        $scope.showmodal = false;
+        $scope.modal_img_url = "";
+
+        // Functions
+        $scope.concatData = function(array) {
+            return array.join(", ");
+        }
+
+        $scope.zoomin = function(src = ""){
+            console.log(src);
+            $scope.modal_img_url = src;
+            $scope.showmodal = !$scope.showmodal;
+        }
+
+        // Data
+        $scope.navbar = [
+            {
+                name: "Furniture Store Website",
+                url: "furniturestore1.html"
+            },
+            {
+                name: "Landing Page",
+                url: "landing-page.html"
+            },
+            {
+                name: "Weather Forecast",
+                url: "weatherforecast.html"
+            },
+            {
+                name: "Course Selection System",
+                url: "courseselectionsystem.html"
+            },
+        ];
+
+        $scope.ProjectOverview = {
+            title: "Mantis Bug Tracker",
+            programminglanguage: {
+                backend: ["PHP"],
+                frontend: ["HTML", "CSS", "JavaScript"]
+            },
+            description: "This website is an open-source bug tracker that is used for project listing and bug reporting. This project is the first open-source project that I contributed.",
+        };
+
+        $scope.tools = {
+            title: "Tools and Software",
+            programminglanguage: [
+                $scope.concatData($scope.ProjectOverview.programminglanguage.backend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.frontend)
+            ],
+            software: [
+                "Visual Studio Code",
+                "Internet Information Services"
+            ],
+            lib_or_framework: [
+                "Ajax/JQuery"
+            ]
+        }
+
+        $scope.features = {
+            title: "Features",
+            features: [
+                {
+                    name: "",
+                    explanation: [
+                        {
+                            description: "Mantis is an open-source bug tracker that is used for project listing and bug reporting. The use of this bug tracker is similar to Jira Software. There are two roles in this website, which is administrator and reporter.",
+                            image_url: ["../Pics/Portfolio_image/Mantis Bug Tracker/view-issue-details.png"]
+                        }
+                    ]
+                },
+                {
+                    name: "Search and Filter",
+                    explanation: [
+                        {
+                            description: "There are some things that I have changed, such as this search field that I put in the home page for administrators to search and filter for the issues based on reporter or status.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/search-on-homepage.png",
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/search-on-homepage-2.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Simpler Issue Status Change",
+                    explanation: [
+                        {
+                            description: "Usually, users has to open one issue to edit its status. But after modification, this website can now edit issue without opening the issue.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/homepage-done.png",
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/select-issue-status.png"
+                            ]
+                        },
+                        {
+                            description: "When user opens a bug list page, they can also edit the status, priority, severity, and even the issue summary.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/view-all-bugs.png",
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/select-issue-status-on-view-bug-page.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Image Preview",
+                    explanation: [
+                        {
+                            description: "When reporter uploads some images about reported bugs, user can now preview the image without have to be redirected to another page. By simply click the image, the image will be zoom in and user can navigate through pictures shown in carousel style.",
+                            image_url: [
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/image-preview-2.png",
+                                "../Pics/Portfolio_image/Mantis Bug Tracker/image-preview.png"
+                            ]
+                        }
+                    ]
+                }
+            ]
+        }
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../JS/dropdown.js"></script>
 <script src="../JS/project-template.js"></script>
-<script src="../JS/zoomin.js"></script>
