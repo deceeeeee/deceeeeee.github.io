@@ -7,24 +7,48 @@
     <link rel="icon" type="image/x-icon" href="../Pics/profilepicture.png">
     <link rel="stylesheet" type="text/css" href="../css/page-template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         header.intro {
             background-image: url("../Pics/Portfolio_image/Furniture Store Website(JSP)/homepage.png");
         }
+        
+        .nav-container {
+            background-color: #e3e3e3;
+        }
+
+        .nav-container .default,
+        .nav-container .nav-links {
+            color: #1e1a1a;
+        }
+        
+        section.main {
+            background-color: #1e1a1a;
+            color: #e3e3e3;
+        }
+
+        a .fa-chevron-up {
+            color: #fff;
+        }
+
+        .sub-main .right {
+            border-color: #e3e3e3;
+        }
+
+        .sub-main .right a {
+            color: #e3e3e3;
+        }
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <nav class="nav-container">
         <a class="default" href="javascript:void(0);"> @deceeeeee </a>
         <a class="nav-links" href="../"> Home </a>
         <div class="dropdown">
             <a class="nav-links" href="javascript:void(0);"> Portfolio <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
-                <a class="dropdown-items" href="furniturestore2.html">Furniture Store Website(Remake)</a>
-                <a class="dropdown-items" href="landing-page.html">Landing Page</a>
-                <a class="dropdown-items" href="weatherforecast.html">Weather Forecast</a>
-                <a class="dropdown-items" href="courseselectionsystem.html">Course Selection System</a>
+                <a class="dropdown-items" ng-repeat="links in navbar" href="{{links.url}}">{{links.name}}</a>
             </div>
         </div>
     </nav>
@@ -32,25 +56,23 @@
     <header class="intro">
         <div class="title">
             <div class="title-box">
-                <h1> Furniture Store Website </h1>
+                <h1> {{ProjectOverview.title}} </h1>
                 <div class="responsive">
-                    <em> Back-end: Java Server Page, Javascript </em>
-                    <em> Front-end: HTML and CSS </em>
-                    <em> Database: MySQL </em>
+                    <em ng-repeat="(type, coding) in ProjectOverview.programminglanguage"> {{type}}: {{concatData(coding)}} </em>
                 </div>
             </div>
             <div class="title-box">
                 <div class="responsive">
                     <h2> Project Overview </h2>
                 </div>
-                <p> This is my bachelor thesis project. The project is to implement furniture store website that provides commodity recommendation system and transaction system. </p>
+                <p> {{ProjectOverview.description}} </p>
             </div>
         </div>
     </header>
 
-    <div class="modal">
+    <div class="modal" ng-show="showmodal" ng-click="zoomin()">
         <div class="modal-content">
-            <img src="" height="400">
+            <img src="{{modal_img_url}}" height="400">
         </div>
     </div>
 
@@ -62,165 +84,300 @@
         <div class="sub-main">
             <div class="left">
                 <div class="content tools" id="level1">
-                    <h2> Tools and Softwares </h2>
+                    <h2> {{tools.title}} </h2>
                     <ul>
-                        <li> Programming Language: JSP, Javascript, HTML, CSS, MySQL </li>
-                        <li> Software: Eclipse, Apache Tomcat, PHPMyAdmin </li>
-                        <li> Driver: MySQL-Java connector, commons-io, commons-fileupload</li>
+                        <li> Programming Language: {{concatData(tools.programminglanguage)}} </li>
+                        <li> Software: {{concatData(tools.software)}} </li>
+                        <li> Libraries/Frameworks: {{concatData(tools.lib_or_framework)}} </li>
                     </ul>
                 </div>
 
-                <div class="content task-specification" id="level2">
-                    <h2> Task Specification </h2>
-                    <h3 id="level2_1"> 1. Website Information </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> This website contains: </p>
-                        <ul>
-                            <li> Homepage </li>
-                            <p> Homepage is the index of this website. This page contains categorized furniture options and subscription form. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/homepage.png" width="375" height="200">
+                <div ng-repeat="list in features" class="content task-specification other-features" id="level{{prefix = $index+2}}">
+                    <h2> {{list.title}} </h2>
+                    <div class="task-specification-item" ng-repeat="x in list.features">
+                        <h3 id="level{{prefix}}_{{$index+1}}"> {{$index+1}}. {{x.name}} </h3>
+                        <div ng-repeat="item in x.explanation">
+                            <p class="desc"> {{item.description}} </p>
+                            <div class="grid-image" ng-if="item.image_url">
+                                <img ng-repeat="y in item.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="375" height="200">
                             </div>
-                            <li> Store introduction </li>
-                            <p> This page introduce the store's background, contractor, project ideas, and contractor's inquiries. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/aboutus.png" width="325" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/aboutus2.png" width="325" height="200">
-                            </div>
-                            <li> Contact page </li>
-                            <p> This page displays staff's contact if users need something to ask about the website or store. Then there is suggestion form on the right side for customer to give suggestion. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/e-mail.png" width="400" height="200">
-                            </div>
-                            <li> Customer service page </li>
-                            <p> This page is basically a guidance for using the website and store's service. All transaction procedures are in this page. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/helppage.png" width="325" height="200">
-                            </div>
-                        </ul>
-                    </div>
-
-                    <h3 id="level2_2"> 2. User Management </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> The user of this website is categorized into 4 types: </p>
-                        <ul>
-                            <li> Administrator </li>
-                            <p> Administrator is the master of this website, which makes this user has the highest authority. Administrator can manage user database, product database, broadcast email to subscribers and see all the suggestions sent by customers. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/adminpage.png" width="325" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/adminpage2.png" width="325" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/adminpage3.png" width="325" height="200">
-                            </div>
-                            <li> Visitor </li>
-                            <p> Visitor is categorized as users who doesn't have an account. They can open all the mentioned furniture informations but they have to create an account to access more features such as shopping cart and transactions. </p>
-                            <li> Customer </li>
-                            <p> Customers are those users who has account and choose 'customer' account type. This type of user can access shopping cart and put some products they would like to buy </p>
-                            <li> Seller </li>
-                            <p> Seller are those users who created an account as 'seller'. This type of user got different pages than any other user type. Seller can check customer's order requests and delivery progress, manage their own catalogue, and reply customer's comments </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/sellerhomepage.png" width="350" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/sellercatalog.png" width="375" height="200">
-                            </div>
-                        </ul>
-                    </div>
-
-                    <h3 id="level2_3"> 3. Commodity Information </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> This website displays each product with its information such as its material, size, color, price, producer, etc. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/productdisplay.png" width="300" height="200">
+                            <ul ng-if="item.description_list" ng-repeat="items in item.description_list">
+                                <li> {{items.name}} </li>
+                                <p> {{items.description}} </p>
+                                <div class="grid-image">
+                                    <img ng-repeat="y in items.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="375" height="200">
+                                </div>
+                            </ul>
                         </div>
                     </div>
-
-                    <h3 id="level2_4"> 4. Commodity Recommendation System </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> This is the goal of this project. To create an intelligent recommendation system. This system is expected to recommend products to the user based on their preference and search results. </p>
-                        <img style="margin-top:1.5rem" src="../Pics/Portfolio_image/Furniture Store Website(JSP)/searchbar.png" width="300" height="37">
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/searchresult.png" width="300" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/recommend.png" width="300" height="200">
-                        </div>
-                        <p class="desc"> The recommendation system is simple. The website get the search results from users and store it to database. Then 10 most recent search result of one user will be used as query parameter and the result will be displayed as recommendation to the user, like the shown picture above.</p>
-                    </div>
-
-                    <h3 id="level2_5"> 5. Transaction System </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> The website should be the platform where sellers and customers can complete transaction process and comment to each other.
-                        </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/transactionpage.png" width="150" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/invoice.png" width="280" height="200">
-                        </div>
-                        <p class="desc"> When user request an order, they will be told to adjust their address, recheck their ordered products, and choose the payment method. Then when the transaction is finished, the invoice will be generated through the page and user can print it to pdf format. Finally, this invoice is stored in purchase history page where user can also check the progress of their order request.
-                        </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/purchasehistory.png" width="275" height="200">
-                        </div>
-                    </div>
-
-                </div>
-
-                <div class="content other-features" id="level3">
-                    <h2> Other features </h2>
-                    <ul>
-                        <li id="level3_1">
-                            <h3> Login System </h3>
-                        </li>
-                        <p> Login/Registration system is a must for an e-commerce website. For this website login system, there is a basic data validation for the registration and login, and session creation for later use. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/signup.png" width="288" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/login.png" width="441" height="200">
-                        </div>
-                        <li id="level3_2">
-                            <h3> Shopping Cart </h3>
-                        </li>
-                        <p> Shopping cart allows customer to put furniture products that they want to buy. From this page user can see and remove products from shopping cart, then proceed to place an order. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/shoppingcart.png" width="485" height="200">
-                        </div>
-                        <li id="level3_3">
-                            <h3> Search Feature </h3>
-                        </li>
-                        <p> User can search the product based on the commodity information, such as the product's name, material, or even producer. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/searchbar.png" width="300" height="36">
-                        </div>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/searchresult.png" width="300" height="200">
-                        </div>
-                        <li id="level3_4">
-                            <h3> Comment Feature </h3>
-                        </li>
-                        <p> Customer and seller can give comment to a product. Through this feature customer can ask some questions about the product or giving a review, while seller can give feedback through it. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(JSP)/comment.png" width="258" height="200">
-                        </div>
-                    </ul>
                 </div>
             </div>
             <div class="right">
                 <h3> Contents </h3>
                 <a href="#level1"> Tools and Software </a>
-                <a href="#level2"> Task Specification </a>
-                <div class="sub-nav">
-                    <a href="#level2_1"> Website Information </a>
-                    <a href="#level2_2"> User Management </a>
-                    <a href="#level2_3"> Commodity Information </a>
-                    <a href="#level2_4"> Recommendation System </a>
-                    <a href="#level2_5"> Transaction System </a>
+                
+                <div ng-repeat="x in features">
+                    <a href="#level{{title = $index + 2}}"> {{x.title}} </a>
+                    <div class="sub-nav">
+                        <a ng-repeat="y in x.features" href="#level{{title}}_{{$index+1}}"> {{y.name}} </a>
+                    </div>
                 </div>
-                <a href="#level3"> Other features </a>
-                <div class="sub-nav">
-                    <a href="#level3_1"> Login System </a>
-                    <a href="#level3_2"> Shopping Cart </a>
-                    <a href="#level3_3"> Search Feature </a>
-                    <a href="#level3_4"> Commenting System </a>
-                </div>
+                
             </div>
     </section>
 
 </body>
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope){
+
+        // Initial value
+        $scope.counter = 0;
+        $scope.showmodal = false;
+        $scope.modal_img_url = "";
+        $scope.porto_img_path = "../Pics/Portfolio_image/Furniture Store Website(JSP)/";
+        
+        
+        // Functions
+        $scope.concatData = function(array) {
+            return array.join(", ");
+        }
+
+        $scope.zoomin = function(src = ""){
+            $scope.modal_img_url = $scope.porto_img_path + src;
+            $scope.showmodal = !$scope.showmodal;
+        }
+
+        // Data
+        $scope.navbar = [
+            {
+                name: "Furniture Store Website(Remake)",
+                url: "furniturestore2.html"
+            },
+            {
+                name: "Landing Page",
+                url: "landing-page.html"
+            },
+            {
+                name: "Weather Forecast",
+                url: "weatherforecast.html"
+            },
+            {
+                name: "Course Selection System",
+                url: "courseselectionsystem.html"
+            }
+        ];
+
+        $scope.ProjectOverview = {
+            title: "Furniture Store Website",
+            programminglanguage: {
+                backend: ["JSP, Javascript"],
+                frontend: ["HTML", "CSS"],
+                database: ["MySQL"],
+            },
+            description: "This is my bachelor thesis project. The project is to implement furniture store website that provides commodity recommendation system and transaction system.",
+        };
+
+        $scope.tools = {
+            title: "Tools and Software",
+            programminglanguage: [
+                $scope.concatData($scope.ProjectOverview.programminglanguage.backend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.frontend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.database)
+            ],
+            software: [
+                "Eclipse",
+                "Apache Tomcat",
+                "PHPMyAdmin"
+            ],
+            lib_or_framework: [
+                "MySQL-Java connector",
+                "commons-io",
+                "commons-fileupload"
+            ]
+        }
+
+        $scope.features = [
+            {
+                title: "Task Specification",
+                features: [
+                    {
+                        name: "Website Information",
+                        explanation: [
+                            {
+                                description: "This website contains",
+                                description_list: [
+                                    {
+                                        name: "Homepage",
+                                        description: "Homepage is the index of this website. This page contains categorized furniture options and subscription form.",
+                                        image_url: [
+                                            "homepage.png"
+                                        ]
+                                    },
+                                    {
+                                        name: "Store introduction",
+                                        description: "This page introduce the store's background, contractor, project ideas, and contractor's inquiries.",
+                                        image_url: [
+                                            "aboutus.png",
+                                            "aboutus2.png"
+                                        ]
+                                    },
+                                    {
+                                        name: "Contact page",
+                                        description: "This page displays staff's contact if users need something to ask about the website or store. Then there is suggestion form on the right side for customer to give suggestion.",
+                                        image_url: [
+                                            "e-mail.png"
+                                        ]
+                                    },
+                                    {
+                                        name: "Customer Service page",
+                                        description: "This page is basically a guidance for using the website and store's service. All transaction procedures are in this page.",
+                                        image_url: [
+                                            "helppage.png"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "User Management",
+                        explanation: [
+                            {
+                                description: "The user of this website is categorized into 4 types:",
+                                description_list: [
+                                    {
+                                        name: "Administrator",
+                                        description: "Administrator is the master of this website, which makes this user has the highest authority. Administrator can manage user database, product database, broadcast email to subscribers and see all the suggestions sent by customers.",
+                                        image_url: [
+                                            "adminpage.png",
+                                            "adminpage2.png",
+                                            "adminpage3.png"
+                                        ]
+                                    },
+                                    {
+                                        name: "Visitor",
+                                        description: "Visitor is categorized as users who doesn't have an account. They can open all the mentioned furniture informations but they have to create an account to access more features such as shopping cart and transactions."
+                                    },
+                                    {
+                                        name: "Customer",
+                                        description: "Customers are those users who has account and choose 'customer' account type. This type of user can access shopping cart and put some products they would like to buy.",
+                                    },
+                                    {
+                                        name: "Seller",
+                                        description: "Seller are those users who created an account as 'seller'. This type of user got different pages than any other user type. Seller can check customer's order requests and delivery progress, manage their own catalogue, and reply customer's comments.",
+                                        image_url: [
+                                            "sellerhomepage.png",
+                                            "sellercatalog.png"
+                                        ]
+                                    }
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Commodity Information",
+                        explanation: [
+                            {
+                                description: "This website displays each product with its information such as its material, size, color, price, producer, etc.",
+                                image_url: [
+                                    "productdisplay.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Commodity Recommendation System",
+                        explanation: [
+                            {
+                                description: "This is the goal of this project. To create an intelligent recommendation system. This system is expected to recommend products to the user based on their preference and search results.",
+                                image_url: [
+                                    "searchbar.png",
+                                    "searchresult.png",
+                                    "recommend.png"
+                                ]
+                            },
+                            {
+                                description: "The recommendation system is simple. The website get the search results from users and store it to database. Then 10 most recent search result of one user will be used as query parameter and the result will be displayed as recommendation to the user, like the shown picture above."
+                            }
+                        ]
+                    },
+                    {
+                        name: "Transaction System",
+                        explanation: [
+                            {
+                                description: "The website should be the platform where sellers and customers can complete transaction process and comment to each other.",
+                                image_url: [
+                                    "transactionpage.png",
+                                    "invoice.png"
+                                ]
+                            },
+                            {
+                                description: "When user request an order, they will be told to adjust their address, recheck their ordered products, and choose the payment method. Then when the transaction is finished, the invoice will be generated through the page and user can print it to pdf format. Finally, this invoice is stored in purchase history page where user can also check the progress of their order request.",
+                                image_url: [
+                                    "purchasehistory.png"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            },
+            {
+                title: "Other Features",
+                features: [
+                    {
+                        name: "Login System",
+                        explanation: [
+                            {
+                                description: "Login/Registration system is a must for an e-commerce website. For this website login system, there is a basic data validation for the registration and login, and session creation for later use.",
+                                image_url: [
+                                    "signup.png",
+                                    "login.png"
+                                ]
+                            }
+                        ]
+                        
+                    },
+                    {
+                        name: "Shopping Cart",
+                        explanation: [
+                            {
+                                description: "Shopping cart allows customer to put furniture products that they want to buy. From this page user can see and remove products from shopping cart, then proceed to place an order.",
+                                image_url: [
+                                    "shoppingcart.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Search Feature",
+                        explanation: [
+                            {
+                                description: "User can search the product based on the commodity information, such as the product's name, material, or even producer.",
+                                image_url: [
+                                    "searchbar.png",
+                                    "searchresult.png"
+                                ]
+                            }
+                        ]
+                    },
+                    {
+                        name: "Comment Feature",
+                        explanation: [
+                            {
+                                description: "Customer and seller can give comment to a product. Through this feature customer can ask some questions about the product or giving a review, while seller can give feedback through it.",
+                                image_url: [
+                                    "comment.png"
+                                ]
+                            }
+                        ]
+                    }
+                ]
+            }
+        ]
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../JS/dropdown.js"></script>
 <script src="../JS/project-template.js"></script>
-<script src="../JS/zoomin.js"></script>

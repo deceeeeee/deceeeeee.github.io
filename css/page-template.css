@@ -157,17 +157,18 @@ ul {
 .sub-main .left .task-specification ul {
   line-height: 1.7rem;
   margin-left: 1.3rem;
+  font-size: 18px;
 }
 
 .sub-main .left .task-specification .desc {
   font-size: 18px;
-  /* margin-bottom: 0.8rem; */
+  margin-bottom: 0.8rem;
 }
 
 /* Other features */
 
 .sub-main .left .other-features p {
-  font-size: 18px;
+  /* font-size: 18px; */
   margin-bottom: 0.8rem;
 }
 

@@ -85,13 +85,13 @@
                         <div ng-repeat="item in x.explanation">
                             <p class="desc"> {{item.description}} </p>
                             <div class="grid-image" ng-if="item.image_url">
-                                <img ng-repeat="y in item.image_url" src="{{y}}" ng-click="zoomin(y)" width="375" height="175">
+                                <img ng-repeat="y in item.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="375" height="200">
                             </div>
                             <ul ng-if="item.description_list" ng-repeat="items in item.description_list">
                                 <li> {{items.name}} </li>
                                 <p> {{items.description}} </p>
                                 <div class="grid-image">
-                                    <img ng-repeat="y in items.image_url" src="{{y}}" ng-click="zoomin(y)" width="375" height="175">
+                                    <img ng-repeat="y in items.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="375" height="200">
                                 </div>
                             </ul>
                         </div>
@@ -120,6 +120,7 @@
         $scope.counter = 0;
         $scope.showmodal = false;
         $scope.modal_img_url = "";
+        $scope.porto_img_path = "../Pics/Portfolio_image/Course Selection System/";
 
         // Functions
         $scope.concatData = function(array) {
@@ -127,7 +128,7 @@
         }
 
         $scope.zoomin = function(src = ""){
-            $scope.modal_img_url = src;
+            $scope.modal_img_url = $scope.porto_img_path + src;
             $scope.showmodal = !$scope.showmodal;
         }
 
@@ -190,18 +191,18 @@
                                     name: "Administrator",
                                     description: "Administrator is the master of this website, which makes this user has the highest authority. Administrator can manage students and courses database.",
                                     image_url: [
-                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(login-page).png",
-                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(admin-page1).png"
+                                        "course-selection-system(login-page).png",
+                                        "course-selection-system(admin-page1).png"
                                     ]
                                 },
                                 {
                                     name: "Student",
                                     description: "Student can log in to the website after registering their account to the website. They are required to register their id, name, and major that they have taken. Then, the account will be created and their data will be automatically stored in the administrator data management.",
                                     image_url: [
-                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(register-page).png",
-                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system.png",
-                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(profile).png",
-                                        "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-selection).png"
+                                        "course-selection-system(register-page).png",
+                                        "course-selection-system.png",
+                                        "course-selection-system(profile).png",
+                                        "course-selection-system(course-selection).png"
                                     ]
                                 }
                             ]
@@ -214,9 +215,9 @@
                         {
                             description: "Administrator are able to add/modify/delete students, teachers, and courses information.",
                             image_url: [
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-table).png",
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(teacher-form).png",
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(student-form).png"
+                                "course-selection-system(course-table).png",
+                                "course-selection-system(teacher-form).png",
+                                "course-selection-system(student-form).png"
                             ]
                         }
                     ]
@@ -227,9 +228,9 @@
                         {
                             description: "The student user can select a new course.",
                             image_url: [
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-selection).png",
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-select).png",
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-select-2).png"
+                                "course-selection-system(course-selection).png",
+                                "course-selection-system(course-select).png",
+                                "course-selection-system(course-select-2).png"
                             ]
                         }
                     ]
@@ -240,8 +241,8 @@
                         {
                             description: "The student user can use the fuzzy query (using the wildcard * in the search keyword) to search the related courses by providing the course name, course teacher.",
                             image_url: [
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(fuzzy-query).png",
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(fuzzy-query-2).png"
+                                "course-selection-system(fuzzy-query).png",
+                                "course-selection-system(fuzzy-query-2).png"
                             ]
                         }
                     ]
@@ -252,8 +253,8 @@
                         {
                             description: "The student can give score and write comments on the selected courses.",
                             image_url: [
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-transcript).png",
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(satisfaction-score).png"
+                                "course-selection-system(course-transcript).png",
+                                "course-selection-system(satisfaction-score).png"
                             ]
                         }
                     ]
@@ -264,7 +265,7 @@
                         {
                             description: "The admin can get the following statistics: top 3 popular courses (i.e., the courses with the top 3 number of students), course selection rate (i.e., the number of selected courses / the total course number).",
                             image_url: [
-                                "../Pics/Portfolio_image/Course Selection System/course-selection-system(course-statistics).png"
+                                "course-selection-system(course-statistics).png"
                             ]
                         }
                     ]

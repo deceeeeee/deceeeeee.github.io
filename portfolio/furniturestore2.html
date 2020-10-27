@@ -7,6 +7,7 @@
     <link rel="icon" type="image/x-icon" href="../Pics/profilepicture.png">
     <link rel="stylesheet" type="text/css" href="../css/page-template.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         header.intro {
             background-image: url("../Pics/Portfolio_image/Furniture Store Website(PHP)/logistic.png");
@@ -14,17 +15,14 @@
     </style>
 </head>
 
-<body>
+<body ng-app="myApp" ng-controller="myCtrl">
     <nav class="nav-container">
         <a class="default" href="javascript:void(0);"> @deceeeeee </a>
         <a class="nav-links" href="../"> Home </a>
         <div class="dropdown">
             <a class="nav-links" href="javascript:void(0);"> Portfolio <i class="fa fa-caret-down"></i></a>
             <div class="dropdown-content">
-                <a class="dropdown-items" href="furniturestore1.html">Furniture Store Website</a>
-                <a class="dropdown-items" href="landing-page.html">Landing Page</a>
-                <a class="dropdown-items" href="weatherforecast.html">Weather Forecast</a>
-                <a class="dropdown-items" href="courseselectionsystem.html">Course Selection System</a>
+                <a class="dropdown-items" ng-repeat="links in navbar" href="{{links.url}}">{{links.name}}</a>
             </div>
         </div>
     </nav>
@@ -32,25 +30,23 @@
     <header class="intro">
         <div class="title">
             <div class="title-box">
-                <h1> Furniture Store Website (Remake) </h1>
+                <h1> {{ProjectOverview.title}} </h1>
                 <div class="responsive">
-                    <em> Back-end: PHP </em>
-                    <em> Front-end: HTML, CSS, JavaScript, Ajax/jQuery </em>
-                    <em> Database: MySQL </em>
+                    <em ng-repeat="(type, coding) in ProjectOverview.programminglanguage"> {{type}}: {{concatData(coding)}} </em>
                 </div>
             </div>
             <div class="title-box">
                 <div class="responsive">
                     <h2> Project Overview </h2>
                 </div>
-                <p> This is an updated version of my thesis project. This website is remade with PHP as the back-end. The implementation of jQuery improves the UI and UX of this website. </p>
+                <p> {{ProjectOverview.description}} </p>
             </div>
         </div>
     </header>
 
-    <div class="modal">
+    <div class="modal" ng-show="showmodal" ng-click="zoomin()">
         <div class="modal-content">
-            <img src="" height="400">
+            <img src="{{modal_img_url}}" height="400">
         </div>
     </div>
 
@@ -62,124 +58,32 @@
         <div class="sub-main">
             <div class="left">
                 <div class="content tools" id="level1">
-                    <h2> Tools and Softwares </h2>
+                    <h2> {{tools.title}} </h2>
                     <ul>
-                        <li> Programming Language: PHP, Javascript, HTML, CSS, MySQL </li>
-                        <li> Software: Visual Studio Code, XAMPP </li>
-                        <li> Libraries: Font-awesome w3schools, Ajax/jQuery </li>
+                        <li> Programming Language: {{concatData(tools.programminglanguage)}} </li>
+                        <li> Software: {{concatData(tools.software)}} </li>
+                        <li> Libraries/Frameworks: {{concatData(tools.lib_or_framework)}} </li>
                     </ul>
                 </div>
 
-                <div class="content task-specification" id="level2">
-                    <h2> Updated features </h2>
-                    <h3 id="level2_1"> 1. Index page </h3>
+                <h2> {{features.title}} </h2>
+                <div class="content task-specification" id="level3" ng-repeat="x in features.features">
                     <div class="task-specification-item">
-                        <p class="desc"> The website layout has changed a little bit since the last project. In this project, the files created for the website has decreased a lot because the implementation of javascript. The index page contains all the furniture informations. Lets see what are the difference! </p>
-                        <ul>
-                            <li> Homepage </li>
-                            <p> Homepage is the index of this website. This page now contains furniture category options and recommended product display for visitor and customer users. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/index.png" width="375" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/index_recommend.png" width="375" height="200">
+                        <h3 id="level2_{{$index+1}}"> {{$index+1}}. {{x.name}} </h3>
+                        <div ng-repeat="item in x.explanation">
+                            <p class="desc"> {{item.description}} </p>
+                            <div class="grid-image" ng-if="item.image_url">
+                                <img ng-repeat="y in item.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="375" height="200">
                             </div>
-                            <li> Store introduction </li>
-                            <p> This page introduce the store's background, contractor, and the project ideas. The inquiries has been moved to another side of the page. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/projectideas.png" width="325" height="200">
-                            </div>
-                            <li> Customer service page </li>
-                            <p> This page does not change much except for the color. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/help.png" width="325" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/help2.png" width="325" height="200">
-                            </div>
-                            <li> Contact </li>
-                            <p> The difference between the last project and this for this index page is the footer. This website index now has a footer which contains the inquiries of the store, suggestion form, and subscription form. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/footer.png" width="400" height="200">
-                            </div>
-                        </ul>
-                    </div>
-
-                    <h3 id="level2_2"> 2. Login/Register Page </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> Login and register page have a huge changes too. This is once again because of more implementation of javascript in this website. </p>
-                        <ul>
-                            <li> Login Page </li>
-                            <p> Users don't have to access new page to log in anymore. They can simply hover the 'account' tab and another options will show up, which is login and register. If the user click login, the modal box will show up and user can log in. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/login.png" width="375" height="200">
-                            </div>
-                            <li> Register Page </li>
-                            <p> If the user wants to register an account for this website, they can click the register and they will be redirected to register page. This time, users can choose the account type and the form will be displayed according to which user type that they choose. </p>
-                            <div class="grid-image">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/register.png" width="375" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/register_customer.png" width="375" height="200">
-                                <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/register_seller.png" width="375" height="200">
-                            </div>
-                        </ul>
-                    </div>
-
-                    <h3 id="level2_3"> 3. Catalog Display </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> The display of the product is slightly different from before. Now users can click the category on the side navigation bar to choose which category they are looking for. Search feature is also available in this page so that users can specifically search for commodities they are looking for. </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/catalogpage.png" width="400" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/catalogpage2.png" width="400" height="200">
+                            <ul ng-if="item.description_list" ng-repeat="items in item.description_list">
+                                <li> {{items.name}} </li>
+                                <p> {{items.description}} </p>
+                                <div class="grid-image">
+                                    <img ng-repeat="y in items.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="375" height="200">
+                                </div>
+                            </ul>
                         </div>
                     </div>
-
-                    <h3 id="level2_4"> 4. Product Display </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> This page is also improved and side navigation bar has been added for users to move around in the website easily. The rest is just the same as before.</p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/productdisplay.png" width="425" height="200">
-                        </div>
-                    </div>
-
-                    <h3 id="level2_5"> 5. Shopping Cart and Purchase History </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> Shopping cart UI is now user-friendly. User can now adjust the quantity through the shopping cart page by clicking the button or clicking the quantity of the products that they put in the shopping cart.
-                        </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/shoppingcart.png" width="375" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/shoppingcart2.png" width="375" height="200">
-                        </div>
-                        <p class="desc"> Besides shopping cart, purchase history UI has changed also. The list of purchase history looks more interesting than before. Instead of displaying by words, the progress of the order is now displayed by color. White for pending, yellow for delivered, green for received and red for cancelled.
-                        </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/purchasehistory.png" width="430" height="200">
-                        </div>
-                    </div>
-
-                    <h3 id="level2_6"> 6. Seller Page </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> Seller page doesn't change much since the last project. The purpose of seller account page is still the same. But now, sellers can do a live search for their own catalog.
-                        </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/orderrequest.png" width="375" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/sellercatalog.png" width="375" height="200">
-                        </div>
-                    </div>
-
-                    <h3 id="level2_7"> 7. Administrator Dashboard </h3>
-                    <div class="task-specification-item">
-                        <p class="desc"> Administrator page is now a better, user-friendly page. The layout, table, and everything, has been changed to give a comfortable use for the administrator of this website. Admin can now check account's info or product's info without accessing another page.
-                        </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/accountcontrol.png" width="375" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/accountcontrol2.png" width="375" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/logistic.png" width="375" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/logistic2.png" width="375" height="200">
-                        </div>
-                        <p class="desc"> The create and update form UI for product management has been updated too.
-                        </p>
-                        <div class="grid-image">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/add.png" width="375" height="200">
-                            <img src="../Pics/Portfolio_image/Furniture Store Website(PHP)/update.png" width="375" height="200">
-                        </div>
-                    </div>
-
                 </div>
 
             </div>
@@ -187,20 +91,220 @@
                 <h3> Contents </h3>
                 <a href="#level1"> Tools and Software </a>
                 <a href="#level2"> Updated Features </a>
-                <div class="sub-nav">
-                    <a href="#level2_1"> Index Page </a>
-                    <a href="#level2_2"> Login/Register Page </a>
-                    <a href="#level2_3"> Catalog Display </a>
-                    <a href="#level2_4"> Product Display </a>
-                    <a href="#level2_5"> Shopping Cart and Purchase History </a>
-                    <a href="#level2_6"> Seller Page </a>
-                    <a href="#level2_7"> Administrator Dashboard </a>
+                <div class="sub-nav" ng-repeat="x in features.features">
+                    <a href="#level2_{{$index+1}}"> {{x.name}} </a>
                 </div>
             </div>
     </section>
 
 </body>
+<script>
+    var app = angular.module("myApp", []);
+
+    app.controller("myCtrl", function($scope){
+
+        // Initial value
+        $scope.counter = 0;
+        $scope.showmodal = false;
+        $scope.modal_img_url = "";
+        $scope.porto_img_path = "../Pics/Portfolio_image/Furniture Store Website(PHP)/";
+        
+        
+        // Functions
+        $scope.concatData = function(array) {
+            return array.join(", ");
+        }
+
+        $scope.zoomin = function(src = ""){
+            $scope.modal_img_url = $scope.porto_img_path + src;
+            $scope.showmodal = !$scope.showmodal;
+        }
+
+        // Data
+        $scope.navbar = [
+            {
+                name: "Landing Page",
+                url: "landing-page.html"
+            },
+            {
+                name: "Weather Forecast",
+                url: "weatherforecast.html"
+            },
+            {
+                name: "Mantis Bug Tracker",
+                url: "mantisbugtracker.html"
+            },
+            {
+                name: "Course Selection System",
+                url: "courseselectionsystem.html"
+            }
+        ];
+
+        $scope.ProjectOverview = {
+            title: "Furniture Store Website (Remake)",
+            programminglanguage: {
+                backend: ["PHP"],
+                frontend: ["HTML", "CSS", "JavaScript"],
+                database: ["MySQL"],
+            },
+            description: "This is an updated version of my thesis project. This website is remade with PHP as the back-end. The implementation of jQuery improves the UI and UX of this website.",
+        };
+
+        $scope.tools = {
+            title: "Tools and Software",
+            programminglanguage: [
+                $scope.concatData($scope.ProjectOverview.programminglanguage.backend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.frontend),
+                $scope.concatData($scope.ProjectOverview.programminglanguage.database)
+            ],
+            software: [
+                "Visual Studio Code, XAMPP"
+            ],
+            lib_or_framework: [
+                "Font-awesome w3schools",
+                "Ajax/JQuery"
+            ]
+        }
+
+        $scope.features = {
+            title: "Updated Features",
+            features: [
+                {
+                    name: "Index page",
+                    explanation: [
+                        {
+                            description: "The website layout has changed a little bit since the last project. In this project, the files created for the website has decreased a lot because the implementation of javascript. The index page contains all the furniture informations. Lets see what are the difference!",
+                            description_list: [
+                                {
+                                    name: "Homepage",
+                                    description: "Homepage is the index of this website. This page now contains furniture category options and recommended product display for visitor and customer users.",
+                                    image_url: [
+                                        "index.png",
+                                        "index_recommend.png"
+                                    ]
+                                },
+                                {
+                                    name: "Store introduction",
+                                    description: "This page introduce the store's background, contractor, and the project ideas. The inquiries has been moved to another side of the page.",
+                                    image_url: [
+                                        "projectideas.png"
+                                    ]
+                                },
+                                {
+                                    name: "Contact",
+                                    description: "The difference between the last project and this for this index page is the footer. This website index now has a footer which contains the inquiries of the store, suggestion form, and subscription form.",
+                                    image_url: [
+                                        "footer.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Login/Register Page",
+                    explanation: [
+                        {
+                            description: "Login and register page have a huge changes too. This is once again because of more implementation of javascript in this website.",
+                            description_list: [
+                                {
+                                    name: "Login Page",
+                                    description: "Users don't have to access new page to log in anymore. They can simply hover the 'account' tab and another options will show up, which is login and register. If the user click login, the modal box will show up and user can log in.",
+                                    image_url: [
+                                        "login.png"
+                                    ]
+                                },
+                                {
+                                    name: "Register Page",
+                                    description: "If the user wants to register an account for this website, they can click the register and they will be redirected to register page. This time, users can choose the account type and the form will be displayed according to which user type that they choose.",
+                                    image_url: [
+                                        "register.png",
+                                        "register_customer.png",
+                                        "register_seller.png"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Catalog Display",
+                    explanation: [
+                        {
+                            description: "The display of the product is slightly different from before. Now users can click the category on the side navigation bar to choose which category they are looking for. Search feature is also available in this page so that users can specifically search for commodities they are looking for.",
+                            image_url: [
+                                "catalogpage.png",
+                                "catalogpage2.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Product Display",
+                    explanation: [
+                        {
+                            description: "This page is also improved and side navigation bar has been added for users to move around in the website easily. The rest is just the same as before.",
+                            image_url: [
+                                "productdisplay.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Shopping Cart and Purchase History",
+                    explanation: [
+                        {
+                            description: "Shopping cart UI is now user-friendly. User can now adjust the quantity through the shopping cart page by clicking the button or clicking the quantity of the products that they put in the shopping cart.",
+                            image_url: [
+                                "shoppingcart.png",
+                                "shoppingcart2.png"
+                            ]
+                        },
+                        {
+                            description: "Besides shopping cart, purchase history UI has changed also. The list of purchase history looks more interesting than before. Instead of displaying by words, the progress of the order is now displayed by color. White for pending, yellow for delivered, green for received and red for cancelled.",
+                            image_url: [
+                                "purchasehistory.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Seller Page",
+                    explanation: [
+                        {
+                            description: "Seller page doesn't change much since the last project. The purpose of seller account page is still the same. But now, sellers can do a live search for their own catalog.",
+                            image_url: [
+                                "orderrequest.png",
+                                "sellercatalog.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Administrator Dashboard",
+                    explanation: [
+                        {
+                            description: "Administrator page is now a better, user-friendly page. The layout, table, and everything, has been changed to give a comfortable use for the administrator of this website. Admin can now check account's info or product's info without accessing another page.",
+                            image_url: [
+                                "accountcontrol.png",
+                                "accountcontrol2.png",
+                                "logistic.png",
+                                "logistic2.png"
+                            ]
+                        },
+                        {
+                            description: "The create and update form UI for product management has been updated too.",
+                            image_url: [
+                                "add.png",
+                                "update.png"
+                            ]
+                        }
+                    ]
+                },
+            ]
+        }
+    });
+</script>
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
 <script src="../JS/dropdown.js"></script>
 <script src="../JS/project-template.js"></script>
-<script src="../JS/zoomin.js"></script>

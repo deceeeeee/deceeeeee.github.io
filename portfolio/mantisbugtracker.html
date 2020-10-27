@@ -99,13 +99,13 @@
                         <div ng-repeat="item in x.explanation">
                             <p class="desc"> {{item.description}} </p>
                             <div class="grid-image">
-                                <img ng-repeat="y in item.image_url" src="{{y}}" ng-click="zoomin(y)" width="400" height="200">
+                                <img ng-repeat="y in item.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="400" height="200">
                             </div>
                             <ul ng-if="item.description_list" ng-repeat="items in item.description_list">
                                 <li> {{items.name}} </li>
                                 <p> {{items.description}} </p>
                                 <div class="grid-image">
-                                    <img ng-repeat="y in items.image_url" src="{{y}}" ng-click="zoomin(y)" width="375" height="175">
+                                    <img ng-repeat="y in items.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="375" height="175">
                                 </div>
                             </ul>
                         </div>
@@ -133,6 +133,7 @@
         $scope.counter = 0;
         $scope.showmodal = false;
         $scope.modal_img_url = "";
+        $scope.porto_img_path ="../Pics/Portfolio_image/Mantis Bug Tracker/";
 
         // Functions
         $scope.concatData = function(array) {
@@ -141,7 +142,7 @@
 
         $scope.zoomin = function(src = ""){
             console.log(src);
-            $scope.modal_img_url = src;
+            $scope.modal_img_url = $scope.porto_img_path + src;
             $scope.showmodal = !$scope.showmodal;
         }
 
@@ -197,7 +198,9 @@
                     explanation: [
                         {
                             description: "Mantis is an open-source bug tracker that is used for project listing and bug reporting. The use of this bug tracker is similar to Jira Software. There are two roles in this website, which is administrator and reporter.",
-                            image_url: ["../Pics/Portfolio_image/Mantis Bug Tracker/view-issue-details.png"]
+                            image_url: [
+                                "view-issue-details.png"
+                            ]
                         }
                     ]
                 },
@@ -207,8 +210,8 @@
                         {
                             description: "There are some things that I have changed, such as this search field that I put in the home page for administrators to search and filter for the issues based on reporter or status.",
                             image_url: [
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/search-on-homepage.png",
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/search-on-homepage-2.png"
+                                "search-on-homepage.png",
+                                "search-on-homepage-2.png"
                             ]
                         }
                     ]
@@ -219,15 +222,15 @@
                         {
                             description: "Usually, users has to open one issue to edit its status. But after modification, this website can now edit issue without opening the issue.",
                             image_url: [
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/homepage-done.png",
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/select-issue-status.png"
+                                "homepage-done.png",
+                                "select-issue-status.png"
                             ]
                         },
                         {
                             description: "When user opens a bug list page, they can also edit the status, priority, severity, and even the issue summary.",
                             image_url: [
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/view-all-bugs.png",
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/select-issue-status-on-view-bug-page.png"
+                                "view-all-bugs.png",
+                                "select-issue-status-on-view-bug-page.png"
                             ]
                         }
                     ]
@@ -238,8 +241,8 @@
                         {
                             description: "When reporter uploads some images about reported bugs, user can now preview the image without have to be redirected to another page. By simply click the image, the image will be zoom in and user can navigate through pictures shown in carousel style.",
                             image_url: [
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/image-preview-2.png",
-                                "../Pics/Portfolio_image/Mantis Bug Tracker/image-preview.png"
+                                "image-preview-2.png",
+                                "image-preview.png"
                             ]
                         }
                     ]
