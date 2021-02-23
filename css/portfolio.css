@@ -49,10 +49,12 @@
 
 .introduction {
   display: flex;
-  visibility: hidden;
-  flex: row nowrap;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  justify-content: center;
   flex-shrink: 1;
   flex-grow: 0;
+  visibility: hidden;
   width: 100%;
   margin-top: 1.4rem;
 }

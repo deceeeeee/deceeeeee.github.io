@@ -192,6 +192,7 @@ ul {
   color: #000;
   line-height: 1.7rem;
   display: block;
+  border-bottom: 0;
 }
 
 .sub-main .right a:hover {
