@@ -185,11 +185,23 @@
   flex-direction: column;
   align-content: flex-start;
   width: 38%;
+  font-style: normal;
 }
 
 .footer .contact-me .contacts {
   line-height: 2.8em;
   display: block;
+}
+
+.footer .contact-me .contacts .contact-link {
+  text-decoration: none;
+  color: inherit;
+  transition: 0.2s;
+}
+
+.footer .contact-me .contacts .contact-link:hover {
+  opacity: 0.8;
+  font-size: 1.01rem;
 }
 
 .footer .contact-me .contacts .fa {
