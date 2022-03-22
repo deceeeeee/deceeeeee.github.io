@@ -10,33 +10,12 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         header.intro {
-            background-image: url("../Pics/Portfolio_image/Mantis Bug Tracker/image-preview.png");
+            background-image: url("../Pics/Portfolio_image/@cptredbyjosh/header.png");
+            background-size: cover;
         }
 
-        .nav-container {
-            background-color: #e3e3e3;
-        }
-
-        .nav-container .default,
-        .nav-container .nav-links {
-            color: #1e1a1a;
-        }
-        
-        section.main {
-            background-color: #1e1a1a;
-            color: #e3e3e3;
-        }
-
-        a .fa-chevron-up {
-            color: #fff;
-        }
-
-        .sub-main .right {
-            border-color: #e3e3e3;
-        }
-
-        .sub-main .right a {
-            color: #e3e3e3;
+        .modal {
+            display: block;
         }
     </style>
 </head>
@@ -65,14 +44,14 @@
                 <div class="responsive">
                     <h2> Project Overview </h2>
                 </div>
-                <p> {{ProjectOverview.description}} </p>
+                <p ng-bind-html="ProjectOverview.description"> </p>
             </div>
         </div>
     </header>
 
     <div class="modal" ng-show="showmodal" ng-click="zoomin()">
         <div class="modal-content">
-            <img src="{{modal_img_url}}" height="400">
+            <img src="{{modal_img_url}}">
         </div>
     </div>
 
@@ -99,7 +78,7 @@
                         <div ng-repeat="item in x.explanation">
                             <p class="desc"> {{item.description}} </p>
                             <div class="grid-image">
-                                <img ng-repeat="y in item.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" width="400" height="200">
+                                <img ng-repeat="y in item.image_url" src="{{porto_img_path + y}}" ng-click="zoomin(y)" height="200">
                             </div>
                             <ul ng-if="item.description_list" ng-repeat="items in item.description_list">
                                 <li> {{items.name}} </li>
@@ -117,9 +96,6 @@
                 <h3> Contents </h3>
                 <a href="#level1"> {{tools.title}} </a>
                 <a href="#level2"> {{features.title}} </a>
-                <div class="sub-nav" ng-repeat="x in features.features">
-                    <a href="#level2_{{$index+1}}"> {{x.name}} </a>
-                </div>
             </div>
     </section>
 
@@ -127,13 +103,13 @@
 <script>
     var app = angular.module("myApp", []);
 
-    app.controller("myCtrl", function($scope){
+    app.controller("myCtrl", function($scope, $sce){
 
         // Initial value
         $scope.counter = 0;
         $scope.showmodal = false;
         $scope.modal_img_url = "";
-        $scope.porto_img_path ="../Pics/Portfolio_image/Mantis Bug Tracker/";
+        $scope.porto_img_path = "../Pics/Portfolio_image/@cptredbyjosh/";
 
         // Functions
         $scope.concatData = function(array) {
@@ -141,7 +117,6 @@
         }
 
         $scope.zoomin = function(src = ""){
-            console.log(src);
             $scope.modal_img_url = $scope.porto_img_path + src;
             $scope.showmodal = !$scope.showmodal;
         }
@@ -149,100 +124,94 @@
         // Data
         $scope.navbar = [
             {
-                name: "Furniture Store Website (Remake)",
-                url: "furniturestore2.html"
+                name: "Weather Forecast",
+                url: "weatherforecast.html"
+            },
+            {
+                name: "Untar Research Week",
+                url: "untarresearchweek.html"
             },
             {
                 name: "Landing Page",
                 url: "landing-page.html"
             },
             {
-                name: "Weather Forecast",
-                url: "weatherforecast.html"
-            },
-            {
-                name: "Course Selection System",
-                url: "courseselectionsystem.html"
+                name: "MyPangan",
+                url: "mypangan.html"
             },
         ];
 
         $scope.ProjectOverview = {
-            title: "Mantis Bug Tracker",
+            title: "@cptredbyjosh",
             programminglanguage: {
-                backend: ["PHP"],
-                frontend: ["HTML", "CSS", "JavaScript"]
+                frontend: ["Javascript"]
             },
-            description: "This website is an open-source bug tracker that is used for project listing and bug reporting. This project is the first open-source project that I contributed.",
+            description: $sce.trustAsHtml("This is portfolio owned by one of my friends. Constructed with ReactJS, this website is made for me to test my own knowledge about NodeJS, ReactJS and basic Javascript. Anyway, check this out by clicking <a href='http://joshualiuhansan.github.io' target='_blank'>here</a> if you are looking for someone to take a great picture of your products, or even yourself!"),
         };
 
         $scope.tools = {
             title: "Tools and Software",
             programminglanguage: [
-                $scope.concatData($scope.ProjectOverview.programminglanguage.backend),
                 $scope.concatData($scope.ProjectOverview.programminglanguage.frontend)
             ],
             software: [
-                "Visual Studio Code",
-                "Internet Information Services"
+                "Visual Studio Code"
             ],
             lib_or_framework: [
-                "Ajax/JQuery"
+                "ReactJS",
+                "Bootstrap 5",
+                "Font Awesome 5"
             ]
         }
 
         $scope.features = {
-            title: "Features",
+            title: "Snapshots",
             features: [
                 {
                     name: "",
                     explanation: [
                         {
-                            description: "Mantis is an open-source bug tracker that is used for project listing and bug reporting. The use of this bug tracker is similar to Jira Software. There are two roles in this website, which is administrator and reporter.",
+                            description: "This website starts by displaying simple information about the portfolio owner, Joshua Liu Hansan, and his area of expertise.",
+                            image_url: ["header.png"]
+                        }
+                    ]
+                },
+                {
+                    name: "",
+                    explanation: [
+                        {
+                            description: "Creating and reusing component is one of my favorite feature from this ReactJS, even though any other frameworks have this feature too.",
                             image_url: [
-                                "view-issue-details.png"
+                                "working-exp.png",
+                                "coding-snapshots.png",
+                                "educational-bg.png", 
+                                "coding-snapshots-2.png",
                             ]
                         }
                     ]
                 },
                 {
-                    name: "Search and Filter",
+                    name: "",
                     explanation: [
                         {
-                            description: "There are some things that I have changed, such as this search field that I put in the home page for administrators to search and filter for the issues based on reporter or status.",
+                            description: "Talking about his portfolio, he has some great photos taken from some places. These photos seem to have correlation with these cores.",
                             image_url: [
-                                "search-on-homepage.png",
-                                "search-on-homepage-2.png"
+                                "collections.png",
+                                "core.png",
                             ]
                         }
                     ]
                 },
                 {
-                    name: "Simpler Issue Status Change",
+                    name: "Responsivity",
                     explanation: [
                         {
-                            description: "Usually, users has to open one issue to edit its status. But after modification, this website can now edit issue without opening the issue.",
+                            description: "Responsivity of this website is maintained quite well too, so that the display is mobile-friendly to mobile users.",
                             image_url: [
-                                "homepage-done.png",
-                                "select-issue-status.png"
-                            ]
-                        },
-                        {
-                            description: "When user opens a bug list page, they can also edit the status, priority, severity, and even the issue summary.",
-                            image_url: [
-                                "view-all-bugs.png",
-                                "select-issue-status-on-view-bug-page.png"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    name: "Image Preview",
-                    explanation: [
-                        {
-                            description: "When reporter uploads some images about reported bugs, user can now preview the image without have to be redirected to another page. By simply click the image, the image will be zoom in and user can navigate through pictures shown in carousel style.",
-                            image_url: [
-                                "image-preview-2.png",
-                                "image-preview.png"
+                                "core.png",
+                                "core-2.png",
+                                "cptredbyjosh.png",
+                                "cptredbyjosh-2.png"
                             ]
                         }
                     ]
