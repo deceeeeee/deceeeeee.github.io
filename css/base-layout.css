@@ -75,6 +75,10 @@ body {
   opacity: 0.6;
 }
 
+.transparent {
+  opacity: 0;
+}
+
 @media screen and (max-width: 600px) {
   .nav-container .default {
     display: none;

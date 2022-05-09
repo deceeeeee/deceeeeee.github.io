@@ -42,6 +42,14 @@
 
 /* First box */
 
+.name h1 {
+  font-size: 2.4rem;
+}
+
+.name h2 {
+  font-size: 1.8rem;
+}
+
 .name h1,
 .name h2 {
   text-align: center;
@@ -77,6 +85,10 @@
   line-height: 1.7rem;
 }
 
+.introduction .columns .profile-description {
+  font-weight: 400;
+}
+
 .introduction .columns h2 {
   font-weight: 500;
 }
@@ -91,9 +103,17 @@
   gap: 2.4rem;
 }
 
+.introduction .proficient .proficient-item {
+  width: 220px;
+}
+
 .introduction .proficient .proficient-item ul {
   margin-top: 10px;
   padding-left: 1.3rem;
+}
+
+.introduction .proficient .proficient-item ul li {
+  font-weight: 400;
 }
 
 /* About */
@@ -102,13 +122,24 @@
   margin-left: 1.2rem;
 }
 
-.introduction .about-me h3 {
-  padding-bottom: 3px;
+.introduction .about-me ul li {
+  font-weight: 400;
 }
 
-.introduction .about-me p {
+.introduction .about-me h3 {
+  padding-bottom: 3px;
+  font-size: 1.3rem;
+}
+
+.introduction .about-me .work-location {
   border-top: 2px solid #000;
   width: fit-content;
+  font-size: 1.05rem;
+}
+
+.introduction .about-me .about-description {
+  font-weight: 400;
+  margin-top: 10px;
 }
 
 /* Portfolio */
@@ -150,6 +181,7 @@
 
 .card .explanation p {
   font-size: 13px;
+  font-weight: 400;
 }
 
 @keyframes port-fadein {
@@ -177,7 +209,7 @@
 }
 
 .footer h2 {
-  font-size: 45px;
+  font-size: 60px;
 }
 
 .footer .contact-me {
@@ -190,7 +222,10 @@
 
 .footer .contact-me .contacts {
   line-height: 2.8em;
-  display: block;
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  font-size: 17px;
 }
 
 .footer .contact-me .contacts .contact-link {
@@ -201,12 +236,11 @@
 
 .footer .contact-me .contacts .contact-link:hover {
   opacity: 0.8;
-  font-size: 1.01rem;
+  font-size: 1.1rem;
 }
 
 .footer .contact-me .contacts .fa {
-  font-size: 20px;
-  margin-right: 5px;
+  font-size: 30px;
 }
 
 @media screen and (max-width: 1125px) {
@@ -221,11 +255,11 @@
   }
 
   .introduction .columns {
-    width: auto;
+    width: 100vw;
   }
 
   .introduction .columns h2 {
-    width: auto;
+    width: 100vw;
   }
 
   .card-container {
