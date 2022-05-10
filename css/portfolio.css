@@ -255,11 +255,15 @@
   }
 
   .introduction .columns {
-    width: 100vw;
+    width: 100%;
   }
 
   .introduction .columns h2 {
-    width: 100vw;
+    width: 100%;
+  }
+  
+  .introduction .proficient .proficient-item {
+    width: 50%;
   }
 
   .card-container {
@@ -268,6 +272,10 @@
 }
 
 @media screen and (max-width: 700px) {
+  .introduction .proficient .proficient-item {
+    width: 100%;
+  }
+
   .card-container {
     grid-template-columns: 400px;
   }
