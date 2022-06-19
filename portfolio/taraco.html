@@ -10,7 +10,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.9/angular.min.js"></script>
     <style>
         header.intro {
-            background-image: url("../Pics/Portfolio_image/AgricultureHub/agriculturehub-logo.png");
+            background-image: url("../Pics/Portfolio_image/Taraco/taraco-start-page.png");
             background-size: cover;
         }
 
@@ -109,7 +109,7 @@
         $scope.counter = 0;
         $scope.showmodal = false;
         $scope.modal_img_url = "";
-        $scope.porto_img_path = "../Pics/Portfolio_image/AgricultureHub/";
+        $scope.porto_img_path = "../Pics/Portfolio_image/Taraco/";
 
         // Functions
         $scope.concatData = function(array) {
@@ -136,17 +136,17 @@
                 url: "mypangan.html"
             },
             {
-                name: "Taraco",
-                url: "taraco.html"
+                name: "AgricultureHub",
+                url: "agriculturehub.html"
             }
         ];
 
         $scope.ProjectOverview = {
-            title: "AgricultureHub",
+            title: "Taraco",
             programminglanguage: {
                 frontend: ["Javascript"]
             },
-            description: $sce.trustAsHtml("AgricultureHub is an agricultural and forestry commodities trading company. This website is another chance for me to improve my knowledge about ReactJS, especially this website is real and going public with official server hosting. Click <a href='http://agriculturehub.id' target='_blank'>here</a> to see the website."),
+            description: $sce.trustAsHtml("Taraco is a furniture and interior design service. The target of this website is to introduce their company with advance UI/UX. This design will not be realized without ReactJS, since a lot of features and animations are quite complicated. Click <a href='http://taracodesign.id' target='_blank'>here</a> to see the website."),
         };
 
         $scope.tools = {
@@ -160,7 +160,8 @@
             lib_or_framework: [
                 "ReactJS",
                 "Bootstrap 5",
-                "Font Awesome 5"
+                "Font Awesome 5",
+                "React Slider"
             ]
         }
 
@@ -168,42 +169,77 @@
             title: "Snapshots",
             features: [
                 {
+                    name: "Initial Page",
+                    explanation: [
+                        {
+                            description: "This website is made unique since it provides loading screen everytime you open it. Then display taraco name and changing background for certain amount of time as on-start page.",
+                            image_url: [
+                                "taraco-loading-page.png",
+                                "taraco-start-page.png"
+                            ]
+                        }
+                    ]
+                },
+                {
                     name: "Homepage",
                     explanation: [
                         {
-                            description: "This is the landing page of the website. The header contains the name of the company and CTA in a form of buttons.",
+                            description: "Homepage displays introduction of Taraco as interior design company. It contains small navigation list on the bottom left and descriptions on the right to call users to check either their furnitures or interior design examples.",
                             image_url: [
-                                "agriculturehub-homepage.png",
-                                "agriculturehub-core-values.png"
-                            ]
-                        }
-                    ]
-                },
-                {
-                    name: "",
-                    explanation: [
-                        {
-                            description: "The footer contains usual information such as location, social media, and form. These information are provided for user to get in touch with AgricultureHub.",
-                            image_url: [
-                                "agriculturehub-footer.png",
-                            ]
-                        }
-                    ]
-                },
-                {
-                    name: "Products",
-                    explanation: [
-                        {
-                            description: "Product categories provided by AgricultureHub. Category can be chosen by clicking one of corresponding category button.",
-                            image_url: [
-                                "agriculturehub-products.png",
+                                "taraco-homepage.png",
                             ]
                         },
                         {
-                            description: "Then list of products will be displayed according to the category chosen. There are spice and coconut products",
+                            description: "List of interior design works that they have done.",
                             image_url: [
-                                "agriculturehub-product-list-2.png",
-                                "agriculturehub-product-list-1.png"
+                                "taraco-work-portfolio.png",
+                            ]
+                        },
+                        {
+                            description: "The footer contains usual information such as location, social media, and form. These information are provided for user to get in touch with Taraco.",
+                            image_url: [
+                                "taraco-footer.png",
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Interior Page",
+                    explanation: [
+                        {
+                            description: "Interior page displays project portfolio of Taraco. Slider background color can change according to the project navigated.",
+                            image_url: [
+                                "taraco-interior-light.png",
+                                "taraco-interior-dark.png",
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Furniture Page",
+                    explanation: [
+                        {
+                            description: "Furniture page displays furnitures that they sell. There are some categories that they offered.",
+                            image_url: [
+                                "taraco-furniture-list.png"
+                            ]
+                        },
+                        {
+                            description: "User can also check the detail of the furniture chosen. There is more information on the detail.",
+                            image_url: [
+                                "taraco-furniture-details.png"
+                            ]
+                        }
+                    ]
+                },
+                {
+                    name: "Custom Cursor",
+                    explanation: [
+                        {
+                            description: "One of Taraco's website uniqueness is its custom cursor. This cursor display automatically changes on some pages. For interior page, cursor becomes a circle with arrow that points to the left or right, depending on which sides the cursor is on page.",
+                            image_url: [
+                                "taraco-cursor-demo.png",
+                                "taraco-cursor-demo-interior.png"
                             ]
                         }
                     ]
@@ -214,14 +250,16 @@
                         {
                             description: "Responsivity of this website is maintained quite well too, so that the display is mobile-friendly to mobile users.",
                             image_url: [
-                                "mobile-agriculturehub-homepage.jpg",
-                                "mobile-agriculturehub-navbar.jpg",
-                                "mobile-agriculturehub-core-values.jpg",
-                                "mobile-agriculturehub-footer-1.jpg",
-                                "mobile-agriculturehub-footer-2.jpg",
-                                "mobile-agriculturehub-products.jpg",
-                                "mobile-agriculturehub-product-list-2.jpg",
-                                "mobile-agriculturehub-product-list-1.jpg"
+                                "mobile-taraco-loading-page.jpg",
+                                "mobile-taraco-start-page.jpg",
+                                "mobile-taraco-homepage.jpg",
+                                "mobile-taraco-footer-1.jpg",
+                                "mobile-taraco-footer-2.jpg",
+                                "mobile-taraco-interior-light.jpg",
+                                "mobile-taraco-interior-dark.jpg",
+                                "mobile-taraco-furniture-list.jpg",
+                                "mobile-taraco-furniture-details-1.jpg",
+                                "mobile-taraco-furniture-details-2.jpg"
                             ],
                             isMobileSnapshot: true
                         }
