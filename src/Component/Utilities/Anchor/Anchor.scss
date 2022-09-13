@@ -1,0 +1,60 @@
+a {
+    * {
+        text-decoration: none;
+    }
+}
+
+.with-underline {
+    position: relative;
+    width: fit-content;
+
+    &:after {
+        content: '';
+
+        width: 0%;
+        position: absolute;
+        left: 0;
+        bottom: 1px;
+
+        border-width: 0 0 1.7px;
+        border-style: solid;
+
+        transition: width 0.5s linear;
+    }
+    
+    &:hover {
+        // opacity: 0.75;
+        // font-size: 1.1rem;
+
+        &:after {
+            width: 100%;
+            opacity: 1;
+        }
+    }
+    
+    &.fade-in {
+        &:after {
+            content: '';
+    
+            width: 100%;
+            position: absolute;
+            left: 0;
+            bottom: 1px;
+            opacity: 0;
+    
+            border-width: 0 0 1.7px;
+            border-style: solid;
+    
+            transition: opacity 0.3s linear;
+        }
+
+        &:hover {
+            // opacity: 0.75;
+            // font-size: 1.1rem;
+    
+            &:after {
+                opacity: 1;
+            }
+        }
+    }
+}

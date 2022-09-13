@@ -1,0 +1,33 @@
+.custom-progress-bar {
+
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 4vw;
+    
+    .line {
+        min-height: 1.5px;
+        width: 100%;
+    }
+
+    .number {
+        font-size: 18px;
+    }
+
+    &.progress-bar-dark {
+        color: #FFF;
+
+        .line {
+            background-color: #FFF;
+        }
+    }
+
+    &.progress-bar-light {
+        color: #000;
+
+        .line {
+            background-color: #000;
+        }
+    }
+
+}

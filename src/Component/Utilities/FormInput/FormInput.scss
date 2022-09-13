@@ -1,0 +1,9 @@
+$primaryColor: rgb(255, 255, 255);
+
+.form-control {
+    background-color: rgba(0, 0, 0, 0);
+    border: none;
+    outline: none;
+    border-radius: 0;
+    border-bottom: 1px solid rgba($primaryColor, 1);
+}

@@ -1,0 +1,294 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  /* color: var(--primary-text-color); */
+}
+
+.App {
+  font-family: 'Roboto';
+  color: var(--primary-text-color);
+  position: relative;
+  min-height: 100vh;
+  height: fit-content;
+}
+
+.App.dark-mode {
+  background-color: #222222;
+  color: #FFF;
+}
+
+.App .hide {
+  visibility: hidden;
+  opacity: 0;
+}
+
+.base-bg-dark {
+  background-color: var(--base-bg-dark);
+}
+
+/* Fonts */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/Heebo-VariableFont_wght.ttf');
+}
+
+/* Static 'Heebo' Font */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-Thin.ttf');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-ExtraLight.ttf');
+  font-weight: 200;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-ExtraLightItalic.ttf');
+  font-weight: 200;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-Light.ttf');
+  font-weight: 300;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-Regular.ttf');
+  font-weight: 400;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-Medium.ttf');
+  font-weight: 500;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-MediumItalic.ttf');
+  font-weight: 500;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-SemiBold.ttf');
+  font-weight: 600;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-SemiBoldItalic.ttf');
+  font-weight: 600;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-Bold.ttf');
+  font-weight: 700;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-ExtraBold.ttf');
+  font-weight: 800;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-ExtraBoldItalic.ttf');
+  font-weight: 800;
+  font-style: italic;
+} */
+
+@font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-Black.ttf');
+  font-weight: 900;
+}
+
+/* @font-face {
+  font-family: 'Heebo';
+  src: url('./Fonts/Heebo/static/Heebo-BlackItalic.ttf');
+  font-weight: 900;
+  font-style: italic;
+} */
+
+/* Static 'Cormorant Garamond' Font */
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-MediumItalic.ttf');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-SemiBold.ttf');
+  font-weight: 600;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-SemiBoldItalic.ttf');
+  font-weight: 600;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'CormorantGaramond';
+  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+/* Static 'Roboto' Font */
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-Thin.ttf');
+  font-weight: 100;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-ThinItalic.ttf');
+  font-weight: 100;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-Light.ttf');
+  font-weight: 300;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-LightItalic.ttf');
+  font-weight: 300;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-Regular.ttf');
+  font-weight: 400;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-Italic.ttf');
+  font-weight: 400;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-Medium.ttf');
+  font-weight: 500;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-MediumItalic.ttf');
+  font-weight: 500;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-Bold.ttf');
+  font-weight: 700;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-BoldItalic.ttf');
+  font-weight: 700;
+  font-style: italic;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-Black.ttf');
+  font-weight: 900;
+}
+
+@font-face {
+  font-family: 'Roboto';
+  src: url('./Fonts/Roboto/Roboto-BlackItalic.ttf');
+  font-weight: 900;
+  font-style: italic;
+}

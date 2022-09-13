@@ -1,0 +1,49 @@
+:root {
+    /* Load Content */
+    --logo-background-1: url(/assets/images/logo-background-1.jpeg);
+    --logo-background-2: url(/assets/images/logo-background-2.jpeg);
+    --logo-background-3: url(/assets/images/logo-background-3.jpeg);
+    --logo-background-4: url(/assets/images/logo-background-4.jpeg);
+    --logo-background-5: url(/assets/images/logo-background-5.jpeg);
+    --logo-background-6: url(/assets/images/logo-background-6.jpeg);
+
+    /* Color Palette */
+    --base-primary-color: #FFF;
+    --base-secondary-color: #000;
+    --default-bg-color: #FFF;
+    --base-bg-dark: #202022;
+  
+    /* Backgrounds */
+    --jumbotron-bg-1: #F2F6FC;
+    --jumbotron-bg-2: rgba(0, 0, 0, 0);
+  
+    /* Navbar */
+    --navbar-shadow: rgba(48, 49, 51, 0.2);
+    --navbar-brand-shadow: rgba(0, 113, 176, 0.18);
+  
+    /* Header */
+    --header-color: #9AEFBD 0%, rgba(33, 208, 106, 0) 97.02%;
+    --header-color-2: #3EDF81 0%, #6EE8A1 100%;
+  
+    /* Button */
+    --button-primary: #21D06A 0%, #6EE8A1 100%;
+    --button-primary-shadow: rgba(49, 255, 135, 0.28);
+    --button-secondary: #CB4E4D 0%, #F77777 100%;
+    --button-secondary-shadow: rgba(170, 60, 59, 0.3);
+  
+    /* Text */
+    --primary-text-color: #000;
+    --secondary-text-color: #FFF;
+    --gray-text-color: #909399;
+    --transparent-text-color: rgb(250, 252, 253, 0.8);
+  
+    /* Highlighted Color */
+    --highlight-color: #21D06A;
+  
+    /* Footer */
+    --footer-background-color: #000;
+    --footer-list-color: var(--base-primary-color);
+  
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }

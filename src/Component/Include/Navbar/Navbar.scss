@@ -1,0 +1,14 @@
+$primaryColor: var(--base-primary-color);
+$secondaryColor: var(--base-secondary-color);
+$primaryTextColor: var(--primary-text-color);
+$secondaryTextColor: var(--secondary-text-color);
+$transparentTextColor: var(--transparent-text-color);
+
+.navbar {
+    font-family: 'Roboto';
+    padding: 10px 20px;
+
+    .nav-logo {
+        width: 160px;
+    }
+}

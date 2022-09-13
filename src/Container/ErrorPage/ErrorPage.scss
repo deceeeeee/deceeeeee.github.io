@@ -1,0 +1,25 @@
+.error-404 {
+    position:relative;
+    width: 100%;
+    height: 720px;
+    overflow-y: hidden;
+
+    .error-container {
+        position:absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: var(--base-bg-secondary);
+
+        .error-message {
+            color: var(--base-bg-primary);
+            width: 40%;
+            min-width: 320px;
+            margin: 20% auto;
+            font-size: 33px;
+            text-align: center;
+        }
+    }
+
+}
