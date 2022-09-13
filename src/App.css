@@ -6,11 +6,12 @@
 }
 
 .App {
-  font-family: 'Roboto';
+  font-family: 'Ubuntu';
   color: var(--primary-text-color);
   position: relative;
   min-height: 100vh;
   height: fit-content;
+  font-size: 17px;
 }
 
 .App.dark-mode {
@@ -28,187 +29,56 @@
 }
 
 /* Fonts */
+/* 'Ubuntu' Font */
 
 @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/Heebo-VariableFont_wght.ttf');
-}
-
-/* Static 'Heebo' Font */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-Thin.ttf');
-  font-weight: 100;
-}
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-ExtraLight.ttf');
-  font-weight: 200;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-ExtraLightItalic.ttf');
-  font-weight: 200;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-Light.ttf');
-  font-weight: 300;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-LightItalic.ttf');
-  font-weight: 300;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-Regular.ttf');
-  font-weight: 400;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-Italic.ttf');
-  font-weight: 400;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-Medium.ttf');
-  font-weight: 500;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-MediumItalic.ttf');
-  font-weight: 500;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-SemiBold.ttf');
-  font-weight: 600;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-SemiBoldItalic.ttf');
-  font-weight: 600;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-Bold.ttf');
-  font-weight: 700;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-BoldItalic.ttf');
-  font-weight: 700;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-ExtraBold.ttf');
-  font-weight: 800;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-ExtraBoldItalic.ttf');
-  font-weight: 800;
-  font-style: italic;
-} */
-
-@font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-Black.ttf');
-  font-weight: 900;
-}
-
-/* @font-face {
-  font-family: 'Heebo';
-  src: url('./Fonts/Heebo/static/Heebo-BlackItalic.ttf');
-  font-weight: 900;
-  font-style: italic;
-} */
-
-/* Static 'Cormorant Garamond' Font */
-
-@font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Light.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-Light.ttf');
   font-weight: 300;
 }
 
 @font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-LightItalic.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-LightItalic.ttf');
   font-weight: 300;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Regular.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-Regular.ttf');
   font-weight: 400;
 }
 
 @font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Italic.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-Italic.ttf');
   font-weight: 400;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Medium.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-Medium.ttf');
   font-weight: 500;
 }
 
 @font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-MediumItalic.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-MediumItalic.ttf');
   font-weight: 500;
   font-style: italic;
 }
 
 @font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-SemiBold.ttf');
-  font-weight: 600;
-}
-
-@font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-SemiBoldItalic.ttf');
-  font-weight: 600;
-  font-style: italic;
-}
-
-@font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-Bold.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-Bold.ttf');
   font-weight: 700;
 }
 
 @font-face {
-  font-family: 'CormorantGaramond';
-  src: url('./Fonts/CormorantGaramond/static/CormorantGaramond-BoldItalic.ttf');
+  font-family: 'Ubuntu';
+  src: url('./Fonts/Ubuntu/Ubuntu-BoldItalic.ttf');
   font-weight: 700;
   font-style: italic;
 }

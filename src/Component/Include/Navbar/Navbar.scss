@@ -1,14 +1,20 @@
 $primaryColor: var(--base-primary-color);
-$secondaryColor: var(--base-secondary-color);
-$primaryTextColor: var(--primary-text-color);
-$secondaryTextColor: var(--secondary-text-color);
-$transparentTextColor: var(--transparent-text-color);
 
 .navbar {
-    font-family: 'Roboto';
+    font-family: 'Ubuntu';
+    background-color: $primaryColor;
     padding: 10px 20px;
+    position: fixed;
+    z-index: 1;
+    width: 100%;
 
-    .nav-logo {
-        width: 160px;
+    .navbar-brand {
+        font-weight: 500;
+    }
+
+    .nav-link {
+        display: flex;
+        gap: 6px;
+        align-items: center;
     }
 }

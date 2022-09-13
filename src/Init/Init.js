@@ -6,6 +6,8 @@ import { far } from '@fortawesome/free-regular-svg-icons';
 
 import { isMobile } from 'react-device-detect';
 
+import Parallax from '../Data/Parallax';
+
 var Init = {};
 
 // Basic config
@@ -65,10 +67,12 @@ Init.config = {
         ]
     },
     imageFolder: "/assets/images/",
+    profileImage: "/assets/images/profpics.png",
     imageLogo: "/assets/logo/logo.png",
     imageLogoAlt: "/assets/logo/logo-alt.png",
     iconFolder: "/assets/icons/",
-    isMobile: isMobile
+    isMobile: isMobile,
+    parallax: Parallax()
 }
 
 Init.config.imageIcon = Init.config.iconFolder + "icon.png";

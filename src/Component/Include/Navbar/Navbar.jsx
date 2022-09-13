@@ -42,15 +42,14 @@ class NavigationBar extends Component {
 
     render() {
         let state = this.state;
-        let logoPath = Init.config.imageLogoAlt;
+        const FontAwesomeIcon = Init.FontAwesomeIcon;
 
         return (
             <Fragment>
                 <Router>
-                    <Navbar ref={state.navbarElement} expand="md" bg='dark' variant='dark'>
+                    <Navbar ref={state.navbarElement} expand="md" variant='dark'>
                         <Navbar.Brand href="/">
-                            {/* <img className="nav-logo" src={logoPath} alt="Logo" /> */}
-                            Sneakerzz
+                            @deceeeeee
                         </Navbar.Brand>
                         
                         <Navbar.Toggle aria-controls="basic-navbar-nav">
@@ -68,7 +67,9 @@ class NavigationBar extends Component {
                                                         to={item.path} 
                                                         // activeClassName="active" 
                                                         className="nav-link ml-2" 
-                                                        onClick={() => this.getCurrentPath(item.path)}> {item.name} </NavLink>
+                                                        onClick={() => this.getCurrentPath(item.path)}> 
+                                                            <FontAwesomeIcon icon={item.icon} /> {item.name} 
+                                                        </NavLink>
                                             );
                                         }
 

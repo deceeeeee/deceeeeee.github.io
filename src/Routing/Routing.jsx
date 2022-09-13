@@ -1,5 +1,4 @@
 import Homepage from '../Container/Homepage/Homepage';
-
 import ErrorPage from '../Container/ErrorPage/ErrorPage';
 
 const Routes = () => {
@@ -10,23 +9,35 @@ const Routes = () => {
             visibility: true,
             showNav: true,
             showFooter: true,
-            component: Homepage
+            component: Homepage,
+            icon: ['fas', 'home']
         },
         {
-            path: "/",
-            name: "Products",
+            path: "#about",
+            name: "About Me",
             visibility: true,
             showNav: true,
             showFooter: true,
-            component: Homepage
+            component: Homepage,
+            icon: ['fas', 'info-circle']
         },
         {
-            path: "/",
-            name: "Contact Us",
+            path: "#portfolio",
+            name: "My Portfolio",
             visibility: true,
             showNav: true,
             showFooter: true,
-            component: Homepage
+            component: Homepage,
+            icon: ['fas', 'clipboard']
+        },
+        {
+            path: "#contact",
+            name: "Contact Me",
+            visibility: true,
+            showNav: true,
+            showFooter: true,
+            component: Homepage,
+            icon: ['fas', 'phone']
         },
         {
             path: "*",
