@@ -28,6 +28,31 @@
   background-color: var(--base-bg-dark);
 }
 
+fieldset {
+  display: block;
+  margin-inline-start: 2px;
+  margin-inline-end: 2px;
+  padding-block-start: 0.35em;
+  padding-inline-start: 0.75em;
+  padding-inline-end: 0.75em;
+  padding-block-end: 0.625em;
+  
+  border: 3.5px solid #FFF;
+  border-radius: 15px;
+}
+
+legend {
+  float: none;
+  display: block;
+  padding-inline-start: 10px;
+  padding-inline-end: 10px;
+  border-width: initial;
+  border-style: none;
+  border-color: initial;
+  border-image: initial;
+  width: fit-content;
+}
+
 /* Fonts */
 /* 'Ubuntu' Font */
 

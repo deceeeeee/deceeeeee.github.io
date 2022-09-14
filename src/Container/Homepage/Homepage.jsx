@@ -5,6 +5,7 @@ import Init from '../../Init/Init';
 import Introduction from '../../Component/PagesComponent/Introduction/Introduction';
 import Backgrounds from '../../Component/PagesComponent/Backgrounds/Backgrounds';
 import Proficiencies from '../../Component/PagesComponent/Proficiencies/Proficiencies';
+import Experiences from '../../Component/PagesComponent/Experiences/Experiences';
 
 class Homepage extends Component {
     constructor(props) {
@@ -20,8 +21,6 @@ class Homepage extends Component {
     }
 
     componentDidMount() {
-        // let state = this;
-        
         window.addEventListener('resize', function(event){});
 
     }
@@ -44,8 +43,11 @@ class Homepage extends Component {
                 <Backgrounds id="second-background" imageProps={parallax[1]} />
                 <Proficiencies />
                 <Backgrounds id="third-background" imageProps={parallax[2]} />
-                <Introduction />
+                <Experiences />
                 <Backgrounds id="fourth-background" imageProps={parallax[3]} />
+                <Introduction />
+                <Backgrounds id="fifth-background" imageProps={parallax[4]} />
+                <Proficiencies />
             </div>
         );
     }

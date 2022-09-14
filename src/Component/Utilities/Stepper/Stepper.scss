@@ -1,0 +1,115 @@
+.c-stepper {
+    display: flex;
+    flex-wrap: wrap;
+
+    &__item {
+        flex: 1 0;
+        display: flex;
+        flex-direction: column;
+        text-align: center;
+
+        .c-stepper__container {
+            .c-stepper__title {
+                font-weight: 600;
+            }
+
+            .c-stepper__desc {
+
+            }
+        }
+        
+        &:before {
+            content: '';
+            --size: 2rem;
+            position: relative;
+            z-index: 1;
+            display: block;
+            width: var(--size);
+            height: var(--size);
+            border: 6px solid #FFF;        
+            outline: 8px solid #0BBFE1;
+            border-radius: 50%;
+            margin: 1rem auto 0;
+        }
+
+        &:not(:last-child):after {
+            content: "";
+            position: relative;
+            top: 2.5rem;
+            left: 50%;
+            height: 2px;
+            background-color: #0bbfe1;
+            order: -1;
+        }
+    }
+
+    &.c-stepper-vertical {
+        flex-direction: column;
+        flex-wrap: nowrap;
+
+        .c-stepper__item {
+            flex-direction: row;
+            align-items: flex-start;
+            gap: 25px;
+
+            .c-stepper__container {
+                text-align: left;
+                flex: 1 1 auto;
+                background-color: #0bbfe1;
+                box-shadow: 3px 3px 10px rgba(11, 191, 225, 0.3);
+                padding: 0.7rem 1rem;
+                border-radius: 7px;
+                margin-bottom: 20px;
+                width: 70%;
+
+                &:last-child {
+                    margin-bottom: 0;
+                }
+
+                .c-stepper__title {
+                    margin-bottom: 0;
+                }
+                
+                .c-stepper__caption {
+                    margin-bottom: 0.7rem;
+                }
+
+                .c-stepper__desc {
+                    flex: 1 1;
+                    text-align: justify;
+                    background-color: rgba(255, 255, 255, 0.95);
+                    color: #000;
+                    margin: 0;
+                    padding: 1rem;
+                    border-radius: 10px;
+
+                    strong {
+                        font-weight: 500;
+                    }
+                }
+            }
+
+            
+            &:before {
+                content: '';
+                margin: 0;
+            }
+    
+            &:after {
+                content: "";
+                position: relative;
+                top: 0;
+                left: 2.65rem;
+                width: 2px;
+                height: 100%;
+                order: -1;
+            }
+
+            &:last-child {
+                &:after {
+                    visibility: hidden;
+                }
+            }
+        }
+    }
+}
