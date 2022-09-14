@@ -15,11 +15,14 @@ function Proficiencies(props) {
             {
                 proficiencyData.map((item, index) => {
                     return (
-                        <fieldset key={index} className="proficiency-board">
-                            <legend className='proficiency-title'>
+                        <div key={index} className="proficiency-board">
+                            {/* <legend className='proficiency-title'>
                                 <FontAwesomeIcon icon={item.icon} /> { item.title }
-                            </legend>
-                            <ul>
+                            </legend> */}
+                            <h3 className='proficiency-title'>
+                                <FontAwesomeIcon icon={item.icon} /> { item.title }
+                            </h3>
+                            <ul className='proficiency-list'>
                                 {
                                     item.items.map((value, key) => {
                                         return (
@@ -30,7 +33,7 @@ function Proficiencies(props) {
                                     })
                                 }
                             </ul>
-                        </fieldset>
+                        </div>
                     )
                 })
             }

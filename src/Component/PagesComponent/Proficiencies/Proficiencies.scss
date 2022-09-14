@@ -17,9 +17,22 @@ $secondaryColor: var(--base-secondary-color);
         user-select: none;
         -webkit-user-select: none;
         -moz-user-select: none;
+        background-color: $secondaryColor;
+        padding: 0 1rem 2rem 1rem;
+        border: 3px solid white;
+        border-radius: 20px;
 
         .proficiency-title {
             font-weight: 500;
+            margin: 1rem 0;
+        }
+
+        .proficiency-list {
+            background-color: white;
+            color: $primaryColor;
+            height: 80%;
+            border-radius: 10px;
+            padding: 0.7rem 2rem;
         }
     }
 }
