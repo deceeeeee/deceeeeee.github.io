@@ -1,0 +1,42 @@
+$primaryColor: var(--base-primary-color);
+$secondaryColor: var(--base-secondary-color);
+
+.proficiencies {
+    width: 100%;
+    background-color: $primaryColor;
+    padding: 100px 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+
+    .proficiency-board {
+        height: 300px;
+        border: 3.5px solid #FFF;
+        border-radius: 15px;
+        min-width: 300px;
+
+        display: block;
+        margin-inline-start: 2px;
+        margin-inline-end: 2px;
+        padding-block-start: 0.35em;
+        padding-inline-start: 0.75em;
+        padding-inline-end: 0.75em;
+        padding-block-end: 0.625em;
+
+        .proficiency-title {
+            float: none;
+            display: block;
+            padding-inline-start: 10px;
+            padding-inline-end: 10px;
+            border-width: initial;
+            border-style: none;
+            border-color: initial;
+            border-image: initial;
+            width: fit-content;
+
+            font-weight: 500;
+        }
+    }
+}

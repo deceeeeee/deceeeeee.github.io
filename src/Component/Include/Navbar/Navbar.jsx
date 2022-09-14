@@ -64,12 +64,12 @@ class NavigationBar extends Component {
                                         if(item.hasOwnProperty('visibility') && item.visibility) {
                                             navLinks = (
                                                 <NavLink key={index} 
-                                                        to={item.path} 
-                                                        // activeClassName="active" 
-                                                        className="nav-link ml-2" 
-                                                        onClick={() => this.getCurrentPath(item.path)}> 
-                                                            <FontAwesomeIcon icon={item.icon} /> {item.name} 
-                                                        </NavLink>
+                                                    to={item.path} 
+                                                    className="nav-link ml-2" 
+                                                    onClick={() => this.getCurrentPath(item.path)}
+                                                > 
+                                                    <FontAwesomeIcon icon={item.icon} /> {item.name} 
+                                                </NavLink>
                                             );
                                         }
 

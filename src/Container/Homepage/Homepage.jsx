@@ -4,6 +4,7 @@ import Init from '../../Init/Init';
 
 import Introduction from '../../Component/PagesComponent/Introduction/Introduction';
 import Backgrounds from '../../Component/PagesComponent/Backgrounds/Backgrounds';
+import Proficiencies from '../../Component/PagesComponent/Proficiencies/Proficiencies';
 
 class Homepage extends Component {
     constructor(props) {
@@ -41,7 +42,7 @@ class Homepage extends Component {
                 <Backgrounds id="first-background" imageProps={parallax[0]} />
                 <Introduction />
                 <Backgrounds id="second-background" imageProps={parallax[1]} />
-                <Introduction />
+                <Proficiencies />
                 <Backgrounds id="third-background" imageProps={parallax[2]} />
                 <Introduction />
                 <Backgrounds id="fourth-background" imageProps={parallax[3]} />

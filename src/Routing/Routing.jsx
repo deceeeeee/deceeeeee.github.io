@@ -1,5 +1,6 @@
 import Homepage from '../Container/Homepage/Homepage';
 import ErrorPage from '../Container/ErrorPage/ErrorPage';
+import Introduction from '../Component/PagesComponent/Introduction/Introduction';
 
 const Routes = () => {
     return [
@@ -13,16 +14,17 @@ const Routes = () => {
             icon: ['fas', 'home']
         },
         {
-            path: "#about",
+            path: "/",
             name: "About Me",
-            visibility: true,
+            visibility: false,
             showNav: true,
             showFooter: true,
-            component: Homepage,
+            hash: '#about',
+            component: Introduction,
             icon: ['fas', 'info-circle']
         },
         {
-            path: "#portfolio",
+            path: "/portfolio",
             name: "My Portfolio",
             visibility: true,
             showNav: true,
@@ -33,7 +35,7 @@ const Routes = () => {
         {
             path: "#contact",
             name: "Contact Me",
-            visibility: true,
+            visibility: false,
             showNav: true,
             showFooter: true,
             component: Homepage,
