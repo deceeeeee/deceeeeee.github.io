@@ -63,7 +63,7 @@ class App extends Component {
     return(
       <div ref={state.appRef} className={"App"}>
         <NavigationBar show={this.pathMatch(state.currentRoute)} navList={routes} onChoose={(path) => handleNavClick(path)} />
-        <Footer show={ this.state.showApp && hasFooterRoutes.includes(this.state.currentRoute) } />
+        {/* <Footer show={ this.state.showApp && hasFooterRoutes.includes(this.state.currentRoute) } /> */}
       </div>
     );
   }

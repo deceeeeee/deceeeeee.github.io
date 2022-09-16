@@ -6,6 +6,7 @@ import Introduction from '../../Component/PagesComponent/Introduction/Introducti
 import Backgrounds from '../../Component/PagesComponent/Backgrounds/Backgrounds';
 import Proficiencies from '../../Component/PagesComponent/Proficiencies/Proficiencies';
 import Experiences from '../../Component/PagesComponent/Experiences/Experiences';
+import Contact from '../../Component/PagesComponent/Contact/Contact';
 
 class Homepage extends Component {
     constructor(props) {
@@ -39,15 +40,20 @@ class Homepage extends Component {
         return (
             <div className="homepage">
                 <Backgrounds id="first-background" imageProps={parallax[0]} />
+                {/* Profile */}
                 <Introduction />
                 <Backgrounds id="second-background" imageProps={parallax[1]} />
+                {/* Proficiencies */}
                 <Proficiencies />
                 <Backgrounds id="third-background" imageProps={parallax[2]} />
+                {/* Experiences */}
                 <Experiences />
                 <Backgrounds id="fourth-background" imageProps={parallax[3]} />
+                {/* Portfolio */}
                 <Introduction />
                 <Backgrounds id="fifth-background" imageProps={parallax[4]} />
-                <Proficiencies />
+                {/* Contacts */}
+                <Contact />
             </div>
         );
     }
