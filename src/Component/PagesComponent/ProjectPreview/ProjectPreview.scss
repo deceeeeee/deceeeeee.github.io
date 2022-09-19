@@ -1,0 +1,92 @@
+$primaryColor: var(--base-primary-color);
+
+.project-preview-container {
+    // color: $primaryColor;    
+    width: 100%;
+    height: 550px;
+    
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    
+    .project-preview-carousel {
+        background-color: #FFF;
+        width: 50%;
+        height: inherit;
+
+        .project-preview-item-container {
+            width: 100%;
+            height: inherit;
+
+            .project-preview-item-holder {
+                width: 100%;
+                height: inherit;
+    
+                .project-preview-image {
+                    width: 100%;
+                    height: 100%;
+
+                    display: flex;
+                    align-items: center;
+                    justify-content: center;
+
+                    img {
+                        max-height: 550px;
+                        max-width: 100%;
+                    }
+                }
+            }
+
+            .project-preview-carousel-dot {
+                width: 12px;
+                height: 12px;
+                border: 2px solid $primaryColor;
+                background-color: $primaryColor;
+                border-radius: 50%;
+                margin: 10px 5px;
+                transition: all 0.5s ease;
+                
+                &.active {
+                    background-color: #FFF;
+                }
+            }
+        }
+
+
+    }
+
+    .project-preview-content {
+        width: 50%;
+        height: 100%;
+        padding: 3rem 5rem;
+
+        .project-preview-title {
+            font-weight: 700;
+            font-size: 3rem;
+            margin-bottom: 2rem;
+        }
+
+        .project-preview-desc {
+            line-height: 1.8rem;
+        }
+
+        .project-preview-tech-stack {
+            &-title {
+                
+            }
+
+            &-list {
+                .project-preview-tech-stack-item {
+                    margin: 0 5px;
+                    padding: 0.3rem 0.5rem;
+                    border-radius: 15px;
+                }
+            }
+        }
+    }
+
+    .project-default-text {
+        font-size: 2.5rem;
+    }
+}

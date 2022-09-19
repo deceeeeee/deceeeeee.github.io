@@ -1,0 +1,34 @@
+.project-mini-carousel {
+    // border: 5px solid red;
+    width: 100%;
+    height: 100px;
+    overflow: hidden;
+
+    .project-carousel-item-holder {
+        height: 100%; 
+        outline: none;
+        overflow: hidden;
+        cursor: pointer;
+        border: 3px solid rgba(27, 38, 44, 0.85);
+        
+        .project-thumbnail-box {
+            height: 100%;
+            width: 100%;
+            background-color: white;
+            opacity: 0.6;
+            
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: all 0.5s ease;
+            
+            &.active {
+                opacity: 1;       
+            }
+            
+            .project-thumbnail-img {
+                height: 85px;
+            }
+        }
+    }
+}

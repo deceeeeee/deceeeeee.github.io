@@ -1,5 +1,6 @@
 import Homepage from '../Container/Homepage/Homepage';
 import ErrorPage from '../Container/ErrorPage/ErrorPage';
+import ProjectsPage from '../Container/ProjectsPage/ProjectsPage';
 
 const Routes = () => {
     return [
@@ -13,12 +14,12 @@ const Routes = () => {
             icon: ['fas', 'home']
         },
         {
-            path: "/portfolio",
-            name: "My Portfolio",
+            path: "/projects",
+            name: "My Projects",
             visibility: true,
             showNav: true,
             showFooter: false,
-            component: Homepage,
+            component: ProjectsPage,
             icon: ['fas', 'clipboard']
         },
         {

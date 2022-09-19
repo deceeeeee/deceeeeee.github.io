@@ -29,7 +29,7 @@ const PortfolioItem = (props) => {
                         { desc }
                     </p>
                     <div className="portfolio-btn-container">
-                        <a href="javascript:void(0);" className="btn-portfolio btn-portfolio-detail">
+                        <a href="/projects" className="btn-portfolio btn-portfolio-detail">
                             <FontAwesomeIcon icon={['fas', 'info-circle']}/> Details
                         </a>
                     </div>
@@ -54,6 +54,8 @@ const CustomDots = ({ onMove, index, onClick, active }) => {
 
 const Portfolio = (props) => {
     let portfolioData = PortfolioData();
+
+    portfolioData = portfolioData.slice(0, 5);
     
     /**
          * Make sure to customize config before storing it to state 
