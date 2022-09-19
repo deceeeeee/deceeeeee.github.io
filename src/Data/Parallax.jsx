@@ -28,7 +28,7 @@ const Parallax = () => {
         {
             imageName: 'fourthbackground.jpg',
             opacity: 0.1,
-            title: 'Portfolio',
+            title: 'Projects',
             titleIcon: ['fas', 'clipboard']
         },
         {

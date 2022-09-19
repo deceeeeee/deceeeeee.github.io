@@ -76,6 +76,7 @@ Init.config = {
 }
 
 Init.config.imageIcon = Init.config.iconFolder + "icon.png";
+Init.config.portfolioFolder = Init.config.imageFolder + 'Portfolio_image/';
 
 // Functions
 Init.capitalize = (str) => {

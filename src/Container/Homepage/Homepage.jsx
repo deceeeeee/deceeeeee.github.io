@@ -7,6 +7,7 @@ import Backgrounds from '../../Component/PagesComponent/Backgrounds/Backgrounds'
 import Proficiencies from '../../Component/PagesComponent/Proficiencies/Proficiencies';
 import Experiences from '../../Component/PagesComponent/Experiences/Experiences';
 import Contact from '../../Component/PagesComponent/Contact/Contact';
+import Portfolio from '../../Component/PagesComponent/Portfolio/Portfolio';
 
 class Homepage extends Component {
     constructor(props) {
@@ -50,7 +51,7 @@ class Homepage extends Component {
                 <Experiences />
                 <Backgrounds id="fourth-background" imageProps={parallax[3]} />
                 {/* Portfolio */}
-                <Introduction />
+                <Portfolio />
                 <Backgrounds id="fifth-background" imageProps={parallax[4]} />
                 {/* Contacts */}
                 <Contact />

@@ -22,7 +22,7 @@ function Experiences(props) {
 
             <fieldset id="project" className="experience-container">
                 <legend className="experience-container-title">
-                    <FontAwesomeIcon icon={['fas', 'clipboard']} /> Projects
+                    <FontAwesomeIcon icon={['fas', 'clipboard']} /> Freelance
                 </legend>
                 <Stepper steps={experienceData.project} />
             </fieldset>
