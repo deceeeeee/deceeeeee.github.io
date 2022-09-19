@@ -1,4 +1,5 @@
 import React, { Component, createRef } from 'react';
+import queryString from 'query-string';
 import './ProjectsPage.scss';
 
 import PortfolioData from '../../Data/Portfolio';
@@ -9,14 +10,13 @@ import ProjectCarousel from '../../Component/PagesComponent/ProjectCarousel/Proj
 class ProjectsPage extends Component {
     constructor(props) {
         super(props);
-        
-        this.state = {
-            currentProject: null
-        }
-    }
+     
+        const searchParams = queryString.parse(location.search);
+        const projectIndex = searchParams.id;
 
-    componentDidMount() {
-        // console.log(this.state);
+        this.state = {
+            currentProject: projectIndex
+        }
     }
 
     selectProject(index) {
@@ -33,7 +33,7 @@ class ProjectsPage extends Component {
         return (
             <div className='projects'>
                 <ProjectPreview project={currentProject} />
-                <ProjectCarousel list={projectData} selectedProject={this.state.currentProject} onChoose={index => this.selectProject(index)} />
+                <ProjectCarousel list={projectData} selectedProject={projectIndex} onChoose={index => this.selectProject(index)} />
             </div>
         );
     }

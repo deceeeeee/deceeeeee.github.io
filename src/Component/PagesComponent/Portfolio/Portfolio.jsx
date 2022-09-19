@@ -13,7 +13,8 @@ const portfolioFolder = config.portfolioFolder;
 let carouselConfig = config.carousel;
 
 const PortfolioItem = (props) => {
-    let {name, type, desc, imageFolder, imageCover} = props.item;
+    let { projectIndex, item } = props;
+    let {name, type, desc, imageFolder, imageCover} = item;
     imageCover = portfolioFolder + imageFolder + imageCover;
 
     return (
@@ -29,7 +30,7 @@ const PortfolioItem = (props) => {
                         { desc }
                     </p>
                     <div className="portfolio-btn-container">
-                        <a href="/projects" className="btn-portfolio btn-portfolio-detail">
+                        <a href={"/projects?id=" + projectIndex} className="btn-portfolio btn-portfolio-detail">
                             <FontAwesomeIcon icon={['fas', 'info-circle']}/> Details
                         </a>
                     </div>
@@ -109,7 +110,7 @@ const Portfolio = (props) => {
             {
                 portfolioData.map( (item, index) => {
                     return(
-                        <PortfolioItem key={index} item={item} />
+                        <PortfolioItem key={index} projectIndex={index} item={item} />
                     );
                 } )
             }
@@ -119,7 +120,7 @@ const Portfolio = (props) => {
                         Click here to see more of my projects!
                     </h3>
                     <br />
-                    <a href="/projects" className="btn-portfolio btn-portfolio-detail">
+                    <a href="/projects?id=5" className="btn-portfolio btn-portfolio-detail">
                         <FontAwesomeIcon icon={['fas', 'info-circle']}/> Details
                     </a>
                 </div>

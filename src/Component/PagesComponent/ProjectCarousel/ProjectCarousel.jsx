@@ -22,7 +22,7 @@ const ProjectThumbnail = (props) => {
 
 const ProjectCarousel = (props) => {
     let projectData = props.list;
-    let selectedProject = props.selectedProject;
+    let selectedProject = parseInt(props.selectedProject);
 
     /**
      * Make sure to customize config before storing it to state 

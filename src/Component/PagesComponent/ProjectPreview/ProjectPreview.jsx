@@ -136,7 +136,7 @@ const ProjectPreview = (props) => {
                                 let textColor = programmingLanguageData.hasOwnProperty(lcItem) ? programmingLanguageData[lcItem].color : '';
 
                                 return (
-                                    <TechStackBadges backColor={backgroundColor} textColor={textColor} className="project-preview-tech-stack-item">
+                                    <TechStackBadges key={index} backColor={backgroundColor} textColor={textColor} className="project-preview-tech-stack-item">
                                         { item }
                                     </TechStackBadges>
                                 )
