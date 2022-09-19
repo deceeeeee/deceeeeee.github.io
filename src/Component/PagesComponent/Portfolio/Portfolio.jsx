@@ -9,6 +9,7 @@ import './Portfolio.scss';
 
 const FontAwesomeIcon = Init.FontAwesomeIcon;
 const config = Init.config;
+const imageFolder = config.imageFolder;
 const portfolioFolder = config.portfolioFolder;
 let carouselConfig = config.carousel;
 
@@ -114,10 +115,11 @@ const Portfolio = (props) => {
                     );
                 } )
             }
-            <div className="portfolio-item dark-bg">
+            <div className="portfolio-item dark-bg">            
+                <img className='portfolio-cover' src={ imageFolder + 'firstbackground.jpg' } alt={ 'others' } />
                 <div className="portfolio-info-container">
                     <h3 className="portfolio-info-name">
-                        Click here to see more of my projects!
+                        Click here to see more projects!
                     </h3>
                     <br />
                     <a href="/projects?id=5" className="btn-portfolio btn-portfolio-detail">
