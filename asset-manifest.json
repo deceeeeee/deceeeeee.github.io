@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/static/css/main.0060d1ab.css",
-    "main.js": "/static/js/main.896a88b1.js",
+    "main.js": "/static/js/main.a5486c04.js",
     "static/media/Ubuntu-Light.ttf": "/static/media/Ubuntu-Light.0dd2d5986e2731a16ee7.ttf",
     "static/media/Ubuntu-LightItalic.ttf": "/static/media/Ubuntu-LightItalic.643c0a5c4ac0440c45e5.ttf",
     "static/media/Ubuntu-Italic.ttf": "/static/media/Ubuntu-Italic.fbb3310412795b02afc4.ttf",
@@ -27,10 +27,10 @@
     "static/media/revicons.woff": "/static/media/revicons.e8746a624ed098489406.woff",
     "index.html": "/index.html",
     "main.0060d1ab.css.map": "/static/css/main.0060d1ab.css.map",
-    "main.896a88b1.js.map": "/static/js/main.896a88b1.js.map"
+    "main.a5486c04.js.map": "/static/js/main.a5486c04.js.map"
   },
   "entrypoints": [
     "static/css/main.0060d1ab.css",
-    "static/js/main.896a88b1.js"
+    "static/js/main.a5486c04.js"
   ]
 }
