@@ -14,7 +14,7 @@ const Parallax = () => {
             height: '27vh'
         },
         {
-            imageName: 'secondbackground.JPG',
+            imageName: 'secondbackground.jpg',
             opacity: 0.1,
             title: 'Proficiencies',
             titleIcon: ['fas', 'gears']

@@ -97,7 +97,7 @@ const PortfolioData = () => {
             name: 'Untar Research Week',
             type: 'Virtual Research Exhibition Website',
             desc: 'UNTAR Research Week is an annual virtual research poster exhibition held by Tarumanagara University, collaborating with Minister of Research and Technology.',
-            imageFolder: 'UNTAR Research Week/',
+            imageFolder: 'Untar Research Week/',
             imageCover: 'rw_homepage.png',
             detail: [
                 `UNTAR Research Week is an annual virtual research poster exhibition held by Tarumanagara University, collaborating with Minister of Research and Technology.`,
