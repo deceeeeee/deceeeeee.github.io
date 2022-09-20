@@ -1,11 +1,11 @@
-import React, {Component, Fragment, createRef} from 'react';
+import React, {Component, Fragment} from 'react';
 import {Nav, Navbar} from 'react-bootstrap';
 import './Navbar.scss';
-import {Link, Routes, BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+import {Routes, BrowserRouter as Router, Route, NavLink} from "react-router-dom";
 
 import Init from '../../../Init/Init';
 
-import NavigationContext from '../../../Context/NavigationContext';
+// import NavigationContext from '../../../Context/NavigationContext';
 
 class NavigationBar extends Component {
     constructor(props) {

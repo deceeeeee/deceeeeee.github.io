@@ -2,6 +2,7 @@
   "name": "dece-portfolio",
   "version": "2.0.0",
   "private": true,
+  "homepage": "https://deceeeeee.github.io/",
   "dependencies": {
     "@fortawesome/fontawesome-svg-core": "^6.2.0",
     "@fortawesome/free-brands-svg-icons": "^6.2.0",

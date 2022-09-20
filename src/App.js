@@ -1,12 +1,12 @@
-import React, {Component, Fragment, createRef} from 'react';
+import React, {Component, createRef} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavigationBar from './Component/Include/Navbar/Navbar';
 import NavigationContext from './Context/NavigationContext';
-import Footer from './Component/Include/Footer/Footer';
+// import Footer from './Component/Include/Footer/Footer';
 
-import Cursor from './Component/Utilities/Cursor/Cursor';
-import CursorContext from './Context/CursorContext';
+// import Cursor from './Component/Utilities/Cursor/Cursor';
+// import CursorContext from './Context/CursorContext';
 
 import Routes from './Routing/Routing';
 import Init from './Init/Init';

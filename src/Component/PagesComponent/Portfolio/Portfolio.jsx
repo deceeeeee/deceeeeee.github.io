@@ -1,5 +1,6 @@
 import React from 'react';
 import Init from '../../../Init/Init';
+import { Link } from 'react-router-dom';
 
 import PortfolioData from '../../../Data/Portfolio';
 
@@ -31,9 +32,9 @@ const PortfolioItem = (props) => {
                         { desc }
                     </p>
                     <div className="portfolio-btn-container">
-                        <a href={"/projects?id=" + projectIndex} className="btn-portfolio btn-portfolio-detail">
+                        <Link to={"/projects?id=" + projectIndex} className="btn-portfolio btn-portfolio-detail">
                             <FontAwesomeIcon icon={['fas', 'info-circle']}/> Details
-                        </a>
+                        </Link>
                     </div>
                 </div>
             </div>
