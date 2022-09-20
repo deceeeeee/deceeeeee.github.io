@@ -52,6 +52,14 @@
             align-items: flex-start;
             gap: 25px;
 
+            @media screen and (max-width: 768px) {
+                gap: 0;
+        
+                &:before {
+                    display: none;
+                }
+            }
+
             .c-stepper__container {
                 text-align: left;
                 flex: 1 1 auto;

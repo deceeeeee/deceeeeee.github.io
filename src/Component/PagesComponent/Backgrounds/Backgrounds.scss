@@ -32,4 +32,20 @@ $primaryColor: var(--base-primary-color);
         }
     }
 
+    @media screen and (max-width: 768px) {
+        .text-container {
+            h2 {
+                font-size: 2em;
+            }
+        }
+    }
+
+    @media screen and (max-width: 400px) {
+        .text-container {
+            h2 {
+                font-size: 1.3em;
+            }
+        }
+    }
+
 }

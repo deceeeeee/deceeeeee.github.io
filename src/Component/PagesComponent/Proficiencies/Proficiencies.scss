@@ -14,4 +14,11 @@ $secondaryColor: var(--base-secondary-color);
     .proficiency-board {
         height: 300px;
     }
+
+    @media screen and (max-width: 624px) {
+        .proficiency-board {
+            width: 90%;
+            min-width: 0;
+        }
+    }
 }

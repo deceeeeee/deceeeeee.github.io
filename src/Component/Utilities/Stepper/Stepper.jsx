@@ -5,6 +5,12 @@ import styled from 'styled-components';
 
 const ListContainer = styled.ol`
     height: ${ props => ( props.customHeight ) };
+
+    @media screen and (max-width: 768px) {
+        height: auto;
+        gap: 2rem;
+        padding: 0;
+    }
 `;
 const ListItem = styled.li`
     :first-child:before {

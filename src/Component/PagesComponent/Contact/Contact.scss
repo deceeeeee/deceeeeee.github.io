@@ -17,6 +17,14 @@ $primaryTextColor: var(--primary-text-color);
             font-size: 4rem;
             color: $secondaryColor;
         }
+
+        @media screen and (max-width: 568px) {
+            h2 {
+                font-size: 3rem;
+                width: 80%;
+                margin: 0 auto;
+            }
+        }
     }
 
     .contact-content {

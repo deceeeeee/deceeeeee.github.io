@@ -12,4 +12,8 @@ $secondaryColor: var(--base-secondary-color);
     align-items: center;
     justify-content: center;
     gap: 0;
+
+    @media screen and (max-width: 1030px) {
+        padding-top: 0;
+    }
 }

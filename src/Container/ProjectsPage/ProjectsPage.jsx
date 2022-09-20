@@ -21,8 +21,10 @@ class ProjectsPage extends Component {
 
     selectProject(index) {
         let state = this.state;
-        state.currentProject = index;
-        this.setState(state);
+        if(state.currentProject !== index) {
+            state.currentProject = index;
+            this.setState(state);
+        }
     }
 
     render() {

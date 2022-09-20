@@ -7,7 +7,6 @@ import Stepper from '../../Utilities/Stepper/Stepper';
 
 
 function Experiences(props) {
-    const config = Init.config;
     const FontAwesomeIcon = Init.FontAwesomeIcon;
     const experienceData = ExperienceData();
 

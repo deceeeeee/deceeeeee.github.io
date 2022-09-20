@@ -33,6 +33,10 @@ $secondaryColor: var(--base-secondary-color);
 
     .portfolio-item {
         height: 100%;
+        display: flex;
+        justify-content: center;
+        overflow: hidden;
+
         &.dark-bg {
             background-color: $primaryColor;
         }
@@ -56,8 +60,14 @@ $secondaryColor: var(--base-secondary-color);
         }
 
         .portfolio-cover {
-            width: 100%;
+            max-width: 100%;
             min-height: 100%;
+        }
+
+        @media screen and (max-width: 1240px) {
+            .portfolio-cover {
+                max-width: none;
+            }
         }
         
         .portfolio-info-container {
@@ -100,6 +110,14 @@ $secondaryColor: var(--base-secondary-color);
 
                     .btn-portfolio-detail {
                         float: right;
+                    }
+                }
+
+                @media screen and (max-width: 768px) {
+                    height: 90%;
+                    
+                    .portfolio-btn-container {
+                        bottom: 40px;
                     }
                 }
             }
