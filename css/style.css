@@ -1,0 +1,26 @@
+:root {
+    /* Color Palette */
+    --base-primary-color: #1B262C;
+    --base-secondary-color: #00BBE1;
+    --default-bg-color: #FFF;
+  
+    /* Navbar */
+    --navbar-shadow: rgba(48, 49, 51, 0.2);
+    --navbar-brand-shadow: rgba(0, 113, 176, 0.18);
+  
+    /* Text */
+    --primary-text-color: #FFF;
+    --secondary-text-color: #1B262C;
+    --gray-text-color: #909399;
+    --transparent-text-color: rgb(250, 252, 253, 0.8);
+  
+    /* Highlighted Color */
+    --highlight-color: #21D06A;
+  
+    /* Footer */
+    --footer-background-color: #000;
+    --footer-list-color: var(--base-primary-color);
+  
+    overflow-x: hidden;
+    box-sizing: border-box;
+  }
