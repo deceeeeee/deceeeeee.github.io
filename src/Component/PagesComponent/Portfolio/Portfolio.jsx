@@ -32,9 +32,9 @@ const PortfolioItem = (props) => {
                         { desc }
                     </p>
                     <div className="portfolio-btn-container">
-                        <Link to={"/projects?id=" + projectIndex} className="btn-portfolio btn-portfolio-detail">
+                        {/* <Link to={"/projects?id=" + projectIndex} className="btn-portfolio btn-portfolio-detail">
                             <FontAwesomeIcon icon={['fas', 'info-circle']}/> Details
-                        </Link>
+                        </Link> */}
                     </div>
                 </div>
             </div>
@@ -123,9 +123,9 @@ const Portfolio = (props) => {
                         Click here to see more projects!
                     </h3>
                     <br />
-                    <a href="/projects?id=5" className="btn-portfolio btn-portfolio-detail">
+                    <Link to="/projects" className="btn-portfolio btn-portfolio-detail">
                         <FontAwesomeIcon icon={['fas', 'info-circle']}/> Details
-                    </a>
+                    </Link>
                 </div>
             </div>
         </Carousel>

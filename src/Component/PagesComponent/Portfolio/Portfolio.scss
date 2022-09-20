@@ -33,9 +33,9 @@ $secondaryColor: var(--base-secondary-color);
 
     .portfolio-item {
         height: 100%;
-        display: flex;
-        justify-content: center;
         overflow: hidden;
+        display: flex;
+        align-items: center;
 
         &.dark-bg {
             background-color: $primaryColor;
@@ -60,13 +60,15 @@ $secondaryColor: var(--base-secondary-color);
         }
 
         .portfolio-cover {
-            max-width: 100%;
+            width: 100%;
             min-height: 100%;
         }
-
+        
         @media screen and (max-width: 1240px) {
+            justify-content: center;
+
             .portfolio-cover {
-                max-width: none;
+                width: auto;
             }
         }
         

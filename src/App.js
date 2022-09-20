@@ -3,6 +3,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import NavigationBar from './Component/Include/Navbar/Navbar';
 import NavigationContext from './Context/NavigationContext';
+import {BrowserRouter as Router} from 'react-router-dom';
+
 // import Footer from './Component/Include/Footer/Footer';
 
 // import Cursor from './Component/Utilities/Cursor/Cursor';
@@ -61,10 +63,12 @@ class App extends Component {
     console.log('Render App');
 
     return(
-      <div ref={state.appRef} className={"App"}>
-        <NavigationBar show={this.pathMatch(state.currentRoute)} navList={routes} onChoose={(path) => handleNavClick(path)} />
-        {/* <Footer show={ this.state.showApp && hasFooterRoutes.includes(this.state.currentRoute) } /> */}
-      </div>
+      <Router>
+        <div ref={state.appRef} className={"App"}>
+          <NavigationBar show={this.pathMatch(state.currentRoute)} navList={routes} onChoose={(path) => handleNavClick(path)} />
+          {/* <Footer show={ this.state.showApp && hasFooterRoutes.includes(this.state.currentRoute) } /> */}
+        </div>
+      </Router>
     );
   }
 }

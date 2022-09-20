@@ -1,7 +1,7 @@
 import React, {Component, Fragment} from 'react';
 import {Nav, Navbar} from 'react-bootstrap';
 import './Navbar.scss';
-import {Routes, BrowserRouter as Router, Route, NavLink} from "react-router-dom";
+import {Routes, Route, NavLink} from "react-router-dom";
 
 import Init from '../../../Init/Init';
 
@@ -46,7 +46,6 @@ class NavigationBar extends Component {
 
         return (
             <Fragment>
-                <Router>
                     <Navbar ref={state.navbarElement} expand="md" variant='dark'>
                         <Navbar.Brand href="/">
                             @deceeeeee
@@ -94,7 +93,6 @@ class NavigationBar extends Component {
                             )
                         }
                     </Routes>
-                </Router>
             </Fragment>
         );
     }
