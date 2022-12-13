@@ -1,6 +1,53 @@
 const PortfolioData = () => {
     return [
         {
+            name: 'Landack.',
+            type: 'Web / Mobile Apps',
+            desc: 'Landack. is a legal service platform.',
+            imageFolder: 'Landack/',
+            imageCover: 'landack-icon.png',
+            detail: [
+                `Landack is a digital platform which provides legal consultation and other legal services with affordable price and great accessibility for everyone in Indonesia. 
+
+                Landack was initiated from our concern towards the lack of literation and awareness of law in Indonesia, which drives our purpose to provide reachable legal accessibility for every people in order to raise law awareness and literation in Indonesia.`
+            ],
+            snapshots: [
+                'landack-logo.png',
+                'header.png',
+                'individual-pricing.png',
+                'footer.png'
+            ],
+            display: false, 
+            techStack: ['Laravel', 'RabbitMQ', 'NodeJS', 'ReactJS', 'React Native'],
+            link: 'http://landack.id'
+        },
+        {
+            name: 'PRP',
+            type: 'Company Profile Website',
+            desc: 'Pribadi Randa & Partners (PRP) is a professional boutique law firm based in Jakarta. They provide the proper legal solution for those who needs it.',
+            imageFolder: 'PRP/',
+            imageCover: 'prp-logo.png',
+            detail: [
+                `
+                    Pribadi Randa & Partners (PRP) was founded by professionals with a deep respect for the law and a keen interest in assisting clients. "Committed To Excellence" is their non-negotiable commitment to be one of the few truly full-service law firm in Indonesia. This website was made by me and my friend, Joshua Ivannathan.
+                `
+            ],
+            snapshots: [
+                'prp-logo.svg',
+                'header.png',
+                'about-us.png',
+                'lawyers.png',
+                'expertise.png',
+                'clients.png',
+                'contact-join-us.png',
+                'footer.png'
+                // Mobile view
+            ],
+            display: true, 
+            techStack: ['HTML', 'CSS', 'JavaScript', 'jQuery'],
+            link: 'http://prplawfirm.com'
+        },
+        {
             name: 'Taraco',
             type: 'Company Profile Website',
             desc: 'Taraco offers furnitures and interior design services.',
@@ -22,7 +69,9 @@ const PortfolioData = () => {
                 'mobile-taraco-interior-light.jpg',
                 'mobile-taraco-interior-dark.jpg',
             ],
-            techStack: ['JavaScript', 'NodeJS', 'ReactJS']
+            display: true, 
+            techStack: ['JavaScript', 'NodeJS', 'ReactJS'],
+            link: 'http://taracodesign.id'
         },
         {
             name: 'AgricultureHub',
@@ -46,7 +95,9 @@ const PortfolioData = () => {
                 'mobile-agriculturehub-products.jpg',
                 'mobile-agriculturehub-product-list-1.jpg',
             ],
-            techStack: ['JavaScript', 'NodeJS', 'ReactJS']
+            display: true, 
+            techStack: ['JavaScript', 'NodeJS', 'ReactJS'],
+            link: 'http://agriculturehub.id'
         },
         {
             name: '@cptredbyjosh',
@@ -66,7 +117,9 @@ const PortfolioData = () => {
                 'cptredbyjosh-2.png',
                 'core-2.png'
             ],
-            techStack: ['JavaScript', 'NodeJS', 'ReactJS']
+            display: true, 
+            techStack: ['JavaScript', 'NodeJS', 'ReactJS'],
+            link: 'http://joshualiuhansan.github.io'
         },
         {
             name: 'MyPangan',
@@ -86,6 +139,7 @@ const PortfolioData = () => {
                 'mypangan-homepage-3.png',
                 'mypangan-download-page.png'
             ],
+            display: true, 
             techStack: [
                 'PHP',
                 'Laravel',
@@ -110,7 +164,9 @@ const PortfolioData = () => {
                 'rw_posters_2.png',
                 'rw_posters_3.png',
             ],
-            techStack: ['PHP', 'MySQL', 'JavaScript', 'jQuery']
+            display: true, 
+            techStack: ['PHP', 'MySQL', 'JavaScript', 'jQuery'],
+            link: 'https://postervirtual.untar.ac.id/'
         },
         {
             name: 'Course Selection System',
@@ -138,6 +194,7 @@ const PortfolioData = () => {
                 'course-selection-system(course-transcript).png',
                 'course-selection-system(satisfaction-score).png',
             ],
+            display: true, 
             techStack: ['PHP', 'MySQL', 'JavaScript', 'jQuery']
         },
         {
@@ -158,6 +215,7 @@ const PortfolioData = () => {
                 'view-issue-details.png',
                 'image-preview.png'
             ],
+            display: true, 
             techStack: ['PHP', 'MySQL', 'JavaScript']
         },
         {
@@ -174,6 +232,7 @@ const PortfolioData = () => {
                 'weatherapp.png',
                 'weatherinfo.png'
             ],
+            display: true, 
             techStack: ['JavaScript']
         },
         {
@@ -193,6 +252,7 @@ const PortfolioData = () => {
                 'update.png',
                 'update(2).png'
             ],
+            display: true, 
             techStack: ['PHP', 'MySQL', 'Javascript']
         },
         {
@@ -221,6 +281,7 @@ const PortfolioData = () => {
                 'accountcontrol.png',
                 'accountcontrol2.png'
             ],
+            display: true, 
             techStack: ['PHP', 'MySQL', 'Javascript', 'jQuery']
         }
     ];

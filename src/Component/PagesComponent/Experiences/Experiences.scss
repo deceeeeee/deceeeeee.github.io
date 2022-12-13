@@ -14,11 +14,10 @@ $secondaryColor: var(--base-secondary-color);
     & .experience-container {
         flex: 0 1 auto;
         min-width: 600px;
-        width: 47%;
         padding: 1rem;
+        width: 97.5%;
 
         @media screen and (max-width:1240px) {
-            width: 97.5%;
             min-width: 0;
         }
 

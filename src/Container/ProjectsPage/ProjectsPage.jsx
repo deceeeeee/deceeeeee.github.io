@@ -28,7 +28,12 @@ class ProjectsPage extends Component {
     }
 
     render() {
-        const projectData = PortfolioData();
+        let projectData = PortfolioData();
+
+        projectData = projectData.filter( (item) => {
+            return item.display;
+        } );
+
         let projectIndex = this.state.currentProject;
         let currentProject = projectData.hasOwnProperty(projectIndex) ? projectData[projectIndex] : {};
 

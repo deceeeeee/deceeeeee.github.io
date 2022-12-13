@@ -62,6 +62,8 @@ $primaryColor: var(--base-primary-color);
         height: 100%;
         padding: 3rem 5rem;
 
+        position: relative;
+
         .project-preview-title {
             font-weight: 700;
             font-size: 3rem;
@@ -85,6 +87,25 @@ $primaryColor: var(--base-primary-color);
                     padding: 0.3rem 0.5rem;
                     border-radius: 15px;
                 }
+            }
+        }
+
+        .project-preview-link-container {
+            position: absolute;
+            // width: 100%;
+            right: 30px;
+            bottom: 40px;
+
+            .project-preview-link {
+                text-decoration: none;
+                background-color: #FFF;
+                color: #000;
+
+                padding: 1rem 2rem;
+                border-radius: 40px;
+
+                font-size: 20px;
+                font-weight: 500;
             }
         }
     }

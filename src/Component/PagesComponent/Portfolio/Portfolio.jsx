@@ -58,6 +58,9 @@ const CustomDots = ({ onMove, index, onClick, active }) => {
 const Portfolio = (props) => {
     let portfolioData = PortfolioData();
 
+    portfolioData = portfolioData.filter( (item) => {
+        return item.display;
+    } );
     portfolioData = portfolioData.slice(0, 5);
     
     /**

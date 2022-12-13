@@ -106,6 +106,8 @@ const ProjectPreview = (props) => {
     let {project} = props;
     let projectIsEmpty = Object.keys(project).length === 0;
 
+    const { FontAwesomeIcon } = Init;
+
     return !projectIsEmpty ? (
         <div className="project-preview-container">
             <div className="project-preview-carousel">
@@ -131,7 +133,7 @@ const ProjectPreview = (props) => {
                         {/* Project Tech Stack */}
                         {
                             project.techStack.map((item, index) => {
-                                let lcItem = item.toLowerCase();
+                                let lcItem = item.toLowerCase().split(' ').join('');
                                 let backgroundColor = programmingLanguageData.hasOwnProperty(lcItem) ? programmingLanguageData[lcItem].backgroundColor : '';
                                 let textColor = programmingLanguageData.hasOwnProperty(lcItem) ? programmingLanguageData[lcItem].color : '';
 
@@ -144,8 +146,17 @@ const ProjectPreview = (props) => {
                         }
                         
                     </div>
-
                 </div>
+
+                {
+                    project.hasOwnProperty('link') ? (
+                        <div className="project-preview-link-container">
+                            <a target="_blank" href={project.link} className="project-preview-link">
+                                <FontAwesomeIcon icon={['fas', 'external-link']} /> Open Website
+                            </a>
+                        </div>
+                    ) : ''
+                }
             </div>
         </div>
     ) : (

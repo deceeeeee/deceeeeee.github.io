@@ -1,5 +1,13 @@
 const programmingLanguages = () => {
     return {
+        html: {
+            backgroundColor: '#f06529',
+            color: '#ebebeb'
+        },
+        css: {
+            backgroundColor: '#264de4',
+            color: '#ebebeb'
+        },
         javascript: {
             backgroundColor: '#f0db4f',
             color: '#323330'
@@ -11,6 +19,14 @@ const programmingLanguages = () => {
         reactjs: {
             backgroundColor: '#61DBFB',
             color: '#000'
+        },
+        reactnative: {
+            backgroundColor: '#61DBFB',
+            color: '#000'
+        },
+        rabbitmq: {
+            backgroundColor: '#ff6404',
+            color: '#fff'
         },
         jquery: {
             backgroundColor: '#0868AC',
