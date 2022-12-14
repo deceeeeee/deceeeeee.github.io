@@ -107,6 +107,20 @@ $primaryColor: var(--base-primary-color);
                 font-size: 20px;
                 font-weight: 500;
             }
+
+            @media (max-width: 690px) {
+                position: relative;
+                right: initial;
+                bottom: initial;
+
+                width: 100%;
+                height: fit-content;
+                margin-top: 3rem;
+
+                .project-preview-link {
+                    width: 100%;
+                }
+            }
         }
     }
 
@@ -118,8 +132,12 @@ $primaryColor: var(--base-primary-color);
         flex-direction: column;
         justify-content: flex-start;
         overflow-y: auto;
-        height: 75vh;
+        // height: 75vh;
 
+        &.project-empty-container {
+            justify-content: center;
+        }
+        
         .project-preview-carousel,
         .project-preview-content {
             width: 100%;

@@ -22,7 +22,7 @@ const PortfolioData = () => {
             link: 'http://landack.id'
         },
         {
-            name: 'PRP',
+            name: 'PRP Law Firm',
             type: 'Company Profile Website',
             desc: 'Pribadi Randa & Partners (PRP) is a professional boutique law firm based in Jakarta. They provide the proper legal solution for those who needs it.',
             imageFolder: 'PRP/',
@@ -40,15 +40,19 @@ const PortfolioData = () => {
                 'expertise.png',
                 'clients.png',
                 'contact-join-us.png',
-                'footer.png'
+                'footer.png',
                 // Mobile view
+                'lawyers-mobile.jpg',
+                'expertise-mobile.jpg',
+                'clients-mobile.jpg',
+                'footer-mobile.jpg'
             ],
             display: true, 
             techStack: ['HTML', 'CSS', 'JavaScript', 'jQuery'],
             link: 'http://prplawfirm.com'
         },
         {
-            name: 'Taraco',
+            name: 'Taraco Interior Design',
             type: 'Company Profile Website',
             desc: 'Taraco offers furnitures and interior design services.',
             imageFolder: 'Taraco/',

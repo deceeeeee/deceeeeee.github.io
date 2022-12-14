@@ -160,7 +160,7 @@ const ProjectPreview = (props) => {
             </div>
         </div>
     ) : (
-        <div className="project-preview-container">
+        <div className="project-preview-container project-empty-container">
             <h3 className='project-default-text'>
                 Select project below
             </h3>
