@@ -30,25 +30,51 @@ const ExperienceData = () => {
         ],
         project: [
             {
+                title: 'Freelance Fullstack Developer',
+                caption: 'Rednavi Sneakers | Oct 2022 - Present',
+                desc: `
+                    Creating an e-commerce website for Rednavi Sneakers Store, which provides authentic sneakers such as Air Jordan and Yeezy. The platform consists of: <br />
+                    <ul>
+                        <li> Dashboard as CMS & Master Data Management </li>
+                        <li> Core API, to connect between server DB to client website </li>
+                        <li> Client Website, where people can access and shop some sneakers! </li>
+                    </ul>
+                    Tech Stack: <strong>Laravel · Express · React.js</strong>
+                `,
+                isActive: true
+            },
+            {
                 title: 'Freelance Web Programmer',
                 caption: 'Taraco Interior Design | Apr 2021 - May 2022',
-                desc: 'Creating company profile website for Taraco as furniture and interior design service. There are two special features in this website. This website implements <strong>Advanced UI/UX</strong> and use <strong>Custom Cursor</strong>. <br/> Tech Stack: <strong>Node.js · JavaScript · React.js</strong>'
+                desc: `
+                    Creating company profile website for Taraco as furniture and interior design service. There are two special features in this website. This website implements <strong>Advanced UI/UX</strong> and use <strong>Custom Cursor</strong>. 
+                    <br/> Tech Stack: <strong>Node.js · JavaScript · React.js</strong>`
             },
             {
                 title: 'Freelance Web Programmer',
                 caption: 'Agriculture Hub | Mar 2022',
-                desc: 'Creating company profile website for Agriculture Hub to introduce them as agricultural and forestry commodities trading company. <br/> Tech Stack: <strong>Node.js · JavaScript · React.js</strong>'
+                desc: `
+                    Creating company profile website for Agriculture Hub to introduce them as agricultural and forestry commodities trading company. 
+                    <br/> Tech Stack: <strong>Node.js · JavaScript · React.js</strong>
+                `
             },
             {
                 title: 'Freelance Backend Developer',
                 caption: 'Tarumanagara University | Nov 2020 - Dec 2020',
-                desc: 'Working on Virtual Research Poster Exhibition. This exhibition is an annual event held by Tarumanagara University and Minister of Research and Technology. In this project, I created database and combined it with file system to store hundreds of posters <br/> Tech Stack: <strong>PHP · MySQL</strong>'
+                desc: `
+                    Working on Virtual Research Poster Exhibition. This exhibition is an annual event held by Tarumanagara University and Minister of Research and Technology. In this project, I created database and combined it with file system to store hundreds of posters. 
+                    <br/> Tech Stack: <strong>PHP · MySQL</strong>`
             }
         ],
         education: [
             {
                 title: 'Shenyang Aerospace University',
                 caption: 'Bachelor of Computer Science & Technology | Sept 2016 - July 2020',
+                desc: 'Bachelor Thesis: Furniture Store Website; <br /> Furniture Store Website is focusing on Smart Recommendation System, which is studying customer behaviour, their interest on types of furnitures. Then the website will display furnitures that they are interested in. <br/> Tech Stack: <strong>JSP (Java Server Page) · MySQL</strong>'
+            },
+            {
+                title: 'SMAK Kasih Kemuliaan',
+                caption: 'Social | July 2013 - June 2016',
                 desc: 'Bachelor Thesis: Furniture Store Website; <br /> Furniture Store Website is focusing on Smart Recommendation System, which is studying customer behaviour, their interest on types of furnitures. Then the website will display furnitures that they are interested in. <br/> Tech Stack: <strong>JSP (Java Server Page) · MySQL</strong>'
             }
         ]

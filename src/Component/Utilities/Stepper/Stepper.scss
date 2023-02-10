@@ -13,9 +13,9 @@
                 font-weight: 600;
             }
 
-            .c-stepper__desc {
+            // .c-stepper__desc {
 
-            }
+            // }
         }
         
         &:before {
@@ -70,8 +70,24 @@
                 margin-bottom: 20px;
                 width: 70%;
 
-                &:last-child {
-                    margin-bottom: 0;
+
+                @media screen and (max-width: 800px) {
+                    &:last-child {
+                        margin-bottom: 0;
+                    }
+
+                    .c-stepper__title {
+                        font-size: 1.4rem;
+                    }
+                    
+                    .c-stepper__caption {
+                        font-size: 0.9rem;
+                    }
+    
+                    .c-stepper__desc {
+                        font-size: 14px;
+                    }
+                    
                 }
 
                 .c-stepper__title {

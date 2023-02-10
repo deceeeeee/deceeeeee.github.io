@@ -6,6 +6,7 @@ const ProficiencyData = () => {
                 'PHP',
                 'Laravel Framework',
                 'Lucee (CFML)',
+                'Express (Node JS)',
                 'Database Design',
                 'MySQL',
                 'PostgreSQL',

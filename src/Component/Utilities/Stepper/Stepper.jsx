@@ -8,17 +8,13 @@ const ListContainer = styled.ol`
 
     @media screen and (max-width: 768px) {
         height: auto;
-        gap: 2rem;
+        gap: 1rem;
         padding: 0;
     }
 `;
 const ListItem = styled.li`
-    :first-child:before {
-        background-color: ${props => (props.isActive ? '#0BBFE1' : 'none')};
-    }
-
     :before {
-        background-color: #FFF;
+        background-color: ${props => (props.isActive ? '#0BBFE1' : '#FFF')};
         color: #000;
         content: ${props => (`${props.number}`)}
     }
@@ -60,7 +56,7 @@ Stepper.defaultProps = {
             isActive: false
         }
     ],
-    customHeight: '140vh'
+    customHeight: '160vh'
 }
 
 

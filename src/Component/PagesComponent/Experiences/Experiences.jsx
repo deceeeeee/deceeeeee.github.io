@@ -30,7 +30,10 @@ function Experiences(props) {
                 <legend className="experience-container-title">
                     <FontAwesomeIcon icon={['fas', 'book']} /> Education
                 </legend>
-                <Stepper steps={experienceData.education} customHeight="100%" />
+                <Stepper 
+                    steps={experienceData.education} 
+                    customHeight="500px" 
+                />
             </fieldset>
         </div>
     );
