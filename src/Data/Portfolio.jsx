@@ -14,11 +14,22 @@ const PortfolioData = () => {
             snapshots: [
                 'landack-logo.png',
                 'header.png',
-                'individual-pricing.png',
+                'legal-service.png',
+                'why-us.png',
+                'article-list.png',
+                'article-detail.png',
+                'faq.png',
                 'footer.png'
             ],
-            display: false, 
-            techStack: ['Laravel', 'RabbitMQ', 'NodeJS', 'ReactJS', 'React Native'],
+            display: true, 
+            techStack: [
+                'Laravel', 
+                // 'RabbitMQ', 
+                'NodeJS', 
+                'ExpressJS',
+                'ReactJS', 
+                'React Native'
+            ],
             link: 'http://landack.id'
         },
         {
