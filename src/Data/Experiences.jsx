@@ -7,20 +7,19 @@ const ExperienceData = () => {
                 desc: `
                     Landack is a digital platform which provides legal consultation and other legal services with affordable price and great accessibility for everyone in Indonesia. Landack was initiated from our concern towards the lack of literation and awareness of law in Indonesia, which drives our purpose to provide reachable legal accessibility for every people in order to raise law awareness and literation in Indonesia.
                     <br />
-                    Tech Stack: <strong>PHP · Laravel · MySQL · ReactJS · React Native · ExpressJS</strong>
+                    Tech Stack: <strong>PHP · Laravel · MySQL · ReactJS · React Native · Express</strong>
                 `,
                 isActive: true
-            },
-            {
-                title: 'Web Developer',
-                caption: 'PT Animasi Kreatif Indonesia | Sept 2020 - Present',
-                desc: 'This company provides web-based online games. Players are allowed to do an in-game purchase in this platform. <br/> Tech Stack: <strong>PHP · Lucee(CFML) · MySQL · JavaScript · JQuery · AngularJS</strong>',
-                isActive: true
-            },
+            }, 
             {
                 title: 'Co-Founder & CTO',
                 caption: 'MyPangan | Jan 2021 - May 2022',
                 desc: 'MyPangan is a groceries e-commerce platform that enables customers to buy their groceries online. <br/> Tech Stack: <strong>Laravel · PostgreSQL · Kotlin(Android)</strong>'
+            },
+            {
+                title: 'Web Developer',
+                caption: 'PT Animasi Kreatif Indonesia | Sept 2020 - May 2023',
+                desc: 'This company provides web-based online games. Players are allowed to do an in-game purchase in this platform. <br/> Tech Stack: <strong>PHP · Lucee(CFML) · MySQL · JavaScript · JQuery · AngularJS</strong>',
             },
             {
                 title: 'Intern',
@@ -33,7 +32,7 @@ const ExperienceData = () => {
                 title: 'Freelance Fullstack Developer',
                 caption: 'Rednavi Sneakers | Oct 2022 - Present',
                 desc: `
-                    Creating an e-commerce website for Rednavi Sneakers Store, which provides authentic sneakers such as Air Jordan and Yeezy. The platform consists of: <br />
+                    Develop an e-commerce website for Rednavi Sneakers Store, which provides authentic sneakers such as Air Jordan and Yeezy. The platform consists of: <br />
                     <ul>
                         <li> Dashboard as CMS & Master Data Management </li>
                         <li> Core API, to connect between server DB to client website </li>
@@ -42,6 +41,19 @@ const ExperienceData = () => {
                     Tech Stack: <strong>Laravel · Express · React.js</strong>
                 `,
                 isActive: true
+            },
+            {
+                title: 'Backend Developer',
+                caption: 'PT Qoin Digital Indonesia | Jul 2023 - Aug 2023',
+                desc: `
+                    Develop SNAP Converter as a integrator system to support them in following SNAP Standards regulated by Bank of Indonesia. Scope of work includes:
+                    <ul>
+                        <li> SNAP Modules </li>
+                        <li> Converter Modules </li>
+                        <li> SNAP Developer Site Testing </li>
+                    </ul>
+                    Tech Stack: <strong>Express</strong>
+                `
             },
             {
                 title: 'Freelance Web Programmer',
@@ -70,11 +82,6 @@ const ExperienceData = () => {
             {
                 title: 'Shenyang Aerospace University',
                 caption: 'Bachelor of Computer Science & Technology | Sept 2016 - July 2020',
-                desc: 'Bachelor Thesis: Furniture Store Website; <br /> Furniture Store Website is focusing on Smart Recommendation System, which is studying customer behaviour, their interest on types of furnitures. Then the website will display furnitures that they are interested in. <br/> Tech Stack: <strong>JSP (Java Server Page) · MySQL</strong>'
-            },
-            {
-                title: 'SMAK Kasih Kemuliaan',
-                caption: 'Social | July 2013 - June 2016',
                 desc: 'Bachelor Thesis: Furniture Store Website; <br /> Furniture Store Website is focusing on Smart Recommendation System, which is studying customer behaviour, their interest on types of furnitures. Then the website will display furnitures that they are interested in. <br/> Tech Stack: <strong>JSP (Java Server Page) · MySQL</strong>'
             }
         ]

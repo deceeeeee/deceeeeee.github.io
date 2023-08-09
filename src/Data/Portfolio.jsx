@@ -1,6 +1,25 @@
 const PortfolioData = () => {
     return [
         {
+            name: 'SNAP Converter',
+            type: 'Core',
+            desc: 'SNAP Converter is an API integrator which supports conversion model from existing system to SNAP standards regulated by Bank of Indonesia.',
+            imageFolder: 'SNAP Converter/',
+            imageCover: 'snap-developer-site-icon.png',
+            detail: [
+                `SNAP Converter is an API integrator which supports conversion model from existing system to SNAP standards regulated by Bank of Indonesia.
+                
+                The goal of this system is to accelerate and simplify integration between payment services without significantly changes existing system.`
+            ],
+            snapshots: [
+                'snap-developer-site-icon.png'
+            ],
+            display: true, 
+            techStack: [
+                'Express'
+            ]
+        },
+        {
             name: 'Landack.',
             type: 'Web / Mobile Apps',
             desc: 'Landack. is a legal service platform.',
@@ -86,7 +105,7 @@ const PortfolioData = () => {
             ],
             display: true, 
             techStack: ['JavaScript', 'NodeJS', 'ReactJS'],
-            link: 'http://taracodesign.id'
+            // link: 'http://taracodesign.id'
         },
         {
             name: 'AgricultureHub',
@@ -112,7 +131,7 @@ const PortfolioData = () => {
             ],
             display: true, 
             techStack: ['JavaScript', 'NodeJS', 'ReactJS'],
-            link: 'http://agriculturehub.id'
+            // link: 'http://agriculturehub.id'
         },
         {
             name: '@cptredbyjosh',
