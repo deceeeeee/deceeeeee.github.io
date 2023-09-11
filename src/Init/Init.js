@@ -67,7 +67,7 @@ Init.config = {
         ]
     },
     imageFolder: "/assets/images/",
-    profileImage: "/assets/images/profpics.png",
+    profileImage: "/assets/images/profpics-2.jpeg",
     imageLogo: "/assets/logo/logo.png",
     imageLogoAlt: "/assets/logo/logo-alt.png",
     iconFolder: "/assets/icons/",

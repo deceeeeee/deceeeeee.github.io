@@ -15,7 +15,9 @@ function Introduction(props) {
         <div className="introduction">
             <div className="introduction-title-card">
                 <div className="title-container">
-                    <img className="profile-image" src={profileImage} alt="profile-image" />
+                    <div className="profile-image-container">
+                        <img className="profile-image" src={profileImage} alt="profile-image" />
+                    </div>
                     <div className="profile-container">
                         <h1> Michael D'Christio </h1>
                         <strong> Junior Web Developer </strong>

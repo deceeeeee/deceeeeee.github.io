@@ -24,8 +24,14 @@ $secondaryColor: var(--base-secondary-color);
             justify-content: flex-start;
             gap: 25px;
 
-            & .profile-image {
+            & .profile-image-container {
                 width: 200px;
+                overflow: hidden;
+                border-radius: 50%;
+
+                & .profile-image {
+                    width: 100%;
+                }
             }
 
             & .profile-container {
@@ -52,7 +58,7 @@ $secondaryColor: var(--base-secondary-color);
             gap: 1rem;
 
             & .title-container {
-                & .profile-image {
+                & .profile-image-container {
                     width: 150px;
                 }
             }
@@ -76,7 +82,7 @@ $secondaryColor: var(--base-secondary-color);
                 gap: 10px;
                 margin-bottom: 25px;
     
-                & .profile-image {
+                & .profile-image-container {
                     width: 200px;
                 }
     
