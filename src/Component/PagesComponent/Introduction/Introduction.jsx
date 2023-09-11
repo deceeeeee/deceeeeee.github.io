@@ -1,10 +1,15 @@
 import React from 'react';
 import Init from '../../../Init/Init';
 import './Introduction.scss';
+import { getTimestamp } from '../../../Util/Util';
 
 function Introduction(props) {
     const config = Init.config;
     const profileImage = config.profileImage;
+    const currentTime = getTimestamp();
+    const startTime = getTimestamp('2020-09-05 00:00:00');
+    
+    const year = Math.floor((currentTime - startTime) / (1000 * 60 * 60 * 24 * 365)); // seconds -> minute -> hour -> day -> year
 
     return (
         <div className="introduction">
@@ -17,7 +22,7 @@ function Introduction(props) {
                     </div>
                 </div>
                 <div className="caption-container">
-                    <b>Junior Web Developer</b> specialized in <b>PHP</b>, especially <b>Laravel</b> framework. Other than <b>Backend Development</b>, I am also into <b>Frontend Development</b> with <b>ReactJS</b> as my current weapon. Aspire to be a <b>Fullstack Developer</b> with great passion and 2 years experience of <b>Web Development</b>, I am always intrigued with better opportunity to experience and challenge myself to connect with plenty of programmers and be inspired with their knowledge for my self-improvement. Currently I am interested in <b>ReactJS</b>, since the code structure is more organized, reduces a lot of development time, and it is easier to learn. I also wish to learn more about IT infrastructure in the future.
+                    <b>Junior Web Developer</b> specialized in <b>PHP</b>, especially <b>Laravel</b> framework. Other than <b>Backend Development</b>, I am also into <b>Frontend Development</b> with <b>ReactJS</b> as my current weapon. Aspire to be a <b>Fullstack Developer</b> with great passion and { year } years experience of <b>Web Development</b>, I am always intrigued with better opportunity to experience and challenge myself to connect with plenty of programmers and be inspired with their knowledge for my self-improvement. Currently I am interested in <b>ReactJS</b>, since the code structure is more organized, reduces a lot of development time, and it is easier to learn. I also wish to learn more about IT infrastructure in the future.
                 </div>
             </div>
         </div>

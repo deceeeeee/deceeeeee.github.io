@@ -14,7 +14,7 @@ const PortfolioData = () => {
             snapshots: [
                 'snap-developer-site-icon.png'
             ],
-            display: true, 
+            display: false, 
             techStack: [
                 'Express'
             ]
@@ -33,12 +33,53 @@ const PortfolioData = () => {
             snapshots: [
                 'landack-logo.png',
                 'header.png',
-                'legal-service.png',
                 'why-us.png',
                 'article-list.png',
-                'article-detail.png',
                 'faq.png',
-                'footer.png'
+                'homepage.png',
+                'order-page.png',
+                'order-page-2.png',
+                'event-page.png',
+                'profile-page.png'
+            ],
+            display: true, 
+            techStack: [
+                'Laravel', 
+                // 'RabbitMQ', 
+                'NodeJS', 
+                'ExpressJS',
+                'ReactJS', 
+                'React Native',
+                'Socket.io'
+            ],
+            link: 'https://landack.id'
+        },
+        {
+            name: 'Rednavi Sneakers & Apparel',
+            type: 'Web',
+            desc: 'Rednavi Sneakers & Apparel is a retail fashion store which sells multiple brands of sneakers and apparels, such as Air Jordan, Yeezy, ADLV, etc.',
+            imageFolder: 'Rednavi Sneakers/',
+            imageCover: 'rednavi-icon.png',
+            detail: [
+                `Rednavi Sneakers & Apparel is a retail fashion store which sells multiple brands of sneakers and apparels, such as Air Jordan, Yeezy, ADLV, etc.
+                
+                As One Stop Streetwear Destination, they curate the best brands and aim for continuous growth by following fast-changing trends. They are currently aiming to be a bridge between global and local brands to help local brand development and growth.
+                `
+            ],
+            snapshots: [
+                'rednavi-logo.png',
+                'homepage.png',
+                'homepage-storefront.png',
+                'product-catalog.png',
+                'product-detail.png',
+                'add-to-cart-result.png',
+                'cart-edit.png',
+                'checkout-fill-address.png',
+                'checkout-success.png',
+                'checkout-detail.png',
+                'payment-confirmation-form.png',
+                'payment-confirmation-form-2.png',
+                'payment-confirmation-success.png'
             ],
             display: true, 
             techStack: [
@@ -49,7 +90,7 @@ const PortfolioData = () => {
                 'ReactJS', 
                 'React Native'
             ],
-            link: 'http://landack.id'
+            link: 'https://rednavi.co.id'
         },
         {
             name: 'PRP Law Firm',

@@ -32,7 +32,7 @@ function Experiences(props) {
                 </legend>
                 <Stepper 
                     steps={experienceData.education} 
-                    customHeight="500px" 
+                    customHeight="250px" 
                 />
             </fieldset>
         </div>

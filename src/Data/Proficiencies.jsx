@@ -29,8 +29,8 @@ const ProficiencyData = () => {
         {
             title: 'Tools',
             items: [
-                'Git (Version Control System)',
-                'Web Hosting',
+                'Git [Version Control System]',
+                // 'Web Hosting',
                 'Basic Linux',
                 'Docker'
             ],

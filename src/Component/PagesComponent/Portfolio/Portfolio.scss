@@ -69,6 +69,8 @@ $secondaryColor: var(--base-secondary-color);
 
             .portfolio-cover {
                 width: auto;
+                min-height: 0;
+                max-height: 100%;
             }
         }
         
