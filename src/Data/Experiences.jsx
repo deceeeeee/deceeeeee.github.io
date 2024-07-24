@@ -29,8 +29,52 @@ const ExperienceData = () => {
         ],
         project: [
             {
-                title: 'Freelance Fullstack Developer',
-                caption: 'Rednavi Sneakers | Oct 2022 - Present',
+                title: 'Law Firm Website',
+                caption: 'Lexvaya Law Firm | Jul 2024',
+                desc: `
+                    Lexvaya is a dynamic law firm specializing in Finance, Banking, and Corporate Law.
+                     <br />
+                    Tech Stack: <strong>HTML · CSS · JS</strong>
+                `,
+                isActive: true
+            },
+            {
+                title: 'E-commerce Website',
+                caption: 'YoboyCup | June 2024 - July 2024',
+                desc: `
+                    YoboyCup website is upgraded company profile website to e-commerce, which provides transaction features for users to buy customized F&B packages. The platform consists of: 
+                     <br />
+                    <ul>
+                        <li> Dashboard as CMS & Master Data Management </li>
+                        <li> Main Core, to maintain authentication and products </li>
+                        <li> Payment Core, as connector between YoboyCup & Payment Gateway </li>
+                        <li> Mail Core, to send mail OTP </li>
+                        <li> Client Website, where people can access and buy YoboyCup customized packages! </li>
+                    </ul>
+                    Tech Stack: <strong>Laravel · Express · React.js</strong>
+                `
+            },
+            {
+                title: 'House of Beef Mini POS',
+                caption: 'Cahaya Meat | May 2024 - June 2024',
+                desc: `
+                    House of Beef is a mini POS system for a meat store. This system is used to manage storefront for their customers to buy House of Beef products whenever they are doing TikTok Live, and integrated with shipping services for product delivery.
+                     <br />
+                    Tech Stack: <strong>Laravel · Express · Next.js</strong>
+                `
+            },
+            {
+                title: 'Law Firm Website',
+                caption: 'PRP Law Firm | Nov 2022 - Dec 2022',
+                desc: `
+                    Pribadi Randa & Partners is a professional boutique law firm.
+                     <br />
+                    Tech Stack: <strong>HTML · CSS · JS</strong>
+                `
+            },
+            {
+                title: 'E-Commerce Website',
+                caption: 'Rednavi Sneakers | Oct 2022 - Dec 2023',
                 desc: `
                     Develop an e-commerce website for Rednavi Sneakers Store, which provides authentic sneakers such as Air Jordan and Yeezy. The platform consists of: <br />
                     <ul>
@@ -39,14 +83,13 @@ const ExperienceData = () => {
                         <li> Client Website, where people can access and shop some sneakers! </li>
                     </ul>
                     Tech Stack: <strong>Laravel · Express · React.js</strong>
-                `,
-                isActive: true
+                `
             },
             {
-                title: 'Backend Developer',
+                title: 'SNAP Converter',
                 caption: 'PT Qoin Digital Indonesia | Jul 2023 - Aug 2023',
                 desc: `
-                    Develop SNAP Converter as a integrator system to support them in following SNAP Standards regulated by Bank of Indonesia. Scope of work includes:
+                    Develop SNAP Converter as a integrator system to support them in following National Payment API Standard (SNAP) regulated by Bank of Indonesia. Scope of work includes:
                     <ul>
                         <li> SNAP Modules </li>
                         <li> Converter Modules </li>
@@ -56,14 +99,14 @@ const ExperienceData = () => {
                 `
             },
             {
-                title: 'Freelance Web Programmer',
+                title: 'Interior Design Website',
                 caption: 'Taraco Interior Design | Apr 2021 - May 2022',
                 desc: `
                     Creating company profile website for Taraco as furniture and interior design service. There are two special features in this website. This website implements <strong>Advanced UI/UX</strong> and use <strong>Custom Cursor</strong>. 
                     <br/> Tech Stack: <strong>Node.js · JavaScript · React.js</strong>`
             },
             {
-                title: 'Freelance Web Programmer',
+                title: 'Company Profile Website',
                 caption: 'Agriculture Hub | Mar 2022',
                 desc: `
                     Creating company profile website for Agriculture Hub to introduce them as agricultural and forestry commodities trading company. 
@@ -71,10 +114,10 @@ const ExperienceData = () => {
                 `
             },
             {
-                title: 'Freelance Backend Developer',
+                title: 'Virtual Research Poster Exhibition',
                 caption: 'Tarumanagara University | Nov 2020 - Dec 2020',
                 desc: `
-                    Working on Virtual Research Poster Exhibition. This exhibition is an annual event held by Tarumanagara University and Minister of Research and Technology. In this project, I created database and combined it with file system to store hundreds of posters. 
+                    Virtual Research Poster Exhibition is an annual event held by Tarumanagara University and Minister of Research and Technology. In this project, I created database and combined it with file system to store hundreds of posters. 
                     <br/> Tech Stack: <strong>PHP · MySQL</strong>`
             }
         ],

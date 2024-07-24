@@ -121,8 +121,8 @@ const ProjectPreview = (props) => {
                 {
                     project.detail.map( (item, index) => {
                         return (
-                            <p key={index} className="project-preview-desc">
-                                {item}
+                            <p key={index} className="project-preview-desc" dangerouslySetInnerHTML={{__html: item}}>
+                                
                             </p>
                         )
                     } )

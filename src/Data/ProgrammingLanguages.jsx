@@ -55,6 +55,14 @@ const programmingLanguages = () => {
         postgresql: {
             backgroundColor: '#008bb9',
             color: '#fff'
+        },
+        express: {
+            backgroundColor: '#f0db4f',
+            color: '#323330'
+        },
+        nextjs: {
+            backgroundColor: '#000000',
+            color: "#FFF"
         }
     };
 };

@@ -1,8 +1,92 @@
 const PortfolioData = () => {
     return [
         {
+            name: 'Lexvaya',
+            type: 'Law Firm Website',
+            desc: 'Lexvaya is a dynamic law firm specializing in Finance, Banking, and Corporate Law.',
+            imageFolder: 'Lexvaya/',
+            imageCover: 'leaders.png',
+            detail: [
+                `Lexvaya (LVA) is a dynamic law firm specializing in Finance, Banking, and Corporate Law.`,
+                `With a deep understanding of the financial industry and corporate regulations, they offer tailored solutions to address their clients' unique challenges and achieve clients' business objectives.`
+            ],
+            snapshots: [
+                'header.png',
+                'about-us.png',
+                'services-exp.png',
+                'leaders.png',
+                'clients.png',
+                'footer.png'
+            ],
+            display: true,
+            techStack: ['HTML', 'CSS', 'JavaScript', 'jQuery'],
+            link: 'https://lexvaya.id/'
+        },
+        {
+            name: 'YoboyCup',
+            type: 'E-commerce Website',
+            desc: 'YoboyCup website is upgraded company profile website to e-commerce, which provides transaction features for users to buy customized F&B packages.',
+            imageFolder: 'YoboyCup/',
+            imageCover: 'yoboycup.jpg',
+            detail: [
+                `YoboyCup website is upgraded company profile website to e-commerce, which provides transaction features for users to buy customized F&B packages. The platform consists of: 
+                <br />
+                <ul>
+                    <li> Dashboard as CMS & Master Data Management </li>
+                    <li> Main Core, to maintain authentication and products </li>
+                    <li> Payment Core, as connector between YoboyCup & Payment Gateway </li>
+                    <li> Mail Core, to send mail OTP </li>
+                    <li> Client Website, where people can access and buy YoboyCup customized packages! </li>
+                </ul>`
+            ],
+            snapshots: [
+                'homepage.png',
+                'values.png',
+                'products.png',
+                'order-product.png',
+                'added-to-cart.png',
+                'cart-page.png',
+                'checkout-page.png',
+                'manual-trf-page.png',
+            ],
+            display: true, 
+            techStack: [
+                'Laravel',
+                'Express',
+                'ReactJS'
+            ],
+            link: 'https://yoboycup.com'
+        },
+        {
+            name: 'House of Beef Mini POS',
+            type: 'Mini POS',
+            desc: 'House of Beef is a mini POS system for a meat store.',
+            imageFolder: 'House of Beef/',
+            imageCover: 'house-of-beef.png',
+            detail: [
+                `House of Beef is a mini POS system for a meat store. This system is used to manage storefront for their customers to buy House of Beef products whenever they are doing TikTok Live, and integrated with shipping services for product delivery.`
+            ],
+            snapshots: [
+                '1.jpg',
+                '2.jpg',
+                '3.jpg',
+                '4.jpg',
+                '5.jpg',
+                '6.jpg',
+                '7.jpg',
+                '8.jpg',
+            ],
+            display: true, 
+            techStack: [
+                'Laravel',
+                'Express',
+                'Nextjs'
+            ],
+            link: 'https://houseofbeefofficial.com'
+        },
+        {
             name: 'SNAP Converter',
-            type: 'Core',
+            type: 'Middleware',
             desc: 'SNAP Converter is an API integrator which supports conversion model from existing system to SNAP standards regulated by Bank of Indonesia.',
             imageFolder: 'SNAP Converter/',
             imageCover: 'snap-developer-site-icon.png',
@@ -14,14 +98,14 @@ const PortfolioData = () => {
             snapshots: [
                 'snap-developer-site-icon.png'
             ],
-            display: false, 
+            display: true, 
             techStack: [
                 'Express'
             ]
         },
         {
             name: 'Landack.',
-            type: 'Web / Mobile Apps',
+            type: 'Mobile Apps',
             desc: 'Landack. is a legal service platform.',
             imageFolder: 'Landack/',
             imageCover: 'landack-icon.png',
@@ -56,7 +140,7 @@ const PortfolioData = () => {
         },
         {
             name: 'Rednavi Sneakers & Apparel',
-            type: 'Web',
+            type: 'E-commerce Website',
             desc: 'Rednavi Sneakers & Apparel is a retail fashion store which sells multiple brands of sneakers and apparels, such as Air Jordan, Yeezy, ADLV, etc.',
             imageFolder: 'Rednavi Sneakers/',
             imageCover: 'rednavi-icon.png',
@@ -94,7 +178,7 @@ const PortfolioData = () => {
         },
         {
             name: 'PRP Law Firm',
-            type: 'Company Profile Website',
+            type: 'Law Firm Website',
             desc: 'Pribadi Randa & Partners (PRP) is a professional boutique law firm based in Jakarta. They provide the proper legal solution for those who needs it.',
             imageFolder: 'PRP/',
             imageCover: 'prp-logo.png',

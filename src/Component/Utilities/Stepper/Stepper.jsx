@@ -56,7 +56,7 @@ Stepper.defaultProps = {
             isActive: false
         }
     ],
-    customHeight: '160vh'
+    customHeight: '120vh'
 }
 
 
