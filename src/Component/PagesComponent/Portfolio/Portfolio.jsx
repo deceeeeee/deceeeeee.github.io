@@ -32,6 +32,13 @@ const PortfolioItem = (props) => {
                         { desc }
                     </p>
                     <div className="portfolio-btn-container">
+                        {
+                            item.hasOwnProperty('link') ? (
+                                <a target="_blank" href={item.link} className="btn-portfolio btn-portfolio-detail">
+                                    <FontAwesomeIcon icon={['fas', 'external-link']} /> Open Website
+                                </a>
+                            ) : ''
+                        }
                         {/* <Link to={"/projects?id=" + projectIndex} className="btn-portfolio btn-portfolio-detail">
                             <FontAwesomeIcon icon={['fas', 'info-circle']}/> Details
                         </Link> */}

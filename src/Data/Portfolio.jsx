@@ -1,16 +1,38 @@
 const PortfolioData = () => {
     return [
         {
+            name: 'Waterfront Sekuritas',
+            type: 'Company Profile Website',
+            desc: 'Waterfront Sekuritas is a securities company.',
+            imageFolder: 'Waterfront/',
+            imageCover: 'logo.png',
+            detail: [
+                `Waterfront Sekuritas is a securities company.`,
+                `They are aiming to go digital and rebrand their company by launching a new trading app for public.`
+            ],
+            snapshots: [
+                'homepage.png',
+                'products.png',
+                'page-2.png',
+                'researches.png',
+                'contact-us.png'
+            ],
+            display: true,
+            techStack: ['Laravel', 'Express', 'ReactJS'],
+            link: 'https://waterfront.co.id/'
+        },
+        {
             name: 'Lexvaya',
             type: 'Law Firm Website',
             desc: 'Lexvaya is a dynamic law firm specializing in Finance, Banking, and Corporate Law.',
             imageFolder: 'Lexvaya/',
-            imageCover: 'leaders.png',
+            imageCover: 'logo.png',
             detail: [
                 `Lexvaya (LVA) is a dynamic law firm specializing in Finance, Banking, and Corporate Law.`,
                 `With a deep understanding of the financial industry and corporate regulations, they offer tailored solutions to address their clients' unique challenges and achieve clients' business objectives.`
             ],
             snapshots: [
+                'leaders.png',
                 'header.png',
                 'about-us.png',
                 'services-exp.png',
